@@ -1,5 +1,6 @@
 import { Head } from '$fresh/runtime.ts'
 import { AppProps } from '$fresh/server.ts'
+import Header from 'components/layout/header.tsx'
 import Footer from 'components/layout/footer.tsx'
 
 const App = ({ Component }: AppProps) => (
@@ -45,6 +46,7 @@ const App = ({ Component }: AppProps) => (
 				content='#020105'
 			/>
 		</Head>
+		<Header />
 		<Component />
 		<Footer />
 	</>
