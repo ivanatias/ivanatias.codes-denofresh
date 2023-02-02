@@ -8,7 +8,9 @@ interface Props {
 	titleTag?: keyof JSX.IntrinsicElements
 }
 
-const Title = ({ children, titleClass = 'xl', semibold, titleTag }: Props) => {
+const Title = (
+	{ children, titleClass = 'xl', semibold = false, titleTag }: Props,
+) => {
 	const TitleTag = titleTag ?? 'h1'
 	const titleStyle = styling.headings[titleClass]
 
