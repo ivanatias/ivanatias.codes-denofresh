@@ -12,7 +12,7 @@ const Navbar = () => {
 			<nav>
 				<div class='flex items-center justify-between max-w-[824px] mx-auto px(4 md:5)'>
 					<div class='flex items-center gap-4'>
-						<div className='flex items-center'>
+						<div class='flex items-center'>
 							<Link href='/' className='pt-2'>
 								<img
 									src='/logo.svg'
@@ -22,7 +22,7 @@ const Navbar = () => {
 								/>
 							</Link>
 						</div>
-						<ul className='hidden md:flex md:items-center md:gap-2'>
+						<ul class='hidden md:flex md:items-center md:gap-2'>
 							{links.map(({ path, label }) => (
 								<li key={label}>
 									<Link href={path}>
