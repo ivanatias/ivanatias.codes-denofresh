@@ -7,7 +7,7 @@ interface SmallTextProps {
 }
 
 const SmallText = ({ children }: SmallTextProps) => (
-	<small class='text-xs font-semibold text-black dark:text-gray-500 2xl:text-sm'>
+	<small class='text(xs black dark:gray-500 2xl:sm) font-semibold'>
 		{children}
 	</small>
 )
@@ -17,7 +17,7 @@ const Footer = () => {
 
 	return (
 		<footer class='flex flex-col items-center justify-between pt-12 pb-6'>
-			<div class='flex flex-col gap-5 max-w-[824px] w-full mx-auto px-4 md:px-5'>
+			<div class='flex flex-col gap-5 max-w-[824px] w-full mx-auto px(4 md:5)'>
 				<Title titleTag='h2' titleClass='lg'>
 					Feel free to reach out to me!
 				</Title>
@@ -26,7 +26,7 @@ const Footer = () => {
 					any other subject.
 				</Paragraph>
 				<a
-					class='text-base font-bold text-black dark:text-gray-300 2xl:text-lg'
+					class='text(base black dark:gray-300 2xl:lg) font-bold'
 					href='mailto:ivan.d.atias@gmail.com'
 				>
 					ivan.d.atias@gmail.com
