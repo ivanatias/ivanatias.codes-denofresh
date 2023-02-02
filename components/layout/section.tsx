@@ -5,7 +5,7 @@ interface Props {
 }
 
 const Section = ({ children }: Props) => (
-	<section class='flex flex-col gap-10'>
+	<section class='flex(& col) gap-10'>
 		{children}
 	</section>
 )

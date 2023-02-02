@@ -16,8 +16,8 @@ const Footer = () => {
 	const currentYear = new Date().getUTCFullYear()
 
 	return (
-		<footer class='flex flex-col items-center justify-between pt-12 pb-6'>
-			<div class='flex flex-col gap-5 max-w-[824px] w-full mx-auto px(4 md:5)'>
+		<footer class='flex(& col) items-center justify-between pt-12 pb-6'>
+			<div class='flex(& col) gap-5 max-w-[824px] w-full mx-auto px(4 md:5)'>
 				<Title titleTag='h2' titleClass='lg'>
 					Feel free to reach out to me!
 				</Title>
@@ -32,7 +32,7 @@ const Footer = () => {
 					ivan.d.atias@gmail.com
 				</a>
 			</div>
-			<div class='flex flex-col items-center gap-2 mt-5'>
+			<div class='flex(& col) items-center gap-2 mt-5'>
 				<SmallText>
 					© {currentYear} Ivan Atias
 				</SmallText>

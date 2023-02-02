@@ -5,7 +5,7 @@ interface Props {
 }
 
 const Article = ({ children }: Props) => (
-	<article class='flex flex-col w-full gap-4'>
+	<article class='flex(& col) w-full gap-4'>
 		{children}
 	</article>
 )
