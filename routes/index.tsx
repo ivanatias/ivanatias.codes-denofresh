@@ -1,3 +1,4 @@
+import Layout from 'components/layout/index.tsx'
 import MetaData from 'components/meta-data.tsx'
 import Section from 'components/layout/section.tsx'
 import Article from 'components/layout/article.tsx'
@@ -7,13 +8,15 @@ export default function Home() {
 	return (
 		<>
 			<MetaData />
-			<Section>
-				<Article>
-					<Title>
-						Home Page
-					</Title>
-				</Article>
-			</Section>
+			<Layout>
+				<Section>
+					<Article>
+						<Title>
+							Home Page
+						</Title>
+					</Article>
+				</Section>
+			</Layout>
 		</>
 	)
 }
