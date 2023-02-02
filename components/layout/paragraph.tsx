@@ -1,3 +1,5 @@
+import { styling } from 'utils/styling.ts'
+
 interface Props {
 	children: string
 	pClass?: 'normal' | 'small' | 'xsmall'
@@ -14,14 +16,17 @@ const Paragraph = (
 		underlined = false,
 		centered = false,
 	}: Props,
-) => (
-	<p
-		className={`${pClass ?? 'normal-paragraph'} ${
-			semibold ? 'font-semibold' : ''
-		} ${underlined ? 'underline' : ''} ${centered ? 'text-center' : ''}`}
-	>
-		{children}
-	</p>
-)
+) => {
+	const paragraphStyle = styling.paragraphs[pClass]
+	return (
+		<p
+			className={`${paragraphStyle} ${semibold ? 'font-semibold' : ''} ${
+				underlined ? 'underline' : ''
+			} ${centered ? 'text-center' : ''}`}
+		>
+			{children}
+		</p>
+	)
+}
 
 export default Paragraph
