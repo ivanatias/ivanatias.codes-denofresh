@@ -20,7 +20,7 @@ const Paragraph = (
 	const paragraphStyle = styling.paragraphs[pClass]
 	return (
 		<p
-			className={`${paragraphStyle} ${semibold ? 'font-semibold' : ''} ${
+			class={`${paragraphStyle} ${semibold ? 'font-semibold' : ''} ${
 				underlined ? 'underline' : ''
 			} ${centered ? 'text-center' : ''}`}
 		>
