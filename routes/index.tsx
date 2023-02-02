@@ -1,13 +1,11 @@
-import { Head } from '$fresh/runtime.ts'
+import MetaData from '../components/meta-data.tsx'
 
 export default function Home() {
 	return (
 		<>
-			<Head>
-				<title>ivanatias.codes</title>
-			</Head>
+			<MetaData />
 			<div class='text(center blue-500 5xl) p-4 mx-auto max-w-screen-md'>
-				Initial
+				Home page
 			</div>
 		</>
 	)
