@@ -1,5 +1,5 @@
 import { JSX } from 'preact'
-import { styling } from '../../utils/styling.ts'
+import { styling } from 'utils/styling.ts'
 
 interface Props {
 	children: string
