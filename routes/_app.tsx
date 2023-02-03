@@ -4,6 +4,7 @@ import { AppProps } from '$fresh/server.ts'
 const App = ({ Component }: AppProps) => (
 	<>
 		<Head>
+			<script id='theme' src='/scripts/theme.js'></script>
 			<link
 				rel='apple-touch-icon'
 				sizes='180x180'
