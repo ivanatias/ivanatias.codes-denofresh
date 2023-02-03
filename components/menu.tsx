@@ -30,7 +30,7 @@ const MenuButton = ({ toggleMenu, isActive }: MenuButtonProps) => (
 )
 
 const Menu = () => (
-	<div class='z-50 absolute bottom-[-120px] right-4 w-[200px] bg(white dark:neutral-800) py-5 px-4 rounded-lg shadow(& md dark:gray-600) md:hidden transition-opacity duration-300 ease-in'>
+	<div class='z-50 absolute bottom-[-120px] right-4 w-[200px] bg(white dark:[#1C1B1F]) py-5 px-4 rounded-lg shadow-md md:hidden'>
 		<ul class='flex(& col) justify-center w-full gap-2'>
 			{links.map(({ path, label }) => (
 				<li key={label}>
