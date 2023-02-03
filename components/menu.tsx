@@ -7,8 +7,6 @@ interface MenuButtonProps {
 	isActive: boolean
 }
 
-type MenuProps = Pick<MenuButtonProps, 'toggleMenu'>
-
 const MenuButton = ({ toggleMenu, isActive }: MenuButtonProps) => (
 	<button
 		onClick={toggleMenu}
@@ -31,7 +29,7 @@ const MenuButton = ({ toggleMenu, isActive }: MenuButtonProps) => (
 	</button>
 )
 
-const Menu = ({ toggleMenu }: MenuProps) => (
+const Menu = () => (
 	<div class='z-50 absolute bottom-[-120px] right-4 w-[200px] bg(white dark:neutral-800) py-5 px-4 rounded-lg shadow(& md dark:gray-600) md:hidden transition-opacity duration-300 ease-in'>
 		<ul class='flex(& col) justify-center w-full gap-2'>
 			{links.map(({ path, label }) => (

@@ -37,7 +37,7 @@ const Navbar = () => {
 						{/* Theme toggle button here */}
 						<MenuButton toggleMenu={toggleMenu} isActive={menuOpen} />
 					</div>
-					{menuOpen && <Menu toggleMenu={toggleMenu} />}
+					{menuOpen && <Menu />}
 				</div>
 			</nav>
 		</header>
