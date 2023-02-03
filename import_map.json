@@ -11,6 +11,7 @@
 		"components/": "./components/",
 		"utils/": "./utils/",
 		"constants/": "./constants/",
+		"contexts/": "./contexts/",
 		"islands/": "./islands/"
 	}
 }
