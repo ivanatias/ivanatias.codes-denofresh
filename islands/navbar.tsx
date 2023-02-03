@@ -1,5 +1,6 @@
 import { useState } from 'preact/hooks'
 import Link from 'components/link.tsx'
+import { Menu, MenuButton } from 'components/menu.tsx'
 import { links } from 'constants/links.ts'
 
 const Navbar = () => {
@@ -32,6 +33,11 @@ const Navbar = () => {
 							))}
 						</ul>
 					</div>
+					<div class='flex(& 1) items-center justify-end gap-4'>
+						{/* Theme toggle button here */}
+						<MenuButton toggleMenu={toggleMenu} isActive={menuOpen} />
+					</div>
+					{menuOpen && <Menu toggleMenu={toggleMenu} />}
 				</div>
 			</nav>
 		</header>
