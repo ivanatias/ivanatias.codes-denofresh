@@ -17,11 +17,6 @@ const styling = {
 		small: `text(${sharedParagraphClasses} sm 2xl:base)`,
 		xsmall: `text(${sharedParagraphClasses} xs 2xl:sm)`,
 	},
-	menu: {
-		firstLineActive: `${sharedMenuClasses} rotate-45`,
-		secondLineActive: `${sharedMenuClasses} opacity-0`,
-		thirdLineActive: `${sharedMenuClasses} -rotate-45`,
-	},
 }
 
-export { styling }
+export { sharedMenuClasses, styling }
