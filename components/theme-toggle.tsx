@@ -1,3 +1,4 @@
+import { IS_BROWSER } from '$fresh/runtime.ts'
 import SVG from 'components/svg.tsx'
 import { useTheme } from 'contexts/theme.tsx'
 
@@ -20,9 +21,12 @@ const ThemeToggleButton = () => {
 
 	return (
 		<button
-			class='flex items-center justify-center w-12 h-10 hover:drop-shadow-[0_0_12px] focus:outline-none text(yellow-400 dark:orange-400)'
+			class={`flex items-center justify-center w-12 h-10 transition duration-150 ease-in hover:text(yellow-500 dark:orange-300) focus:outline-none text(yellow-400 dark:orange-400) ${
+				!IS_BROWSER && 'hidden'
+			}`}
 			onClick={toggleTheme}
 			aria-label={label}
+			disabled={!IS_BROWSER}
 		>
 			<SVG id={icon} title={iconLabel} className='w-6 h-6' />
 		</button>
