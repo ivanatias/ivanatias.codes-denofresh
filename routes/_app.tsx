@@ -45,7 +45,9 @@ const App = ({ Component }: AppProps) => (
 				content='#020105'
 			/>
 		</Head>
-		<Component />
+		<body class='bg(white dark:[#020105])'>
+			<Component />
+		</body>
 	</>
 )
 
