@@ -4,7 +4,6 @@ import { AppProps } from '$fresh/server.ts'
 const App = ({ Component }: AppProps) => (
 	<>
 		<Head>
-			<script id='theme' src='/scripts/theme.js'></script>
 			<link
 				rel='apple-touch-icon'
 				sizes='180x180'
@@ -44,6 +43,7 @@ const App = ({ Component }: AppProps) => (
 				media='(prefers-color-scheme: dark)'
 				content='#020105'
 			/>
+			<script id='theme' src='/scripts/theme.js' />
 		</Head>
 		<body class='bg(white dark:[#020105])'>
 			<Component />
