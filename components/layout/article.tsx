@@ -1,13 +1,13 @@
 import { ComponentChildren } from 'preact'
 
 interface Props {
-	children: ComponentChildren
+  children: ComponentChildren
 }
 
 const Article = ({ children }: Props) => (
-	<article class='flex(& col) w-full gap-4'>
-		{children}
-	</article>
+  <article class='flex(& col) w-full gap-4'>
+    {children}
+  </article>
 )
 
 export default Article

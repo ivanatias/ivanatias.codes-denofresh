@@ -5,18 +5,18 @@ import Article from 'components/layout/article.tsx'
 import Title from 'components/layout/title.tsx'
 
 export default function Home() {
-	return (
-		<>
-			<MetaData />
-			<Layout>
-				<Section>
-					<Article>
-						<Title>
-							Home Page
-						</Title>
-					</Article>
-				</Section>
-			</Layout>
-		</>
-	)
+  return (
+    <>
+      <MetaData />
+      <Layout>
+        <Section>
+          <Article>
+            <Title>
+              Home Page
+            </Title>
+          </Article>
+        </Section>
+      </Layout>
+    </>
+  )
 }

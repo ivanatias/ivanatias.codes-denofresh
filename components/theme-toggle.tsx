@@ -5,32 +5,32 @@ import { useTheme } from 'contexts/theme.tsx'
 type ThemeIcon = 'icon-sun' | 'icon-moon'
 
 interface ThemeOptions {
-	label: string
-	iconLabel: string
-	icon: ThemeIcon
+  label: string
+  iconLabel: string
+  icon: ThemeIcon
 }
 
 const themeOptions: Record<string, ThemeOptions> = {
-	dark: { label: 'Light mode', icon: 'icon-sun', iconLabel: 'Sun icon' },
-	light: { label: 'Dark mode', icon: 'icon-moon', iconLabel: 'Moon icon' },
+  dark: { label: 'Light mode', icon: 'icon-sun', iconLabel: 'Sun icon' },
+  light: { label: 'Dark mode', icon: 'icon-moon', iconLabel: 'Moon icon' },
 }
 
 const ThemeToggleButton = () => {
-	const { theme, toggleTheme } = useTheme()
-	const { icon, iconLabel, label } = themeOptions[theme]
+  const { theme, toggleTheme } = useTheme()
+  const { icon, iconLabel, label } = themeOptions[theme]
 
-	return (
-		<button
-			class={`flex items-center justify-center w-12 h-10 transition duration-150 ease-in hover:text(yellow-500 dark:orange-300) focus:outline-none text(yellow-400 dark:orange-400) ${
-				!IS_BROWSER && 'hidden'
-			}`}
-			onClick={toggleTheme}
-			aria-label={label}
-			disabled={!IS_BROWSER}
-		>
-			<SVG id={icon} title={iconLabel} className='w-6 h-6' />
-		</button>
-	)
+  return (
+    <button
+      class={`flex items-center justify-center w-12 h-10 transition duration-150 ease-in hover:text(yellow-500 dark:orange-300) focus:outline-none text(yellow-400 dark:orange-400) ${
+        !IS_BROWSER && 'hidden'
+      }`}
+      onClick={toggleTheme}
+      aria-label={label}
+      disabled={!IS_BROWSER}
+    >
+      <SVG id={icon} title={iconLabel} className='w-6 h-6' />
+    </button>
+  )
 }
 
 export default ThemeToggleButton

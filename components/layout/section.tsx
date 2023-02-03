@@ -1,13 +1,13 @@
 import { ComponentChildren } from 'preact'
 
 interface Props {
-	children: ComponentChildren
+  children: ComponentChildren
 }
 
 const Section = ({ children }: Props) => (
-	<section class='flex(& col) gap-10'>
-		{children}
-	</section>
+  <section class='flex(& col) gap-10'>
+    {children}
+  </section>
 )
 
 export default Section
