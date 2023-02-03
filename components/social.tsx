@@ -9,7 +9,7 @@ const Social = () => (
 				href={path}
 				target='_blank'
 				rel='noreferrer noopener'
-				class='hover:drop-shadow-[0_0_12px]'
+				class='transition duration-150 ease-in hover:text(pink-900 dark:pink-500)'
 			>
 				<SVG
 					id={icon}
