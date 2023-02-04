@@ -8,8 +8,12 @@
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.0.1",
     "twind": "https://esm.sh/twind@0.16.17",
     "twind/": "https://esm.sh/twind@0.16.17/",
+    "sanity/client": "https://esm.sh/@sanity/client@4.0.1",
+    "sanity/image-url": "https://esm.sh/@sanity/image-url@1.0.2",
     "components/": "./components/",
     "utils/": "./utils/",
+    "lib/": "./lib/",
+    "models/": "./models/",
     "constants/": "./constants/",
     "contexts/": "./contexts/",
     "islands/": "./islands/"
