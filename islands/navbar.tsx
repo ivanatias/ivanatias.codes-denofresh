@@ -11,7 +11,7 @@ const Navbar = () => {
   const toggleMenu = () => setMenuOpen((prev) => !prev)
 
   return (
-    <header class='fixed top-0 z-50 w-full py-3'>
+    <header class='fixed top-0 z-50 w-full py-3 bg(white dark:[#020105])'>
       <nav>
         <div class='flex items-center justify-between max-w-[824px] mx-auto px(4 md:5)'>
           <div class='flex items-center gap-4'>
