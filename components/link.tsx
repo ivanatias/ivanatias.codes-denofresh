@@ -24,3 +24,5 @@ const Link = (props: Props) => {
 }
 
 export default Link
+
+export type { Props }
