@@ -32,7 +32,7 @@ const Footer = () => {
           ivan.d.atias@gmail.com
         </a>
       </div>
-      <div class='flex(& col) items-center gap-2 mt-5'>
+      <div class='flex(& col) items-center gap-1 mt-7'>
         <SmallText>
           © {currentYear} Ivan Atias
         </SmallText>
