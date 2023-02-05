@@ -1,4 +1,4 @@
-const biographyQuery = () => {
+const getBiographyQuery = () => {
   const query = `*[_type == "biography"] | order(_createdAt desc) {
     _id,
     year,
@@ -8,7 +8,7 @@ const biographyQuery = () => {
   return query
 }
 
-const worksQuery = () => {
+const getWorksQuery = () => {
   const query = `*[_type == "work"] | order(_createdAt asc) {
     _id,
     title,
@@ -24,7 +24,7 @@ const worksQuery = () => {
   return query
 }
 
-const workQuery = (slug: string) => {
+const getWorkQuery = (slug: string) => {
   const query = `*[_type == "work" && slug.current == "${slug}"] {
     _id,
     title,
@@ -52,7 +52,7 @@ const workQuery = (slug: string) => {
   return query
 }
 
-const blogQuery = () => {
+const getBlogQuery = () => {
   const query = `*[_type == "blog"] | order(_createdAt desc) {
     _id,
     slug,
@@ -72,7 +72,7 @@ const blogQuery = () => {
   return query
 }
 
-const blogPostQuery = (slug: string) => {
+const getBlogPostQuery = (slug: string) => {
   const query = `*[_type == "blog" && slug.current == "${slug}"] {
     "currentPost": {
       _id,
@@ -106,7 +106,7 @@ const blogPostQuery = (slug: string) => {
   return query
 }
 
-const blogPostReadingTimeQuery = (slug: string) => {
+const getBlogPostReadingTimeQuery = (slug: string) => {
   const query = `*[_type == "blog" && slug.current == "${slug}"] {
     articleTitle,
     "numberOfCharacters": length(pt::text(articleBody)),
@@ -119,10 +119,10 @@ const blogPostReadingTimeQuery = (slug: string) => {
 }
 
 export {
-  biographyQuery,
-  blogPostQuery,
-  blogPostReadingTimeQuery,
-  blogQuery,
-  workQuery,
-  worksQuery,
+  getBiographyQuery,
+  getBlogPostQuery,
+  getBlogPostReadingTimeQuery,
+  getBlogQuery,
+  getWorkQuery,
+  getWorksQuery,
 }

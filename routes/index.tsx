@@ -9,12 +9,13 @@ import Skills from 'components/skills.tsx'
 import Paragraph from 'components/layout/paragraph.tsx'
 import BiographyItem from 'components/biography-item.tsx'
 import { client } from 'lib/sanity-client.ts'
-import { biographyQuery } from 'constants/queries.ts'
+import { getBiographyQuery } from 'utils/queries.ts'
 import { Biography } from 'models/biography.d.ts'
 
 export const handler: Handlers<Biography[]> = {
   async GET(_req, ctx) {
-    const biography = await client.fetch(biographyQuery())
+    const biographyQuery = getBiographyQuery()
+    const biography = await client.fetch<Biography[]>(biographyQuery)
     return ctx.render(biography)
   },
 }
