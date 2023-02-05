@@ -2,10 +2,13 @@ import { ComponentChildren } from 'preact'
 
 interface Props {
   children: ComponentChildren
+  className?: string
 }
 
-const Section = ({ children }: Props) => (
-  <section class='flex(& col) gap-10'>
+const defaultStyles = 'flex(& col) gap-10'
+
+const Section = ({ children, className }: Props) => (
+  <section class={className ?? defaultStyles}>
     {children}
   </section>
 )
