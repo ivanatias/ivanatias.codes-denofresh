@@ -9,7 +9,7 @@ interface Props {
 }
 
 const defaultStyles =
-  'block font-semibold text(black dark:gray-300) decoration(black dark:gray-300) transition-all duration-150 underline-offset-4 hover:underline dark:hover:text-white dark:hover:decoration-white'
+  'flex items-center gap-1 font-semibold text(black dark:gray-300) decoration(black dark:gray-300) transition-all duration-150 underline-offset-4 hover:underline dark:hover:text-white dark:hover:decoration-white'
 
 const Link = (props: Props) => {
   const { children, isExternal = false, className } = props
