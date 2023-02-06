@@ -1,4 +1,4 @@
-import Link from 'components/link.tsx'
+import Navlink from 'components/nav-link.tsx'
 import { links } from 'constants/links.ts'
 import { sharedMenuClasses } from 'utils/styling.ts'
 
@@ -32,11 +32,11 @@ const MenuButton = ({ toggleMenu, isActive }: MenuButtonProps) => (
 const Menu = () => (
   <div class='z-50 absolute bottom-[-150px] right-4 w-[200px] bg(white dark:[#1C1B1F]) py-5 px-4 rounded-lg shadow-md md:hidden'>
     <ul class='flex(& col) justify-center w-full gap-2'>
-      {links.map(({ path, label }) => (
+      {links.map(({ path, label, ...item }) => (
         <li key={label}>
-          <Link href={path}>
+          <Navlink href={path} {...item}>
             {label}
-          </Link>
+          </Navlink>
         </li>
       ))}
     </ul>
