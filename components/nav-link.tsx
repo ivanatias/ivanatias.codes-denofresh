@@ -1,7 +1,7 @@
-import Link, { Props } from 'components/link.tsx'
+import Link, { Props as LinkProps } from 'components/link.tsx'
 import SVG from 'components/svg.tsx'
 
-interface NavlinkProps extends Omit<Props, 'children'> {
+interface NavlinkProps extends Omit<LinkProps, 'children'> {
   children: string
   icon?: string
 }
