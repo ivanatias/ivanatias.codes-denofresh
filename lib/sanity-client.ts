@@ -1,4 +1,4 @@
-import sanityClient, { SanityImageAssetDocument } from 'sanity/client'
+import sanityClient from 'sanity/client'
 import imageUrlBuilder from 'sanity/image-url'
 
 const client = sanityClient({
@@ -10,7 +10,7 @@ const client = sanityClient({
 
 const builder = imageUrlBuilder(client)
 
-const urlFor = (source: SanityImageAssetDocument) => {
+const urlFor = (source: string) => {
   return builder.image(source)
 }
 
