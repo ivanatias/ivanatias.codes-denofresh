@@ -22,6 +22,7 @@ const Navbar = () => {
                 alt='Ivan Atias Logo'
                 width='50'
                 height='50'
+                decoding='async'
               />
             </Link>
             <ul class='hidden md:flex md:items-center md:gap-3'>

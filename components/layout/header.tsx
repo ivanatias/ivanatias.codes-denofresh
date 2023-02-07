@@ -10,6 +10,7 @@ const Header = () => (
       width='150'
       height='150'
       alt='Ivan Atias, Front-end Engineer and UI Designer'
+      decoding='async'
     />
     <div class='flex(& col) items-center gap-2'>
       <Title>Ivan Atias</Title>

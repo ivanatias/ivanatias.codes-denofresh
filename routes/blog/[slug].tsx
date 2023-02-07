@@ -80,6 +80,7 @@ const BlogPost = ({ data }: PageProps<Props>) => {
                 width='56'
                 height='56'
                 class='flex-shrink-0 w-14 h-14'
+                decoding='async'
               />
               <Title titleTag='h2' titleClass='lg'>
                 {articleTitle}
