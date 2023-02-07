@@ -5,13 +5,13 @@ import MetaData from 'components/meta-data.tsx'
 import Section from 'components/layout/section.tsx'
 import Article from 'components/layout/article.tsx'
 import Title from 'components/layout/title.tsx'
+import Link from 'components/link.tsx'
 import CustomPortableText from 'components/sanity-block-contents/portable-text/custom-portabletext.tsx'
 import Share from 'islands/socialmedia-share.tsx'
 import { client } from 'lib/sanity-client.ts'
 import { getBlogPostQuery, getBlogPostReadingTimeQuery } from 'utils/queries.ts'
 import { ArticleReadingTime, BlogArticle } from 'models/article.d.ts'
 import { formatDate, formatReadingTime } from 'utils/helpers.ts'
-import Link from '../../components/link.tsx'
 
 interface Props extends BlogArticle {
   readingTime: ArticleReadingTime
