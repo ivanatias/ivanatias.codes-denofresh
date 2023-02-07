@@ -1,3 +1,5 @@
+import { asset } from '$fresh/runtime.ts'
+
 interface Props {
   className?: string
   color?: string
@@ -21,7 +23,7 @@ const SVG = ({
   return (
     <svg class={classNames} fill={fill} role='img' aria-hidden={hidden}>
       {title !== '' && <title>{title}</title>}
-      <use href={`/images/sprite.svg#${id}`} />
+      <use href={asset(`/images/sprite.svg#${id}`)} />
     </svg>
   )
 }
