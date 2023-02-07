@@ -1,8 +1,4 @@
 User-agent: *
 Allow: /
-
-# Host
-Host: https://www.ivanatias.codes
-
-# Sitemaps
+Disallow: /api/*
 Sitemap: https://www.ivanatias.codes/sitemap.xml
