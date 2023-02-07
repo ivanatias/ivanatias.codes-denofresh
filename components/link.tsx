@@ -1,4 +1,4 @@
-import { ComponentChildren } from 'preact'
+import { ComponentChildren, JSX } from 'preact'
 
 interface Props {
   children: ComponentChildren
@@ -6,18 +6,29 @@ interface Props {
   isExternal?: boolean
   className?: string
   onClick?: () => void
+  styles?: JSX.CSSProperties
+  ariaLabel?: string
 }
 
 const defaultStyles =
   'flex items-center gap-1 font-semibold text(black dark:gray-300) decoration(black dark:gray-300) transition-all duration-150 underline-offset-4 hover:underline dark:hover:text-white dark:hover:decoration-white'
 
 const Link = (props: Props) => {
-  const { children, isExternal = false, className } = props
+  const { children, isExternal = false, className, styles = {}, ariaLabel } =
+    props
+
   const target = isExternal ? '_blank' : undefined
   const rel = isExternal ? 'noreferrer noopener' : undefined
 
   return (
-    <a class={className ?? defaultStyles} target={target} rel={rel} {...props}>
+    <a
+      class={className ?? defaultStyles}
+      target={target}
+      rel={rel}
+      style={styles}
+      aria-label={ariaLabel}
+      {...props}
+    >
       {children}
     </a>
   )
