@@ -33,6 +33,15 @@ const App = ({ Component }: AppProps) => (
         sizes='16x16'
         href='/icons/favicon-16x16.png'
       />
+      <link rel='preload' href='/logo.svg' as='image' />
+      <link rel='preload' href='/profile-pic.webp' as='image' />
+      <link
+        rel='preload'
+        href='/images/sprite.svg'
+        as='image'
+        crossOrigin='anonymous'
+      />
+      <link rel='preload' href='/scripts/theme.js' as='script' />
       <meta
         name='theme-color'
         media='(prefers-color-scheme: light)'
