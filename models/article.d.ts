@@ -16,7 +16,7 @@ interface CurrentPost {
 }
 
 type OtherPost = {
-  slug: Pick<CurrentPost, 'slug'>
+  slug: Slug
 } | null
 
 interface Slug {
