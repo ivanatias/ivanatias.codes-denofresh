@@ -10,6 +10,7 @@ import { client } from 'lib/sanity-client.ts'
 import { getBlogPostQuery, getBlogPostReadingTimeQuery } from 'utils/queries.ts'
 import { ArticleReadingTime, BlogArticle } from 'models/article.d.ts'
 import { formatDate, formatReadingTime } from 'utils/helpers.ts'
+import Link from '../../components/link.tsx'
 
 interface Props extends BlogArticle {
   readingTime: ArticleReadingTime
@@ -95,6 +96,18 @@ const BlogPost = ({ data }: PageProps<Props>) => {
               </span>
             </div>
             <CustomPortableText articleBody={articleBody} />
+            <div class='flex items-center justify-center mt-10 gap-4'>
+              {previousPost !== null && (
+                <Link href={`/blog/${previousPost.slug.current}`}>
+                  Previous article
+                </Link>
+              )}
+              {nextPost !== null && (
+                <Link href={`/blog/${nextPost.slug.current}`}>
+                  Next article
+                </Link>
+              )}
+            </div>
           </Article>
         </Section>
       </Layout>
