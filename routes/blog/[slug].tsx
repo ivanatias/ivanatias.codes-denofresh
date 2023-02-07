@@ -6,6 +6,7 @@ import Section from 'components/layout/section.tsx'
 import Article from 'components/layout/article.tsx'
 import Title from 'components/layout/title.tsx'
 import CustomPortableText from 'components/sanity-block-contents/portable-text/custom-portabletext.tsx'
+import Share from 'islands/socialmedia-share.tsx'
 import { client } from 'lib/sanity-client.ts'
 import { getBlogPostQuery, getBlogPostReadingTimeQuery } from 'utils/queries.ts'
 import { ArticleReadingTime, BlogArticle } from 'models/article.d.ts'
@@ -108,6 +109,7 @@ const BlogPost = ({ data }: PageProps<Props>) => {
                 </Link>
               )}
             </div>
+            <Share slug={slug.current} />
           </Article>
         </Section>
       </Layout>
