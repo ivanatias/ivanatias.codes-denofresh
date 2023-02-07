@@ -12,6 +12,7 @@ import * as $5 from './routes/index.tsx'
 import * as $6 from './routes/works/[slug].tsx'
 import * as $7 from './routes/works/index.tsx'
 import * as $$0 from './islands/navbar.tsx'
+import * as $$1 from './islands/socialmedia-share.tsx'
 
 const manifest = {
   routes: {
@@ -26,6 +27,7 @@ const manifest = {
   },
   islands: {
     './islands/navbar.tsx': $$0,
+    './islands/socialmedia-share.tsx': $$1,
   },
   baseUrl: import.meta.url,
   config,
