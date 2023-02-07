@@ -26,9 +26,9 @@ export const handler: Handlers<Props> = {
       client.fetch<ArticleReadingTime>(readingTimeQuery),
     ])
 
-    if (blogPost === null || readingTime === null) return ctx.renderNotFound()
-
-    return ctx.render({ ...blogPost, readingTime })
+    return blogPost === null || readingTime === null
+      ? ctx.renderNotFound()
+      : ctx.render({ ...blogPost, readingTime })
   },
 }
 
