@@ -1,7 +1,7 @@
 interface BlogArticle {
   currentPost: CurrentPost
-  nextPost?: OtherPost
-  previousPost?: OtherPost
+  nextPost: OtherPost
+  previousPost: OtherPost
 }
 
 interface CurrentPost {
@@ -15,7 +15,9 @@ interface CurrentPost {
   socialShareImage: Image
 }
 
-type OtherPost = Pick<CurrentPost, 'slug'>
+type OtherPost = {
+  slug: Pick<CurrentPost, 'slug'>
+} | null
 
 interface Slug {
   _type: string
@@ -86,4 +88,4 @@ interface ArticleReadingTime extends Pick<CurrentPost, 'articleTitle'> {
   numberOfCharacters: number
 }
 
-export { ArticleReadingTime, BlogArticle }
+export { ArticleImage, ArticleReadingTime, BlogArticle, CurrentPost }
