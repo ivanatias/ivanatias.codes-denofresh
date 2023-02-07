@@ -13,8 +13,8 @@ const Share = ({ slug }: Props) => {
   const toggleShareButton = () => setShareButtonActive((prev) => !prev)
 
   return (
-    <div className='flex items-center justify-center my-4'>
-      <div className='relative'>
+    <div class='flex items-center justify-center my-4'>
+      <div class='relative'>
         <ShareButton
           isActive={shareButtonActive}
           toggleShareButton={toggleShareButton}
