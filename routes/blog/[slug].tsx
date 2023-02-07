@@ -21,14 +21,14 @@ export const handler: Handlers<Props> = {
     const blogPostQuery = getBlogPostQuery(slug)
     const readingTimeQuery = getBlogPostReadingTimeQuery(slug)
 
-    const [blogPostData, readingTime] = await Promise.all([
+    const [blogPost, readingTime] = await Promise.all([
       client.fetch<BlogArticle>(blogPostQuery),
       client.fetch<ArticleReadingTime>(readingTimeQuery),
     ])
 
-    return blogPostData.currentPost === null
-      ? ctx.renderNotFound()
-      : ctx.render({ ...blogPostData, readingTime })
+    if (blogPost === null || readingTime === null) return ctx.renderNotFound()
+
+    return ctx.render({ ...blogPost, readingTime })
   },
 }
 
