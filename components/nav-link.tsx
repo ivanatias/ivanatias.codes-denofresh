@@ -6,20 +6,17 @@ interface NavlinkProps extends Omit<LinkProps, 'children'> {
   icon?: string
 }
 
-const Navlink = (props: NavlinkProps) => {
-  const { children, icon, ...restOfProps } = props
-  return (
-    <Link {...restOfProps}>
-      {icon !== undefined && (
-        <SVG
-          id={icon}
-          className='w-6 h-6'
-          hidden={true}
-        />
-      )}
-      {children}
-    </Link>
-  )
-}
+const Navlink = ({ children, icon, ...restOfProps }: NavlinkProps) => (
+  <Link {...restOfProps}>
+    {icon !== undefined && (
+      <SVG
+        id={icon}
+        className='w-6 h-6'
+        hidden={true}
+      />
+    )}
+    {children}
+  </Link>
+)
 
 export default Navlink

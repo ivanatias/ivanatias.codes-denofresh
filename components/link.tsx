@@ -13,10 +13,16 @@ interface Props {
 const defaultStyles =
   'flex items-center gap-1 font-semibold text(black dark:gray-300) decoration(black dark:gray-300) transition-all duration-150 underline-offset-4 hover:underline dark:hover:text-white dark:hover:decoration-white'
 
-const Link = (props: Props) => {
-  const { children, isExternal = false, className, styles = {}, ariaLabel } =
-    props
-
+const Link = (
+  {
+    children,
+    isExternal = false,
+    className,
+    styles = {},
+    ariaLabel,
+    ...restOfProps
+  }: Props,
+) => {
   const target = isExternal ? '_blank' : undefined
   const rel = isExternal ? 'noreferrer noopener' : undefined
 
@@ -27,7 +33,7 @@ const Link = (props: Props) => {
       rel={rel}
       style={styles}
       aria-label={ariaLabel}
-      {...props}
+      {...restOfProps}
     >
       {children}
     </a>
