@@ -1,9 +1,10 @@
 import { Head } from '$fresh/runtime.ts'
+import { BASE_URL } from 'constants/socials.ts'
 
 const defaultTitle = 'Ivan Atias · Front-end Engineer, UI Designer'
 const defaultDescription =
   'Ivan Atias is a Front-end Engineer and UI Designer who enjoys a lot building good looking and functional websites and apps.'
-const defaultImage = 'https://www.ivanatias.codes/card.png'
+const defaultImage = `${BASE_URL}/card.png`
 const defaultOgType = 'website'
 
 interface Props {
@@ -24,7 +25,7 @@ const MetaData = ({
   const mainTitle = title ? `${title} - Ivan Atias` : defaultTitle
   const ogType = contentType ?? defaultOgType
   const ogImage = socialCardImage ?? defaultImage
-  const url = `https://www.ivanatias.codes${canonicalUrlPath ?? ''}`
+  const url = `${BASE_URL}${canonicalUrlPath ?? ''}`
   const desc = description ?? defaultDescription
 
   return (

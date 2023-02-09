@@ -1,4 +1,5 @@
-const BASE_URL_BLOG = 'https://www.ivanatias.codes/blog'
+const BASE_URL = 'https://ivanatias.codes'
+const BASE_URL_BLOG = `${BASE_URL}/blog`
 
 const socialShare = [
   {
@@ -41,4 +42,4 @@ const socialLinks = [
   },
 ]
 
-export { BASE_URL_BLOG, socialLinks, socialShare }
+export { BASE_URL, BASE_URL_BLOG, socialLinks, socialShare }
