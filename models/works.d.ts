@@ -40,4 +40,4 @@ interface WorkDetails extends Omit<Work, 'overview'> {
   stack: Stack[]
 }
 
-export { Work, WorkDetails }
+export { AdditionalImage, Work, WorkDetails }
