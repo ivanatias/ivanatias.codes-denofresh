@@ -7,17 +7,15 @@ interface Props {
   children: ComponentChildren
 }
 
-const Layout = ({ children }: Props) => {
-  return (
-    <>
-      <Navbar />
-      <main class='flex(& 1 col) max-w-3xl px-5 mx-auto'>
-        <Header />
-        {children}
-      </main>
-      <Footer />
-    </>
-  )
-}
+const Layout = ({ children }: Props) => (
+  <>
+    <Navbar />
+    <main class='flex(& 1 col) max-w-3xl px-5 mx-auto'>
+      <Header />
+      {children}
+    </main>
+    <Footer />
+  </>
+)
 
 export default Layout
