@@ -58,11 +58,11 @@ const serializers = {
     <strong class='font-bold'>{children}</strong>
   ),
 
-  ul: ({ children }: { children: string }) => (
+  ul: ({ children }: { children: ComponentChildren }) => (
     <ul class='flex(& col) gap-2 pl-3'>{children}</ul>
   ),
 
-  ol: ({ children }: { children: string }) => (
+  ol: ({ children }: { children: ComponentChildren }) => (
     <ol class='flex(& col) gap-2 pl-3'>
       {children}
     </ol>
