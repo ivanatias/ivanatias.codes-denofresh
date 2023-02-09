@@ -1,3 +1,6 @@
+import { AdditionalImage } from 'models/works.d.ts'
+import { getImageDimensions } from 'sanity/asset-utils'
+
 const formatDate = (date: string) => date.substring(0, 10)
 
 const formatReadingTime = (readingMinutes: number) => {
@@ -18,9 +21,18 @@ const calculateIconLeftPosition = (position: number, multiplicator: number) => {
   }px + 6px)`
 }
 
+const getImagesWithDimensions = (images: AdditionalImage[]) => {
+  return images.map(({ asset }) => ({
+    id: asset._id,
+    url: asset.url,
+    dimensions: getImageDimensions(asset),
+  }))
+}
+
 export {
   calculateIconLeftPosition,
   calculateIconTransition,
   formatDate,
   formatReadingTime,
+  getImagesWithDimensions,
 }

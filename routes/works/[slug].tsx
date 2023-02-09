@@ -6,8 +6,8 @@ import Article from 'components/layout/article.tsx'
 import Paragraph from 'components/layout/paragraph.tsx'
 import Link from 'components/link.tsx'
 import { client } from 'lib/sanity-client.ts'
-import { getImageDimensions } from 'sanity/asset-utils'
 import { getWorkQuery } from 'utils/queries.ts'
+import { getImagesWithDimensions } from 'utils/helpers.ts'
 import { WorkDetails } from 'models/works.d.ts'
 import SVG from 'components/svg.tsx'
 
@@ -46,11 +46,7 @@ const Work = ({ data }: PageProps<WorkDetails>) => {
     },
   ]
 
-  const imagesWithDimensions = additionalImages.map(({ asset }) => ({
-    id: asset._id,
-    url: asset.url,
-    dimensions: getImageDimensions(asset),
-  }))
+  const imagesWithDimensions = getImagesWithDimensions(additionalImages)
 
   return (
     <>
