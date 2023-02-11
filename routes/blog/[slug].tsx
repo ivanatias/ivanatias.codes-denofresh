@@ -86,14 +86,13 @@ const BlogPost = ({ data }: PageProps<Props>) => {
                 {articleTitle}
               </Title>
             </div>
-            <div class='flex items-center gap-3'>
+            <div class='flex text(xs md:sm black dark:gray-400) items-center gap-3'>
               <time
                 dateTime={publishDate}
-                class='text(xs 2xl:sm black dark:gray-400)'
               >
                 {date}
               </time>
-              <span class='text(xs 2xl:sm black dark:gray-400) underline'>
+              <span class='underline'>
                 {readingTime}
               </span>
             </div>

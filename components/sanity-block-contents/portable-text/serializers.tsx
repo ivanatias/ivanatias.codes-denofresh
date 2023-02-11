@@ -43,7 +43,7 @@ const serializers = {
   ),
 
   blockquote: ({ children }: { children: string }) => (
-    <blockquote class='pl-2 text(sm black 2xl:base dark:gray-100) italic border(l-2 pink-800 dark:pink-600)'>
+    <blockquote class='pl-2 text(sm black md:base dark:gray-100) italic border(l-2 pink-800 dark:pink-600)'>
       {children}
     </blockquote>
   ),
@@ -71,14 +71,14 @@ const serializers = {
   li: ({ children }: { children: string }) => (
     <li
       style={{ listStyleType: 'auto' }}
-      class='text(base black dark:gray-300 2xl:lg)'
+      class='text(base black dark:gray-300 md:lg)'
     >
       {children}
     </li>
   ),
 
   code: ({ children }: { children: string }) => (
-    <code class='text(base black dark:gray-300 2xl:lg) bg(gray-200 dark:gray-800) px-1 italic tracking-tighter'>
+    <code class='text(sm black dark:gray-300 md:base) bg(gray-200 dark:gray-800) px-1 italic tracking-tighter'>
       {children}
     </code>
   ),
@@ -87,7 +87,10 @@ const serializers = {
     const { children, ...restOfProps } = props
 
     return (
-      <Link {...restOfProps} className='text(pink-800 dark:pink-600) underline'>
+      <Link
+        {...restOfProps}
+        className='text(base md:lg pink-800 dark:pink-600) underline'
+      >
         {children}
       </Link>
     )
@@ -99,10 +102,10 @@ const serializers = {
     return (
       <>
         <div class='flex justify-between items-center mb-[-28px]'>
-          <div class='flex(& 1) text(base 2xl:lg black dark:gray-100) italic tracking-tighter'>
+          <div class='flex(& 1) text(base md:lg black dark:gray-100) italic tracking-tighter'>
             {filename}
           </div>
-          <div class='py-1 text(base black dark:gray-100 2xl:lg) font-semibold uppercase'>
+          <div class='py-1 text(base black dark:gray-100 md:lg) font-semibold uppercase'>
             {language}
           </div>
         </div>

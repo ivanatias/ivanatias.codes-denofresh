@@ -14,7 +14,7 @@ const Header = () => (
     />
     <div class='flex(& col) items-center gap-2'>
       <Title>Ivan Atias</Title>
-      <Paragraph semibold centered>
+      <Paragraph pClass='small' semibold centered>
         Front-end Engineer and UI Designer based in Venezuela
       </Paragraph>
     </div>

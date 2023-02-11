@@ -56,7 +56,7 @@ const Work = ({ data }: PageProps<WorkDetails>) => {
           <Article>
             <div class='flex items-center gap-2'>
               <Link href='/works'>
-                <h2 class='text(base 2xl:lg black dark:white) font-bold'>
+                <h2 class='text(base md:lg black dark:white) font-bold'>
                   Works
                 </h2>
               </Link>
@@ -66,23 +66,23 @@ const Work = ({ data }: PageProps<WorkDetails>) => {
               >
                 |
               </span>
-              <h3 class='text(base 2xl:lg pink-800 dark:pink-600) font-bold'>
+              <h3 class='text(base md:lg pink-800 dark:pink-600) font-bold'>
                 {title}
               </h3>
             </div>
             <Paragraph>
               {description}
             </Paragraph>
-            <div class='flex(& col) text(sm 2xl:base black dark:white) gap-3 font-semibold'>
+            <div class='flex(& col) text(xs md:sm black dark:white) gap-3 font-semibold'>
               <div class='flex items-center gap-3'>
-                <span class='inline-block px-4 py-1 text(xs 2xl:sm white) bg(indigo-800 dark:indigo-600) font-semibold rounded-lg'>
+                <span class='inline-block px-4 py-1 text(xs md:sm white) bg(indigo-800 dark:indigo-600) font-semibold rounded-lg'>
                   Stack
                 </span>
                 <div class='flex(& wrap) items-center gap-1'>
                   {stack.map(({ _key, tech }) => (
                     <span
                       key={_key}
-                      class='text(xs 2xl:sm black dark:gray-300) underline'
+                      class='text(xs md:sm black dark:gray-300) underline'
                     >
                       {tech}
                     </span>

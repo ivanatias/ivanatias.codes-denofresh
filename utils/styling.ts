@@ -13,9 +13,9 @@ const styling = {
     small: `text(${sharedTitleClasses} small md:lg)`,
   },
   paragraphs: {
-    normal: `text(${sharedParagraphClasses} base 2xl:lg)`,
-    small: `text(${sharedParagraphClasses} sm 2xl:base)`,
-    xsmall: `text(${sharedParagraphClasses} xs 2xl:sm)`,
+    normal: `text(${sharedParagraphClasses} base md:lg)`,
+    small: `text(${sharedParagraphClasses} sm md:base)`,
+    xsmall: `text(${sharedParagraphClasses} xs md:sm)`,
   },
 }
 
