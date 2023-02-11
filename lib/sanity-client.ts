@@ -1,3 +1,4 @@
+import 'https://deno.land/x/dotenv@v3.2.0/load.ts'
 import sanityClient from 'sanity/client'
 import imageUrlBuilder from 'sanity/image-url'
 
