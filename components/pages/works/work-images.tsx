@@ -1,13 +1,13 @@
 import { SanityImageDimensions } from 'sanity/asset-utils'
 
-interface ImagesWithDimensions {
+interface ImageWithDimensions {
   id: string
   url: string
   dimensions: SanityImageDimensions
 }
 
 interface Props {
-  imagesWithDimensions: ImagesWithDimensions[]
+  imagesWithDimensions: ImageWithDimensions[]
   workTitle: string
 }
 
