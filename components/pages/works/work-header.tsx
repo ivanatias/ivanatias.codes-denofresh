@@ -12,7 +12,7 @@ const WorkHeader = ({ title }: Props) => (
       </h2>
     </Link>
     <span
-      class='text(sm black dark:white) font-semibold'
+      class='text(base black dark:white) font-semibold'
       aria-hidden={true}
     >
       |
