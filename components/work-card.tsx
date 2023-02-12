@@ -27,7 +27,7 @@ const WorkCard = ({ thumbNail, title, overview, slug }: Props) => {
         <Title titleTag='h3' titleClass='small'>
           {title}
         </Title>
-        <Paragraph pClass='small'>{overview}</Paragraph>
+        <Paragraph pClass='small' centered>{overview}</Paragraph>
       </div>
     </Link>
   )
