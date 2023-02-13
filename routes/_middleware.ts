@@ -9,7 +9,9 @@ export async function handler(
   req: Request,
   ctx: MiddlewareHandlerContext,
 ) {
-  if (isDevelopment) return await ctx.next()
+  const nextHandler = await ctx.next()
+
+  if (isDevelopment) return nextHandler
 
   const { pathname, host } = new URL(req.url)
   const shouldRedirect = host.startsWith('www')
@@ -22,5 +24,5 @@ export async function handler(
       },
       status: 301,
     })
-    : await ctx.next()
+    : nextHandler
 }
