@@ -1,6 +1,7 @@
 import { ComponentChildren } from 'preact'
 import Title from 'components/layout/title.tsx'
 import Paragraph from 'components/layout/paragraph.tsx'
+import Social from 'components/social.tsx'
 
 interface SmallTextProps {
   children: ComponentChildren
@@ -47,6 +48,9 @@ const Footer = () => {
             Deno Fresh
           </a>
         </SmallText>
+      </div>
+      <div class='mt-5'>
+        <Social />
       </div>
     </footer>
   )
