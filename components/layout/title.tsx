@@ -6,15 +6,15 @@ type Heading = Extract<
   'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 >
 
-interface Props {
+interface HeadingTagProps extends JSX.HTMLAttributes<HTMLHeadingElement> {
+  as: Heading
+}
+
+interface TitleProps {
   children: string
   titleClass?: 'xl' | 'lg' | 'normal' | 'small'
   semibold?: boolean
   titleTag?: Heading
-}
-
-interface HeadingTagProps extends JSX.HTMLAttributes<HTMLHeadingElement> {
-  as: Heading
 }
 
 const HeadingTag = ({ as: As, children, ...restOfProps }: HeadingTagProps) => (
@@ -24,7 +24,8 @@ const HeadingTag = ({ as: As, children, ...restOfProps }: HeadingTagProps) => (
 )
 
 const Title = (
-  { children, titleClass = 'xl', semibold = false, titleTag = 'h1' }: Props,
+  { children, titleClass = 'xl', semibold = false, titleTag = 'h1' }:
+    TitleProps,
 ) => {
   const titleStyle = styling.headings[titleClass]
 
