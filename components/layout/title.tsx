@@ -1,25 +1,40 @@
 import { JSX } from 'preact'
 import { styling } from 'utils/styling.ts'
 
+type Heading = Extract<
+  keyof JSX.IntrinsicElements,
+  'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+>
+
 interface Props {
   children: string
   titleClass?: 'xl' | 'lg' | 'normal' | 'small'
   semibold?: boolean
-  titleTag?: keyof JSX.IntrinsicElements
+  titleTag?: Heading
 }
 
+interface HeadingTagProps extends JSX.HTMLAttributes<HTMLHeadingElement> {
+  as: Heading
+}
+
+const HeadingTag = ({ as: As, children, ...restOfProps }: HeadingTagProps) => (
+  <As {...restOfProps}>
+    {children}
+  </As>
+)
+
 const Title = (
-  { children, titleClass = 'xl', semibold = false, titleTag }: Props,
+  { children, titleClass = 'xl', semibold = false, titleTag = 'h1' }: Props,
 ) => {
-  const TitleTag = titleTag ?? 'h1'
   const titleStyle = styling.headings[titleClass]
 
   return (
-    <TitleTag
-      class={`${titleStyle} ${semibold ? 'font-semibold' : 'font-bold'}`}
+    <HeadingTag
+      as={titleTag}
+      className={`${titleStyle} ${semibold ? 'font-semibold' : 'font-bold'}`}
     >
       {children}
-    </TitleTag>
+    </HeadingTag>
   )
 }
 
