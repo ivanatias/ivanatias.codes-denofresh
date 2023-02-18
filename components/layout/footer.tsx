@@ -2,6 +2,7 @@ import { ComponentChildren } from 'preact'
 import Title from 'components/layout/title.tsx'
 import Paragraph from 'components/layout/paragraph.tsx'
 import Social from 'components/social.tsx'
+import Link from 'components/link.tsx'
 
 interface SmallTextProps {
   children: ComponentChildren
@@ -39,14 +40,13 @@ const Footer = () => {
         </SmallText>
         <SmallText>
           Made with
-          <a
+          <Link
             href='https://fresh.deno.dev/'
-            class='ml-1 underline'
-            target='_blank'
-            rel='noreferrer noopener'
+            className='ml-1 underline'
+            isExternal={true}
           >
             Deno Fresh
-          </a>
+          </Link>
         </SmallText>
       </div>
       <div class='mt-5'>
