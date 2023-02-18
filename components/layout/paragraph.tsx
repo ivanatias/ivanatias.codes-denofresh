@@ -1,8 +1,8 @@
-import { styling } from 'utils/styling.ts'
+import { ParagraphStyling, styling } from 'utils/styling.ts'
 
 interface Props {
   children: string
-  pClass?: 'normal' | 'small' | 'xsmall'
+  pClass?: keyof ParagraphStyling
   semibold?: boolean
   underlined?: boolean
   centered?: boolean
