@@ -38,10 +38,10 @@ const ThemeProvider = (
   const [theme, setTheme] = useState<Theme>(() => {
     if (!IS_BROWSER) return Theme.LIGHT
 
-    const storedMode = window.localStorage.getItem(STORAGE_KEY)
+    const storedMode = window.localStorage.getItem(STORAGE_KEY) as Theme | null
     return storedMode === null
       ? (window.matchMedia(MATCH_MEDIA).matches ? Theme.DARK : Theme.LIGHT)
-      : storedMode as Theme
+      : storedMode
   })
 
   const toggleTheme = () =>
