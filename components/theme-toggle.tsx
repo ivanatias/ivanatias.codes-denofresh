@@ -1,6 +1,6 @@
 import { IS_BROWSER } from '$fresh/runtime.ts'
 import SVG from 'components/svg.tsx'
-import { useTheme } from 'contexts/theme.tsx'
+import { Theme, useTheme } from 'contexts/theme.tsx'
 
 type ThemeIcon = 'icon-sun' | 'icon-moon'
 
@@ -10,7 +10,7 @@ interface ThemeOptions {
   icon: ThemeIcon
 }
 
-const themeOptions: Record<string, ThemeOptions> = {
+const themeOptions: Record<Theme, ThemeOptions> = {
   dark: { label: 'Light mode', icon: 'icon-sun', iconLabel: 'Sun icon' },
   light: { label: 'Dark mode', icon: 'icon-moon', iconLabel: 'Moon icon' },
 }
@@ -21,7 +21,7 @@ const ThemeToggleButton = () => {
 
   return (
     <button
-      class={`flex items-center justify-center w-12 h-10 transition duration-150 ease-in hover:text(yellow-500 dark:orange-300) focus:outline-none text(yellow-400 dark:orange-400) ${
+      class={`flex items-center justify-center w-12 h-10 transition duration-150 ease-in hover:(text-yellow-500 dark:text-yellow-400) focus:outline-none text(yellow-400 dark:yellow-300) ${
         !IS_BROWSER && 'hidden'
       }`}
       onClick={toggleTheme}

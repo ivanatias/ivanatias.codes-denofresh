@@ -12,7 +12,7 @@ enum Theme {
 
 interface ThemeContextType {
   toggleTheme: () => void
-  theme: string
+  theme: Theme
 }
 
 interface ProviderProps {
@@ -35,13 +35,13 @@ const useTheme = () => {
 const ThemeProvider = (
   { children, storageKey = STORAGE_KEY }: ProviderProps,
 ) => {
-  const [theme, setTheme] = useState(() => {
+  const [theme, setTheme] = useState<Theme>(() => {
     if (!IS_BROWSER) return Theme.LIGHT
 
     const storedMode = window.localStorage.getItem(STORAGE_KEY)
     return storedMode === null
       ? (window.matchMedia(MATCH_MEDIA).matches ? Theme.DARK : Theme.LIGHT)
-      : storedMode
+      : storedMode as Theme
   })
 
   const toggleTheme = () =>
@@ -75,4 +75,4 @@ const ThemeProvider = (
 
 export default ThemeProvider
 
-export { useTheme }
+export { Theme, useTheme }
