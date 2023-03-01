@@ -59,20 +59,25 @@ const serializers = {
   ),
 
   ul: ({ children }: { children: ComponentChildren }) => (
-    <ul class='flex(& col) gap-2 pl-3'>{children}</ul>
+    <ul
+      class='flex(& col) gap-2 pl-3'
+      style={{ listStyleType: 'disc' }}
+    >
+      {children}
+    </ul>
   ),
 
   ol: ({ children }: { children: ComponentChildren }) => (
-    <ol class='flex(& col) gap-2 pl-3'>
+    <ol
+      class='flex(& col) gap-2 pl-3'
+      style={{ listStyleType: 'number' }}
+    >
       {children}
     </ol>
   ),
 
   li: ({ children }: { children: string }) => (
-    <li
-      style={{ listStyleType: 'auto' }}
-      class='text(base black dark:gray-300 md:lg)'
-    >
+    <li class='text(base black dark:gray-300 md:lg)'>
       {children}
     </li>
   ),
