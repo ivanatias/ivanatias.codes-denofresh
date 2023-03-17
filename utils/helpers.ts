@@ -4,9 +4,8 @@ import { getImageDimensions } from 'sanity/asset-utils'
 const formatDate = (date: string) => date.substring(0, 10)
 
 const formatReadingTime = (readingMinutes: number) => {
-  return readingMinutes > 1
-    ? `${readingMinutes} minutes read`
-    : `${readingMinutes} minute read`
+  const noun = readingMinutes > 1 ? 'minutes' : 'minute'
+  return `${readingMinutes} ${noun} read`
 }
 
 const calculateIconTransition = (position: number, multiplicator: number) => {
