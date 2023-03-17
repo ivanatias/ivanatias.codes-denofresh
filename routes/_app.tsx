@@ -50,11 +50,11 @@ const App = ({ Component }: AppProps) => (
       <meta
         name='theme-color'
         media='(prefers-color-scheme: dark)'
-        content='#0d1117'
+        content='#0D1117'
       />
       <script id='theme' src='/scripts/theme.js' />
     </Head>
-    <body class='bg(white dark:[#0d1117])'>
+    <body class='bg(gray-100 dark:[#0D1117])'>
       <Component />
     </body>
   </>
