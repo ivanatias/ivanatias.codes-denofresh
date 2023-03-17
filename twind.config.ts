@@ -9,7 +9,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        'white-rgba': 'rgba(255, 255, 255, 0.35)',
+        'white-rgba': 'rgba(243, 244, 246, 0.35)',
         'dark-rgba': 'rgba(13, 17, 23, 0.15)',
       },
     },
