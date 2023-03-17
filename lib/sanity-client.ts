@@ -1,4 +1,4 @@
-import 'dotenv/load.ts'
+import '$std/dotenv/load.ts'
 import sanityClient from 'sanity/client'
 import imageUrlBuilder from 'sanity/image-url'
 
