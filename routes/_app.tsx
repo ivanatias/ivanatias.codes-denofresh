@@ -37,7 +37,7 @@ const App = ({ Component }: AppProps) => (
       <link rel='preload' href={asset('/profile-pic.webp')} as='image' />
       <link
         rel='preload'
-        href={asset('/profile-pic.webp')}
+        href={asset('/images/sprite.svg')}
         as='image'
         crossOrigin='anonymous'
       />
