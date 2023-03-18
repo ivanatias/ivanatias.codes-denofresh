@@ -124,7 +124,7 @@ const serializers = {
               />
             )
             : (
-              <span class='py-1 text(sm black gray-300 lg:base) font-semibold uppercase'>
+              <span class='py-1 text(sm gray-300 lg:base) font-semibold uppercase'>
                 {language}
               </span>
             )}
