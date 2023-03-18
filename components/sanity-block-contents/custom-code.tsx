@@ -1,6 +1,7 @@
-import Refractor from 'react-refractor'
+import { refractor } from 'refractor'
+import { toHtml } from 'hast-to-util-html'
 
-//Languages
+// Languages
 import javascript from 'refractor/lang/javascript'
 import typescript from 'refractor/lang/typescript'
 import jsx from 'refractor/lang/jsx'
@@ -11,24 +12,32 @@ import scss from 'refractor/lang/scss'
 import batch from 'refractor/lang/batch'
 import json from 'refractor/lang/json'
 
-//Register languages
-Refractor.registerLanguage(javascript)
-Refractor.registerLanguage(typescript)
-Refractor.registerLanguage(jsx)
-Refractor.registerLanguage(tsx)
-Refractor.registerLanguage(css)
-Refractor.registerLanguage(sass)
-Refractor.registerLanguage(scss)
-Refractor.registerLanguage(batch)
-Refractor.registerLanguage(json)
+// Register languages
+refractor.register(javascript)
+refractor.register(typescript)
+refractor.register(jsx)
+refractor.register(tsx)
+refractor.register(css)
+refractor.register(sass)
+refractor.register(scss)
+refractor.register(batch)
+refractor.register(json)
+
+// Additional possible language names
+refractor.alias({ javascript: ['js', 'JavaScript'] })
+refractor.alias({ typescript: ['ts', 'TypeScript'] })
 
 interface Props {
   code: string
   language: string
 }
 
-const CustomCode = ({ code, language }: Props) => (
-  <Refractor language={language} value={code} />
-)
+const CustomCode = ({ code, language }: Props) => {
+  const className = `language-${language}`
+  const highlighted = refractor.highlight(code, language)
+  const html = toHtml(highlighted)
+
+  return <pre class={className} dangerouslySetInnerHTML={{ __html: html }} />
+}
 
 export default CustomCode
