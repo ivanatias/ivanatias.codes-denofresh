@@ -108,8 +108,8 @@ const serializers = {
 
     return (
       <>
-        <div class='p-3 bg-indigo-500 flex justify-between items-center mb-[-28px]'>
-          <span class='flex(& 1) font-mono text(sm lg:base gray-300) italic tracking-tighter'>
+        <div class='p-3 text(sm lg:base gray-300) bg-indigo-500 flex justify-between items-center mb-[-28px]'>
+          <span class='flex(& 1) font-mono italic tracking-tighter'>
             {filename}
           </span>
           {languageImageSrc !== undefined
@@ -124,7 +124,7 @@ const serializers = {
               />
             )
             : (
-              <span class='py-1 text(sm gray-300 lg:base) font-semibold uppercase'>
+              <span class='font-semibold uppercase'>
                 {language}
               </span>
             )}
