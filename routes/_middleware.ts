@@ -22,7 +22,7 @@ export async function handler(
         location: `${BASE_URL}${pathname}`,
         ...plainTextHeader,
       },
-      status: 301,
+      status: 308,
     })
     : nextHandler
 }
