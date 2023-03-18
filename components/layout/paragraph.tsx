@@ -1,4 +1,4 @@
-import { ParagraphStyling, styling } from 'utils/styling.ts'
+import { type ParagraphStyling, styling } from 'utils/styling.ts'
 
 interface Props {
   children: string

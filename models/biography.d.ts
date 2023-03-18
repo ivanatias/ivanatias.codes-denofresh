@@ -4,4 +4,4 @@ interface Biography {
   year: string
 }
 
-export { Biography }
+export type { Biography }

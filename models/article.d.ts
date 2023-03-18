@@ -88,4 +88,4 @@ interface ArticleReadingTime extends Pick<CurrentPost, 'articleTitle'> {
   numberOfCharacters: number
 }
 
-export { ArticleImage, ArticleReadingTime, BlogArticle, CurrentPost }
+export type { ArticleImage, ArticleReadingTime, BlogArticle, CurrentPost }

@@ -1,4 +1,4 @@
-import { Handlers, PageProps } from '$fresh/server.ts'
+import type { Handlers, PageProps } from '$fresh/server.ts'
 import Layout from 'components/layout/index.tsx'
 import MetaData from 'components/meta-data.tsx'
 import Section from 'components/layout/section.tsx'
@@ -10,7 +10,7 @@ import Paragraph from 'components/layout/paragraph.tsx'
 import BiographyItem from 'components/biography-item.tsx'
 import { client } from 'lib/sanity-client.ts'
 import { getBiographyQuery } from 'utils/queries.ts'
-import { Biography } from 'models/biography.d.ts'
+import type { Biography } from 'models/biography.d.ts'
 
 export const handler: Handlers<Biography[]> = {
   async GET(_req, ctx) {
@@ -56,10 +56,12 @@ const Home = ({ data }: PageProps<Biography[]>) => (
           <Title titleTag='h2' titleClass='lg'>
             Biography
           </Title>
-          {data.map(({ _id, ...item }) => <BiographyItem
-            key={_id}
-            {...item}
-          />)}
+          {data.map(({ _id, ...item }) => (
+            <BiographyItem
+              key={_id}
+              {...item}
+            />
+          ))}
         </Article>
         <Article>
           <Title titleTag='h2' titleClass='lg'>

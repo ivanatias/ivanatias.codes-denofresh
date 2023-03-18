@@ -1,7 +1,7 @@
 import Link from 'components/link.tsx'
 import Title from 'components/layout/title.tsx'
 import Paragraph from 'components/layout/paragraph.tsx'
-import { Blog } from 'models/blogs.d.ts'
+import type { Blog } from 'models/blogs.d.ts'
 import { formatDate } from 'utils/helpers.ts'
 
 type Props = Omit<Blog, '_id'>

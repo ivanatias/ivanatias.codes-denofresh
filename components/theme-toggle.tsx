@@ -1,6 +1,6 @@
 import { IS_BROWSER } from '$fresh/runtime.ts'
 import SVG from 'components/svg.tsx'
-import { Theme, useTheme } from 'contexts/theme.tsx'
+import { type Theme, useTheme } from 'contexts/theme.tsx'
 
 type ThemeIcon = 'icon-sun' | 'icon-moon'
 

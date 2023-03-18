@@ -1,4 +1,4 @@
-import { AdditionalImage } from 'models/works.d.ts'
+import type { AdditionalImage } from 'models/works.d.ts'
 import { getImageDimensions } from 'sanity/asset-utils'
 
 const formatDate = (date: string) => date.substring(0, 10)

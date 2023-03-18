@@ -1,4 +1,4 @@
-import { Handlers, PageProps } from '$fresh/server.ts'
+import type { Handlers, PageProps } from '$fresh/server.ts'
 import Layout from 'components/layout/index.tsx'
 import MetaData from 'components/meta-data.tsx'
 import Section from 'components/layout/section.tsx'
@@ -11,7 +11,7 @@ import WorkImages from 'components/pages/works/work-images.tsx'
 import { client } from 'lib/sanity-client.ts'
 import { getWorkQuery } from 'utils/queries.ts'
 import { getImagesWithDimensions } from 'utils/helpers.ts'
-import { WorkDetails } from 'models/works.d.ts'
+import type { WorkDetails } from 'models/works.d.ts'
 
 export const handler: Handlers<WorkDetails> = {
   async GET(_req, ctx) {

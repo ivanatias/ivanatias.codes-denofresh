@@ -25,4 +25,4 @@ interface Asset {
   url: string
 }
 
-export { Blog }
+export type { Blog }

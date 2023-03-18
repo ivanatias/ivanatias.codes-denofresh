@@ -1,5 +1,5 @@
 import { Head } from '$fresh/runtime.ts'
-import { ErrorPageProps } from '$fresh/server.ts'
+import type { ErrorPageProps } from '$fresh/server.ts'
 import Navbar from 'islands/navbar.tsx'
 import Link from 'components/link.tsx'
 

@@ -1,5 +1,5 @@
 import { Head } from '$fresh/runtime.ts'
-import { Handlers, PageProps } from '$fresh/server.ts'
+import type { Handlers, PageProps } from '$fresh/server.ts'
 import Layout from 'components/layout/index.tsx'
 import MetaData from 'components/meta-data.tsx'
 import Section from 'components/layout/section.tsx'
@@ -10,7 +10,7 @@ import CustomPortableText from 'components/sanity-block-contents/portable-text/c
 import Share from 'islands/socialmedia-share.tsx'
 import { client } from 'lib/sanity-client.ts'
 import { getBlogPostQuery, getBlogPostReadingTimeQuery } from 'utils/queries.ts'
-import { ArticleReadingTime, BlogArticle } from 'models/article.d.ts'
+import type { ArticleReadingTime, BlogArticle } from 'models/article.d.ts'
 import { formatDate, formatReadingTime } from 'utils/helpers.ts'
 
 interface Props extends BlogArticle {

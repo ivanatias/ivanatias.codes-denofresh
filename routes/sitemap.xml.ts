@@ -1,5 +1,5 @@
 import { SitemapContext } from 'https://deno.land/x/fresh_seo@0.2.1/mod.ts'
-import { Handlers } from '$fresh/server.ts'
+import type { Handlers } from '$fresh/server.ts'
 import { client } from 'lib/sanity-client.ts'
 import { BASE_URL } from 'constants/socials.ts'
 import manifest from '../fresh.gen.ts'

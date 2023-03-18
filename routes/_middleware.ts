@@ -1,5 +1,5 @@
 import '$std/dotenv/load.ts'
-import { MiddlewareHandlerContext } from '$fresh/server.ts'
+import type { MiddlewareHandlerContext } from '$fresh/server.ts'
 import { BASE_URL } from 'constants/socials.ts'
 
 const plainTextHeader = { 'Content-Type': 'text/plain' }

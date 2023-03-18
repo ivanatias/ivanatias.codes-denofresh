@@ -1,4 +1,4 @@
-import { ComponentChildren } from 'preact'
+import type { ComponentChildren } from 'preact'
 import Title from 'components/layout/title.tsx'
 import Paragraph from 'components/layout/paragraph.tsx'
 import Social from 'components/social.tsx'

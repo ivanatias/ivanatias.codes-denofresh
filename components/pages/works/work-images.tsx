@@ -1,4 +1,4 @@
-import { SanityImageDimensions } from 'sanity/asset-utils'
+import type { SanityImageDimensions } from 'sanity/asset-utils'
 
 interface ImageWithDimensions {
   id: string

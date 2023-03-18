@@ -1,10 +1,10 @@
-import { ComponentChildren } from 'preact'
+import type { ComponentChildren } from 'preact'
 import Paragraph from 'components/layout/paragraph.tsx'
 import Title from 'components/layout/title.tsx'
 import Link from 'components/link.tsx'
 import CustomCode from 'components/sanity-block-contents/custom-code.tsx'
 import ArticleImage, {
-  Props as ArticleImageType,
+  type Props as ArticleImageType,
 } from 'components/sanity-block-contents/article-image.tsx'
 import { mapToLanguageLogo } from 'utils/helpers.ts'
 

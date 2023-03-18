@@ -1,5 +1,5 @@
 import PortableText from 'portabletext'
-import { CurrentPost } from 'models/article.d.ts'
+import type { CurrentPost } from 'models/article.d.ts'
 import { serializers } from 'components/sanity-block-contents/portable-text/serializers.tsx'
 
 type Props = Pick<CurrentPost, 'articleBody'>

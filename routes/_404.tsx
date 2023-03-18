@@ -1,5 +1,5 @@
 import { Head } from '$fresh/runtime.ts'
-import { UnknownPageProps } from '$fresh/server.ts'
+import type { UnknownPageProps } from '$fresh/server.ts'
 import Navbar from 'islands/navbar.tsx'
 import Link from 'components/link.tsx'
 

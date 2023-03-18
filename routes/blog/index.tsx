@@ -1,4 +1,4 @@
-import { Handlers, PageProps } from '$fresh/server.ts'
+import type { Handlers, PageProps } from '$fresh/server.ts'
 import Layout from 'components/layout/index.tsx'
 import MetaData from 'components/meta-data.tsx'
 import Section from 'components/layout/section.tsx'
@@ -7,7 +7,7 @@ import Title from 'components/layout/title.tsx'
 import Paragraph from 'components/layout/paragraph.tsx'
 import BlogCard from 'components/article-card.tsx'
 import { client } from 'lib/sanity-client.ts'
-import { Blog } from 'models/blogs.d.ts'
+import type { Blog } from 'models/blogs.d.ts'
 import { getBlogQuery } from 'utils/queries.ts'
 
 export const handler: Handlers<Blog[]> = {

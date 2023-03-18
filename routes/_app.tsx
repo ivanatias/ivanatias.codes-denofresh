@@ -1,5 +1,5 @@
 import { Head } from '$fresh/runtime.ts'
-import { AppProps } from '$fresh/server.ts'
+import type { AppProps } from '$fresh/server.ts'
 
 const App = ({ Component }: AppProps) => (
   <>

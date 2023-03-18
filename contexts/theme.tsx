@@ -75,4 +75,4 @@ const ThemeProvider = (
 
 export default ThemeProvider
 
-export { Theme, useTheme }
+export { type Theme, useTheme }
