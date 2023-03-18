@@ -1,4 +1,4 @@
-import { Head } from '$fresh/runtime.ts'
+import { asset, Head } from '$fresh/runtime.ts'
 import type { Handlers, PageProps } from '$fresh/server.ts'
 import Layout from 'components/layout/index.tsx'
 import MetaData from 'components/meta-data.tsx'
@@ -61,7 +61,7 @@ const BlogPost = ({ data }: PageProps<Props>) => {
   return (
     <>
       <Head>
-        <link rel='stylesheet' href='/styles/prism-theme.css' />
+        <link rel='stylesheet' href={asset('/styles/prism-theme.css')} />
       </Head>
       <MetaData
         title={articleTitle}
