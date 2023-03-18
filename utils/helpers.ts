@@ -28,10 +28,26 @@ const getImagesWithDimensions = (images: AdditionalImage[]) => {
   }))
 }
 
+const mapToLanguageLogo = (language: string) => {
+  const languages: Record<string, string> = {
+    jsx: '/images/reactjs.svg',
+    tsx: '/images/reactjs.svg',
+    javascript: '/images/javascript.svg',
+    js: '/images/javascript.svg',
+    typescript: '/images/typescript.svg',
+    ts: '/images/typescript.svg',
+    css: '/images/css.svg',
+    sass: '/images/sass.svg',
+  }
+
+  return languages[language] || undefined
+}
+
 export {
   calculateIconLeftPosition,
   calculateIconTransition,
   formatDate,
   formatReadingTime,
   getImagesWithDimensions,
+  mapToLanguageLogo,
 }

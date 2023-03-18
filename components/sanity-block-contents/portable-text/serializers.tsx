@@ -6,6 +6,7 @@ import CustomCode from 'components/sanity-block-contents/custom-code.tsx'
 import ArticleImage, {
   Props as ArticleImageType,
 } from 'components/sanity-block-contents/article-image.tsx'
+import { mapToLanguageLogo } from 'utils/helpers.ts'
 
 interface Code {
   code: {
@@ -103,16 +104,30 @@ const serializers = {
 
   customCode: (props: Code) => {
     const { code: { code, filename = '', language } } = props
+    const languageImageSrc = mapToLanguageLogo(language)
 
     return (
       <>
-        <div class='flex justify-between items-center mb-[-28px]'>
-          <div class='flex(& 1) text(base md:lg black dark:gray-100) italic tracking-tighter'>
+        <div class='p-3 bg-indigo-500 flex justify-between items-center mb-[-28px]'>
+          <span class='flex(& 1) font-mono text(sm lg:base gray-300) italic tracking-tighter'>
             {filename}
-          </div>
-          <div class='py-1 text(base black dark:gray-100 md:lg) font-semibold uppercase'>
-            {language}
-          </div>
+          </span>
+          {languageImageSrc !== undefined
+            ? (
+              <img
+                src={languageImageSrc}
+                alt='Logo of the programming language in code block'
+                width={30}
+                height={30}
+                decoding='async'
+                loading='lazy'
+              />
+            )
+            : (
+              <span class='py-1 text(sm black gray-300 lg:base) font-semibold uppercase'>
+                {language}
+              </span>
+            )}
         </div>
         <CustomCode code={code} language={language} />
       </>
