@@ -13,9 +13,13 @@ const Header = () => (
       decoding='async'
     />
     <div class='flex(& col) items-center gap-2'>
-      <Title>Ivan Atias</Title>
+      <Title>
+        Ivan Atias
+      </Title>
       <Paragraph pClass='small' semibold centered>
-        Front-end Engineer and UI Designer based in Venezuela
+        <span class='bg-gradient-to-r text-transparent bg-clip-text from-gray-600 to-pink-800 dark:from-pink-200 dark:to-pink-100'>
+          Front-end Engineer and UI Designer based in Venezuela
+        </span>
       </Paragraph>
     </div>
     <Social />
