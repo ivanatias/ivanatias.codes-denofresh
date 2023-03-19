@@ -15,30 +15,28 @@ const BlogCard = (
   return (
     <Link
       href={`/blog/${slug.current}`}
-      className=''
+      className='flex w-full gap-5 p-4 transition duration-300 border(& transparent) hover:border-indigo-800 dark:hover:border-indigo-400 rounded-md'
     >
-      <div class='flex w-full gap-5 p-2 transition-colors duration-300 hover:bg-indigo-100 dark:hover:bg-indigo-900 rounded-sm'>
-        <img
-          src={url}
-          alt={altText}
-          width='48'
-          height='48'
-          class='flex-shrink-0 w-12 h-12'
-          decoding='async'
-          loading='lazy'
-        />
-        <div class='flex(& col) gap-1'>
-          <Title titleTag='h3' titleClass='small'>
-            {articleTitle}
-          </Title>
-          <Paragraph pClass='small'>{excerpt}</Paragraph>
-          <time
-            dateTime={publishDate}
-            class='text(black dark:gray-400 xs 2xl:sm)'
-          >
-            {date}
-          </time>
-        </div>
+      <img
+        src={url}
+        alt={altText}
+        width='48'
+        height='48'
+        class='flex-shrink-0 w-12 h-12'
+        decoding='async'
+        loading='lazy'
+      />
+      <div class='flex(& col) gap-1'>
+        <Title titleTag='h3' titleClass='small'>
+          {articleTitle}
+        </Title>
+        <Paragraph pClass='small'>{excerpt}</Paragraph>
+        <time
+          dateTime={publishDate}
+          class='text(pink-800 dark:pink-400 xs 2xl:sm) font-semibold'
+        >
+          {date}
+        </time>
       </div>
     </Link>
   )
