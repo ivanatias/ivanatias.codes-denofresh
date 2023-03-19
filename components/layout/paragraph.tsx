@@ -1,7 +1,8 @@
+import type { ComponentChildren } from 'preact'
 import { type ParagraphStyling, styling } from 'utils/styling.ts'
 
 interface Props {
-  children: string
+  children: ComponentChildren
   pClass?: keyof ParagraphStyling
   semibold?: boolean
   underlined?: boolean
