@@ -108,7 +108,7 @@ const serializers = {
 
     return (
       <>
-        <div class='p-3 text(sm lg:base gray-100) bg-indigo-500 flex justify-between items-center mb-[-28px]'>
+        <div class='p-3 text(sm lg:base white) bg-indigo-600 flex justify-between items-center mb-[-28px]'>
           <span class='flex(& 1) font-mono italic tracking-tighter'>
             {filename}
           </span>
