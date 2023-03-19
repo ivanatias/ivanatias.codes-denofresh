@@ -107,8 +107,8 @@ const serializers = {
     const languageImageSrc = mapToLanguageLogo(language)
 
     return (
-      <>
-        <div class='p-3 my-5 text(sm lg:base white) bg-indigo-600 flex justify-between items-center mb-[-28px]'>
+      <div class='my-5'>
+        <div class='p-3 text(sm lg:base white) bg-indigo-600 flex justify-between items-center'>
           <span class='flex(& 1) font-mono italic tracking-tighter'>
             {filename}
           </span>
@@ -130,7 +130,7 @@ const serializers = {
             )}
         </div>
         <CustomCode code={code} language={language} />
-      </>
+      </div>
     )
   },
 
