@@ -21,7 +21,7 @@ const ThemeToggleButton = () => {
 
   return (
     <button
-      class={`flex items-center justify-center w-12 h-10 transition duration-150 ease-in hover:(text-yellow-500 dark:text-yellow-400) focus:outline-none text(yellow-400 dark:yellow-300) ${
+      class={`flex items-center justify-center w-12 h-10 transition duration-150 ease-in hover:(text-yellow-500 dark:text-yellow-400) focus:outline-none md:focus:outline-black md:dark:focus:outline-white text(yellow-400 dark:yellow-300) ${
         !IS_BROWSER && 'hidden'
       }`}
       onClick={toggleTheme}
