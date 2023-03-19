@@ -10,7 +10,7 @@ interface BiographyItem {
 }
 
 const BioYear = ({ children }: BiographyItem) => (
-  <span class='text(sm 2xl:base pink-800 dark:pink-600) font-bold'>
+  <span class='text(sm 2xl:base pink-800 dark:pink-400) font-bold'>
     {children}
   </span>
 )

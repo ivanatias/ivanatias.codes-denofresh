@@ -44,7 +44,7 @@ const serializers = {
   ),
 
   blockquote: ({ children }: { children: string }) => (
-    <blockquote class='pl-2 text(sm black md:base dark:gray-100) italic border(l-2 pink-800 dark:pink-600)'>
+    <blockquote class='pl-2 text(sm black md:base dark:gray-100) italic border(l-2 pink-800 dark:pink-400)'>
       {children}
     </blockquote>
   ),
@@ -95,7 +95,7 @@ const serializers = {
     return (
       <Link
         {...restOfProps}
-        className='text(base md:lg pink-800 dark:pink-600) underline'
+        className='text(base md:lg pink-800 dark:pink-400) underline'
       >
         {children}
       </Link>

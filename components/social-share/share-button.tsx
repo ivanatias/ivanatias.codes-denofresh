@@ -10,7 +10,7 @@ const ShareButton = ({ toggleShareButton, isActive }: Props) => (
   <button
     aria-label='Share button'
     aria-expanded={isActive}
-    class={`focus:outline-none z-10 text(pink-800 dark:pink-600) hover:text-pink-700 dark:hover:text-pink-500 w-12 h-12 p-2 transition-transform duration-300 ease-in border(& gray-400 dark:gray-700) rounded-full ${
+    class={`focus:outline-none z-10 text(pink-800 dark:pink-400) hover:text(pink-900 dark:pink-500) w-12 h-12 p-2 transition-transform duration-300 ease-in border(& gray-400 dark:gray-700) rounded-full ${
       isActive && 'scale-75'
     }`}
     onClick={toggleShareButton}

@@ -17,7 +17,7 @@ const WorkHeader = ({ title }: Props) => (
     >
       |
     </span>
-    <h3 class='text(base md:lg pink-800 dark:pink-600) font-bold'>
+    <h3 class='text(base md:lg pink-800 dark:pink-400) font-bold'>
       {title}
     </h3>
   </div>

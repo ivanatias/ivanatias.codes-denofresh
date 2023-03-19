@@ -3,7 +3,7 @@ import Link from 'components/link.tsx'
 import { socialLinks } from 'constants/socials.ts'
 
 const Social = () => (
-  <div class='flex items-center gap-1 text(pink-800 dark:pink-600)'>
+  <div class='flex items-center gap-1 text(pink-800 dark:pink-400)'>
     {socialLinks.map(({ path, icon, name }) => (
       <Link
         key={name}
