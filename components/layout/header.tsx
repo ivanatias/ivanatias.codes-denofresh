@@ -17,7 +17,7 @@ const Header = () => (
         Ivan Atias
       </Title>
       <Paragraph pClass='small' semibold centered>
-        <span class='bg-gradient-to-r text(gray-600 dark:transparent) bg-clip-text dark:from-pink-200 dark:to-pink-100'>
+        <span class='bg-gradient-to-b text-transparent bg-clip-text from-indigo-900 to-pink-900 dark:from-indigo-200 dark:to-pink-200'>
           Front-end Engineer and UI Designer based in Venezuela
         </span>
       </Paragraph>
