@@ -28,7 +28,7 @@ const ThemeToggleButton = () => {
       aria-label={label}
       disabled={!IS_BROWSER}
     >
-      <SVG id={icon} title={iconLabel} className='w-6 h-6' />
+      <SVG id={icon} title={iconLabel} hidden={true} className='w-6 h-6' />
     </button>
   )
 }
