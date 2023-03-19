@@ -1,4 +1,4 @@
-import type { JSX } from 'preact'
+import type { ComponentChildren, JSX } from 'preact'
 import { type HeadingStyling, styling } from 'utils/styling.ts'
 
 type Tags = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
@@ -9,7 +9,7 @@ type Heading = Extract<
 >
 
 interface Props {
-  children: string
+  children: ComponentChildren
   titleClass?: keyof HeadingStyling
   semibold?: boolean
   titleTag?: Heading
