@@ -36,6 +36,7 @@ const Link = (
       {...restOfProps}
     >
       {children}
+      {isExternal && <span class='sr-only'>opens a new window</span>}
     </a>
   )
 }

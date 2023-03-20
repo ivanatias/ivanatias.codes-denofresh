@@ -16,7 +16,6 @@ const Social = () => (
           title={`Ivan Atias' ${name} profile`}
           className='w-7 h-7'
         />
-        <span class='sr-only'>opens a new window</span>
       </Link>
     ))}
   </div>

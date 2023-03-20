@@ -39,12 +39,10 @@ const ShareIcon = (
         top,
         pointerEvents,
       }}
-      ariaLabel={`Share article on ${label} opens a new window`}
     >
       <SVG
         id={icon}
-        title={label}
-        hidden
+        title={`Share article on ${label}`}
         className='w-9 h-9'
       />
     </Link>
