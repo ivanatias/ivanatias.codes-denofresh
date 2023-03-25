@@ -15,7 +15,7 @@ interface Props {
   contentType: string
 }
 
-const MetaData = ({
+const HeadTag = ({
   title,
   description,
   canonicalUrlPath,
@@ -75,4 +75,4 @@ const MetaData = ({
   )
 }
 
-export default MetaData
+export default HeadTag

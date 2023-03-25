@@ -1,6 +1,6 @@
 import type { Handlers, PageProps } from '$fresh/server.ts'
 import Layout from 'components/layout/index.tsx'
-import MetaData from 'components/meta-data.tsx'
+import HeadTag from 'components/head-tag.tsx'
 import Section from 'components/layout/section.tsx'
 import Article from 'components/layout/article.tsx'
 import Paragraph from 'components/layout/paragraph.tsx'
@@ -52,7 +52,7 @@ const Work = ({ data }: PageProps<WorkDetails>) => {
 
   return (
     <>
-      <MetaData title={title} canonicalUrlPath={`/works/${slug.current}`} />
+      <HeadTag title={title} canonicalUrlPath={`/works/${slug.current}`} />
       <Layout>
         <Section>
           <Article>

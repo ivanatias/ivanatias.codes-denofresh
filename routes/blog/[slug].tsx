@@ -1,7 +1,7 @@
 import { asset, Head } from '$fresh/runtime.ts'
 import type { Handlers, PageProps } from '$fresh/server.ts'
 import Layout from 'components/layout/index.tsx'
-import MetaData from 'components/meta-data.tsx'
+import HeadTag from 'components/head-tag.tsx'
 import Section from 'components/layout/section.tsx'
 import Article from 'components/layout/article.tsx'
 import ArticleHeader from 'components/pages/blog/article-header.tsx'
@@ -60,16 +60,16 @@ const BlogPost = ({ data }: PageProps<Props>) => {
 
   return (
     <>
-      <Head>
-        <link rel='stylesheet' href={asset('/styles/prism-theme.css')} />
-      </Head>
-      <MetaData
+      <HeadTag
         title={articleTitle}
         canonicalUrlPath={`/blog/${slug.current}`}
         description={excerpt}
         socialCardImage={socialImageUrl}
         contentType='article'
       />
+      <Head>
+        <link rel='stylesheet' href={asset('/styles/prism-theme.css')} />
+      </Head>
       <Layout>
         <Section>
           <Article>
