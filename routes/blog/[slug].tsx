@@ -1,4 +1,4 @@
-import { asset, Head } from '$fresh/runtime.ts'
+import { asset } from '$fresh/runtime.ts'
 import type { Handlers, PageProps } from '$fresh/server.ts'
 import Layout from 'components/layout/index.tsx'
 import HeadTag from 'components/head-tag.tsx'
@@ -66,10 +66,11 @@ const BlogPost = ({ data }: PageProps<Props>) => {
         description={excerpt}
         socialCardImage={socialImageUrl}
         contentType='article'
+        linkTags={[{
+          rel: 'stylesheet',
+          href: asset('/styles/prism-theme.css'),
+        }]}
       />
-      <Head>
-        <link rel='stylesheet' href={asset('/styles/prism-theme.css')} />
-      </Head>
       <Layout>
         <Section>
           <Article>
