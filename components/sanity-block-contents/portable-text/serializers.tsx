@@ -50,7 +50,7 @@ const serializers = {
   ),
 
   em: ({ children }: { children: string }) => (
-    <em class='italic'>
+    <em>
       {children}
     </em>
   ),

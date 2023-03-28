@@ -66,10 +66,12 @@ const BlogPost = ({ data }: PageProps<Props>) => {
         description={excerpt}
         socialCardImage={socialImageUrl}
         contentType='article'
-        linkTags={[{
-          rel: 'stylesheet',
-          href: asset('/styles/prism-theme.css'),
-        }]}
+        linkTags={[
+          {
+            rel: 'stylesheet',
+            href: asset('/styles/prism-theme.css'),
+          },
+        ]}
       />
       <Layout>
         <Section>
