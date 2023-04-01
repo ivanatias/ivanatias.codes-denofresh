@@ -3,6 +3,7 @@ import Paragraph from 'components/layout/paragraph.tsx'
 import Title from 'components/layout/title.tsx'
 import Link from 'components/link.tsx'
 import CustomCode from 'components/sanity-block-contents/custom-code.tsx'
+import CopyCode from 'islands/copy-code.tsx'
 import ArticleImage, {
   type Props as ArticleImageType,
 } from 'components/sanity-block-contents/article-image.tsx'
@@ -107,8 +108,8 @@ const serializers = {
     const languageImageSrc = mapToLanguageLogo(language)
 
     return (
-      <div class='my-5'>
-        <div class='p-3 text(sm lg:base white) bg-indigo-600 flex justify-between items-center'>
+      <div class='relative my-5'>
+        <div class='h-[54px] p-3 text(sm lg:base white) bg-indigo-600 flex justify-between items-center'>
           <span class='flex(& 1) font-mono italic tracking-tighter'>
             {filename}
           </span>
@@ -130,6 +131,7 @@ const serializers = {
             )}
         </div>
         <CustomCode code={code} language={language} />
+        <CopyCode code={code} />
       </div>
     )
   },
