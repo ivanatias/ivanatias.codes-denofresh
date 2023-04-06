@@ -17,7 +17,6 @@ const CopyCode = ({ code }: Props) => {
         setCopied(false)
       }, 5000)
     } catch {
-      setCopied(false)
       console.error('Error copying code block')
     }
   }
