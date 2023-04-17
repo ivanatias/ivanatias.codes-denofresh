@@ -28,6 +28,10 @@ const skills = [
     skillText: 'MongoDB',
   },
   {
+    skillImage: '/images/deno.svg',
+    skillText: 'Deno',
+  },
+  {
     skillImage: '/images/css.svg',
     skillText: 'CSS',
   },
