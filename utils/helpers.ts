@@ -43,9 +43,14 @@ const mapToLanguageLogo = (language: string) => {
   return languages[language] || undefined
 }
 
+const copyToClipboard = (text: string) => {
+  return window.navigator.clipboard.writeText(text)
+}
+
 export {
   calculateIconLeftPosition,
   calculateIconTransition,
+  copyToClipboard,
   formatDate,
   formatReadingTime,
   getImagesWithDimensions,

@@ -1,4 +1,5 @@
 import { useState } from 'preact/hooks'
+import { copyToClipboard } from 'utils/helpers.ts'
 import { IS_BROWSER } from '$fresh/runtime.ts'
 
 interface Props {
@@ -8,16 +9,15 @@ interface Props {
 const CopyCode = ({ code }: Props) => {
   const [copied, setCopied] = useState(false)
 
-  const handleCopy = async (codeToCopy: string) => {
+  const handleCopy = async () => {
     try {
-      await window.navigator.clipboard.writeText(codeToCopy)
+      await copyToClipboard(code)
       setCopied(true)
-
       setTimeout(() => {
         setCopied(false)
       }, 5000)
     } catch {
-      console.error('Error copying code block')
+      console.error('Error copying code to clipboard')
     }
   }
 
@@ -29,7 +29,7 @@ const CopyCode = ({ code }: Props) => {
           : 'cursor-copy hover:border-white hover:text-white text-gray-300'
       } absolute text(sm center) transition duration-150 ease-in tracking-tighter top-[54px] right-0 px-3 py-1`}
       disabled={!IS_BROWSER || copied}
-      onClick={() => handleCopy(code)}
+      onClick={handleCopy}
     >
       {copied ? 'Copied' : 'Copy'}
     </button>
