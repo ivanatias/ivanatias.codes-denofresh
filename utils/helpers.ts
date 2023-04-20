@@ -28,7 +28,7 @@ const getImagesWithDimensions = (images: AdditionalImage[]) => {
   }))
 }
 
-const mapToLanguageLogo = (language: string) => {
+const mapToLanguageLogo = (language: string): string | undefined => {
   const languages: Record<string, string> = {
     jsx: '/images/reactjs.svg',
     tsx: '/images/reactjs.svg',
@@ -40,7 +40,7 @@ const mapToLanguageLogo = (language: string) => {
     sass: '/images/sass.svg',
   }
 
-  return languages[language] || undefined
+  return languages[language]
 }
 
 const copyToClipboard = (text: string) => {
