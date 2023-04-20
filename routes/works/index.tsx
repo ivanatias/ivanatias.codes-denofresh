@@ -2,7 +2,6 @@ import type { Handlers, PageProps } from '$fresh/server.ts'
 import Layout from 'components/layout/index.tsx'
 import HeadTag from 'components/head-tag.tsx'
 import Section from 'components/layout/section.tsx'
-import Article from 'components/layout/article.tsx'
 import Title from 'components/layout/title.tsx'
 import Paragraph from 'components/layout/paragraph.tsx'
 import WorkCard from 'components/work-card.tsx'
@@ -18,12 +17,12 @@ export const handler: Handlers<Work[]> = {
   },
 }
 
-const Works = ({ data }: PageProps<Work[]>) => (
+const Works = ({ data: works }: PageProps<Work[]>) => (
   <>
     <HeadTag title='Works' canonicalUrlPath='/works' />
     <Layout>
       <Section>
-        <Article>
+        <header className='flex(& col) gap-4'>
           <Title titleTag='h2' titleClass='lg'>
             Works
           </Title>
@@ -31,16 +30,10 @@ const Works = ({ data }: PageProps<Work[]>) => (
             These are some of my favorite projects that I have built, each one
             of them taught me different things during their development process.
           </Paragraph>
-        </Article>
-        <Article>
-          <Section className='grid(& cols-1 md:cols-2) gap-8'>
-            {data.map(({ _id, ...work }) => (
-              <article key={_id}>
-                <WorkCard {...work} />
-              </article>
-            ))}
-          </Section>
-        </Article>
+        </header>
+        <div className='grid(& cols-1 md:cols-2) gap-8'>
+          {works.map(({ _id, ...work }) => <WorkCard key={_id} {...work} />)}
+        </div>
       </Section>
     </Layout>
   </>

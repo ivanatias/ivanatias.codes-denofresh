@@ -2,10 +2,9 @@ import type { Handlers, PageProps } from '$fresh/server.ts'
 import Layout from 'components/layout/index.tsx'
 import HeadTag from 'components/head-tag.tsx'
 import Section from 'components/layout/section.tsx'
-import Article from 'components/layout/article.tsx'
 import Title from 'components/layout/title.tsx'
 import Paragraph from 'components/layout/paragraph.tsx'
-import BlogCard from 'components/article-card.tsx'
+import ArticleCard from 'components/article-card.tsx'
 import { client } from 'lib/sanity-client.ts'
 import type { Blog } from 'models/blogs.d.ts'
 import { getBlogQuery } from 'utils/queries.ts'
@@ -23,7 +22,7 @@ const Blog = ({ data }: PageProps<Blog[]>) => (
     <HeadTag title='Blog' canonicalUrlPath='/blog' />
     <Layout>
       <Section>
-        <Article>
+        <header className='flex(& col) gap-4'>
           <Title titleTag='h2' titleClass='lg'>
             Blog
           </Title>
@@ -32,19 +31,22 @@ const Blog = ({ data }: PageProps<Blog[]>) => (
             personal experiences in this field, or simply random thoughts that
             cross my mind.
           </Paragraph>
-        </Article>
-        <Article>
-          <Title titleTag='h3' titleClass='normal'>
-            Latest articles
-          </Title>
-          <Section className='grid(& cols-1) gap-8'>
+        </header>
+        <Section className='flex(& col) gap-4'>
+          <header>
+            <Title titleTag='h3' titleClass='normal'>
+              Latest articles
+            </Title>
+          </header>
+          <div className='grid(& cols-1) gap-8'>
             {data.map(({ _id, ...item }) => (
-              <article key={_id}>
-                <BlogCard {...item} />
-              </article>
+              <ArticleCard
+                key={_id}
+                {...item}
+              />
             ))}
-          </Section>
-        </Article>
+          </div>
+        </Section>
       </Section>
     </Layout>
   </>
