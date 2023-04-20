@@ -10,31 +10,7 @@ enum Theme {
   DARK = 'dark',
 }
 
-interface ThemeContextType {
-  toggleTheme: () => void
-  theme: Theme
-}
-
-interface ProviderProps {
-  children: ComponentChildren
-  storageKey?: string
-}
-
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
-
-const useTheme = () => {
-  const context = useContext(ThemeContext)
-
-  if (context === undefined) {
-    throw new Error('useTheme must be used within a child of ThemeProvider')
-  }
-
-  return context
-}
-
-const ThemeProvider = (
-  { children, storageKey = STORAGE_KEY }: ProviderProps,
-) => {
+const useThemeContext = (storageKey = STORAGE_KEY) => {
   const [theme, setTheme] = useState<Theme>(() => {
     if (!IS_BROWSER) return Theme.LIGHT
 
@@ -66,11 +42,33 @@ const ThemeProvider = (
     )
   }, [storageKey, theme])
 
+  return { theme, toggleTheme }
+}
+
+const ThemeContext = createContext<
+  ReturnType<typeof useThemeContext> | undefined
+>(undefined)
+
+const ThemeProvider = (
+  { children }: { children: ComponentChildren },
+) => {
+  const { theme, toggleTheme } = useThemeContext()
+
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   )
+}
+
+const useTheme = () => {
+  const context = useContext(ThemeContext)
+
+  if (context === undefined) {
+    throw new Error('useTheme must be used within a child of ThemeProvider')
+  }
+
+  return context
 }
 
 export default ThemeProvider
