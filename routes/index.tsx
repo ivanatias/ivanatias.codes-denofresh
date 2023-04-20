@@ -33,13 +33,13 @@ const Home = ({ data: biography }: PageProps<Biography[]>) => (
               </Title>
             </header>
             <Paragraph>
-              I&apos;m a Front-end Engineer and UI Designer who enjoys a lot
-              building and designing good looking and functional websites and
-              apps. These days, most of my work revolves around technologies
-              such as React.js, Next.js, Gatsby.js and recently, React Native.
-              I&apos;m also comfortable using CSS technologies such as Sass,
-              Bootstrap, Material UI and TailwindCSS. For my designs, Figma is
-              my predilect design and prototyping tool.
+              I enjoy a lot building and designing visually appealing,
+              functional, performant websites and apps. These days, most of my
+              work revolves around technologies such as React.js, Next.js,
+              Gatsby.js and recently, React Native. I&apos;m also comfortable
+              using CSS technologies such as Sass, Bootstrap, Material UI and
+              TailwindCSS. For my designs, Figma is my predilect design and
+              prototyping tool.
             </Paragraph>
             <LinkButton href='/works'>
               My portfolio
@@ -83,12 +83,9 @@ const Home = ({ data: biography }: PageProps<Biography[]>) => (
               </Title>
             </header>
             <Paragraph>
-              A space for sharing and expanding knowledge. I write about a wide
-              variety of topics related to technology in this section,
-              expressing my personal opinions on subjects such as web
-              development, web performance, user interface design, and other
-              miscellaneous ones. The aim of this blog is to document my journey
-              as a Front-end Engineer and UI Designer one article at a time.
+              In this section, my goal is to share and expand knowledge on
+              various technology topics. I write about web development, web
+              performance, user interface design, and other related subjects.
             </Paragraph>
             <LinkButton href='/blog'>
               See blog

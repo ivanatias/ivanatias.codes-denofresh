@@ -27,9 +27,9 @@ const Blog = ({ data }: PageProps<Blog[]>) => (
             Blog
           </Title>
           <Paragraph>
-            Writing about web development, web performance, UI design, my
-            personal experiences in this field, or simply random thoughts that
-            cross my mind.
+            Writing about web development, web performance, user interface
+            design, my personal experiences in this field, or simply random
+            thoughts that cross my mind.
           </Paragraph>
         </header>
         <Section className='flex(& col) gap-4'>
