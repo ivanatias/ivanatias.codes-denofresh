@@ -26,8 +26,10 @@ const Works = ({ data: works }: PageProps<Work[]>) => (
             Works
           </Title>
         </header>
-        <div className='grid(& cols-1 md:cols-2) gap-8'>
-          {works.map(({ _id, ...work }) => <WorkCard key={_id} {...work} />)}
+        <div className='grid(& cols-1 lg:cols-2) gap-8'>
+          {works.map(({ _id, ...work }, index) => (
+            <WorkCard key={_id} index={index} {...work} />
+          ))}
         </div>
       </Section>
     </Layout>
