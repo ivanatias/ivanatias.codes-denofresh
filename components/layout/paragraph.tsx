@@ -3,7 +3,7 @@ import { type ParagraphStyling, styling } from 'utils/styling.ts'
 
 interface Props {
   children: ComponentChildren
-  pClass?: keyof ParagraphStyling
+  pClass?: ParagraphStyling
   semibold?: boolean
   underlined?: boolean
   centered?: boolean

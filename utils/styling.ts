@@ -19,8 +19,8 @@ const styling = {
   },
 }
 
-type HeadingStyling = Record<keyof typeof styling.headings, string>
-type ParagraphStyling = Record<keyof typeof styling.paragraphs, string>
+type HeadingStyling = keyof typeof styling.headings
+type ParagraphStyling = keyof typeof styling.paragraphs
 
 export { sharedMenuClasses, styling }
 

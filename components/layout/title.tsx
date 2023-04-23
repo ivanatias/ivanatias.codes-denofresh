@@ -10,7 +10,7 @@ type Heading = Extract<
 
 interface Props {
   children: ComponentChildren
-  titleClass?: keyof HeadingStyling
+  titleClass?: HeadingStyling
   semibold?: boolean
   titleTag?: Heading
 }
