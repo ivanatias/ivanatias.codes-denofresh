@@ -3,7 +3,7 @@ import Paragraph from 'components/layout/paragraph.tsx'
 import Social from 'components/social.tsx'
 
 const Header = () => (
-  <header class='flex(& col) items-center gap-5 pb-12 pt-28'>
+  <header class='flex(& col) items-center gap-5 pb-12 pt-32'>
     <img
       src='/profile-pic.webp'
       class='rounded-full ring(& 2 gray-900 dark:gray-100)'
