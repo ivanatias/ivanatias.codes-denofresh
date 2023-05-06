@@ -16,7 +16,7 @@ const Navbar = () => {
       <nav>
         <div class='flex items-center max-w-3xl mx-auto px(4 md:5)'>
           <div class='flex(& 1) items-center gap-5'>
-            <Link href='/' className='pt-2'>
+            <Link href='/'>
               <img
                 src='/logo.svg'
                 alt='Ivan Atias Logo'
