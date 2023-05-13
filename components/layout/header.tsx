@@ -3,7 +3,7 @@ import Paragraph from 'components/layout/paragraph.tsx'
 import Social from 'components/social.tsx'
 
 const Header = () => (
-  <header class='flex(& col) pt-40 pb-24 gap-12 relative'>
+  <header class='flex(& col) pt-32 pb-24 gap-12 relative'>
     <div class='flex(& col) gap-4'>
       <div class='flex(& col) gap-1'>
         <span class='text(indigo-700 dark:indigo-400 2xl md:3xl lg:4xl) font-semibold'>
