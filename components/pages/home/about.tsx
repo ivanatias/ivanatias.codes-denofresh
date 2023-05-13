@@ -21,7 +21,6 @@ const About = ({ biography }: Props) => (
         width='240'
         height='240'
         decoding='async'
-        loading='lazy'
       />
       <Paragraph>
         Hola! I&apos;m a Venezuelan Systems Engineer working as a Front-end
