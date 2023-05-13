@@ -35,11 +35,6 @@ const socialLinks = [
     icon: 'icon-stackoverflow',
     name: 'Stack Overflow',
   },
-  {
-    path: 'https://instagram.com/ivanatias',
-    icon: 'icon-instagram',
-    name: 'Instagram',
-  },
 ]
 
 export { BASE_URL, BASE_URL_BLOG, socialLinks, socialShare }
