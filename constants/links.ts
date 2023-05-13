@@ -5,11 +5,6 @@ const links = [
     isExternal: false,
   },
   {
-    path: '/works',
-    label: 'Works',
-    isExternal: false,
-  },
-  {
     path: '/blog',
     label: 'Blog',
     isExternal: false,

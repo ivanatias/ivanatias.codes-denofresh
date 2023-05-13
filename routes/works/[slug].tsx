@@ -4,7 +4,6 @@ import HeadTag from 'components/head-tag.tsx'
 import Section from 'components/layout/section.tsx'
 import Article from 'components/layout/article.tsx'
 import Paragraph from 'components/layout/paragraph.tsx'
-import WorkHeader from 'components/pages/work-article/work-header.tsx'
 import Stack from 'components/pages/work-article/stack.tsx'
 import WorkLinks from 'components/pages/work-article/work-links.tsx'
 import WorkImages from 'components/pages/work-article/work-images.tsx'
@@ -56,7 +55,9 @@ const Work = ({ data }: PageProps<WorkDetails>) => {
       <Layout>
         <Section>
           <Article>
-            <WorkHeader title={title} />
+            <h3 class='text(base md:lg pink-800 dark:pink-400) font-bold'>
+              {title}
+            </h3>
             <Paragraph>
               {description}
             </Paragraph>

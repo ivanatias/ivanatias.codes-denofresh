@@ -5,9 +5,9 @@ import Paragraph from 'components/layout/paragraph.tsx'
 import { getImageDimensions } from 'sanity/asset-utils'
 import type { Work } from 'models/works.d.ts'
 
-type Props = Omit<Work, '_id'> & { index: number }
+type Props = Omit<Work, '_id'>
 
-const WorkCard = ({ thumbNail, title, overview, slug, index }: Props) => {
+const WorkCard = ({ thumbNail, title, overview, slug }: Props) => {
   const { width, height } = getImageDimensions(thumbNail.asset)
 
   return (
@@ -23,7 +23,7 @@ const WorkCard = ({ thumbNail, title, overview, slug, index }: Props) => {
           height={height}
           class='w-full h-auto rounded-lg'
           decoding='async'
-          loading={index > 1 ? 'lazy' : 'eager'}
+          loading='lazy'
         />
         <div class='flex(& col ) items-center justify-center w-full gap-1 mt-3'>
           <Title titleTag='h3' titleClass='small'>

@@ -12,7 +12,6 @@ import * as $5 from './routes/blog/index.tsx'
 import * as $6 from './routes/index.tsx'
 import * as $7 from './routes/sitemap.xml.ts'
 import * as $8 from './routes/works/[slug].tsx'
-import * as $9 from './routes/works/index.tsx'
 import * as $$0 from './islands/copy-code.tsx'
 import * as $$1 from './islands/navbar.tsx'
 import * as $$2 from './islands/socialmedia-share.tsx'
@@ -28,7 +27,6 @@ const manifest = {
     './routes/index.tsx': $6,
     './routes/sitemap.xml.ts': $7,
     './routes/works/[slug].tsx': $8,
-    './routes/works/index.tsx': $9,
   },
   islands: {
     './islands/copy-code.tsx': $$0,
