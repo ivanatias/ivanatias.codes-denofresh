@@ -15,7 +15,7 @@ const WorkCard = ({ thumbNail, title, overview, slug, index }: Props) => {
       href={`/works/${slug.current}`}
       className=''
     >
-      <Article className='flex(& col) items-center justify-center lg:transition-transform lg:duration-300 lg:hover:scale-110'>
+      <Article className='flex(& col) items-center justify-center md:transition-transform md:duration-300 md:hover:scale-105'>
         <img
           src={thumbNail.asset.url}
           alt={title}
