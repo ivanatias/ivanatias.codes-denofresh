@@ -33,7 +33,7 @@ const ArticleHeader = (
         {title}
       </Title>
     </div>
-    <div class='flex text(xs md:sm black dark:gray-400) items-center gap-3'>
+    <div class='flex text(xs md:sm gray-700 dark:gray-400) font-semibold items-center gap-3'>
       <time
         dateTime={publishDate}
       >
