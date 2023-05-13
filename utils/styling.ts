@@ -1,6 +1,6 @@
-const sharedTitleClasses = 'black dark:gray-100'
+const sharedTitleClasses = 'gray-800 dark:gray-100'
 
-const sharedParagraphClasses = 'black dark:gray-300'
+const sharedParagraphClasses = 'gray-700 dark:gray-300'
 
 const sharedMenuClasses =
   'bg(black dark:gray-100) w-full h-[2px] origin-left transition-all duration-200 ease-in'
