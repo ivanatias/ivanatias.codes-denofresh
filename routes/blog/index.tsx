@@ -35,10 +35,10 @@ const Blog = ({ data }: PageProps<Blog[]>) => (
         <Section className='flex(& col) gap-4'>
           <header>
             <Title titleTag='h3' titleClass='normal'>
-              Latest articles
+              Articles
             </Title>
           </header>
-          <div className='grid(& cols-1) gap-8'>
+          <div className='grid(& cols-1 sm:cols-2) sm:gap-6 gap-8'>
             {data.map(({ _id, ...item }) => (
               <ArticleCard
                 key={_id}
