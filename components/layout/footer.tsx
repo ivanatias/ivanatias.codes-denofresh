@@ -9,7 +9,7 @@ interface SmallTextProps {
 }
 
 const SmallText = ({ children }: SmallTextProps) => (
-  <small class='text(xs black dark:gray-400 2xl:sm) font-semibold'>
+  <small class='text(xs gray-800 dark:gray-400 2xl:sm) font-semibold'>
     {children}
   </small>
 )
