@@ -1,7 +1,6 @@
 import type { Handlers, PageProps } from '$fresh/server.ts'
 import Wrapper from 'components/layout/wrapper.tsx'
 import HeadTag from 'components/head-tag.tsx'
-import Section from 'components/layout/section.tsx'
 import Article from 'components/layout/article.tsx'
 import Paragraph from 'components/layout/paragraph.tsx'
 import Stack from 'components/pages/work-article/stack.tsx'
@@ -53,24 +52,24 @@ const Work = ({ data }: PageProps<WorkDetails>) => {
     <>
       <HeadTag title={title} canonicalUrlPath={`/works/${slug.current}`} />
       <Wrapper>
-        <Section>
-          <Article>
+        <Article>
+          <header>
             <h3 class='text(base md:lg pink-800 dark:pink-400) font-bold'>
               {title}
             </h3>
-            <Paragraph>
-              {description}
-            </Paragraph>
-            <div class='flex(& col) text(xs md:sm black dark:white) gap-3 font-semibold'>
-              <Stack stack={stack} />
-              <WorkLinks workLinks={workLinks} />
-            </div>
-            <WorkImages
-              imagesWithDimensions={imagesWithDimensions}
-              workTitle={title}
-            />
-          </Article>
-        </Section>
+          </header>
+          <Paragraph>
+            {description}
+          </Paragraph>
+          <div class='flex(& col) text(xs md:sm black dark:white) gap-3 font-semibold'>
+            <Stack stack={stack} />
+            <WorkLinks workLinks={workLinks} />
+          </div>
+          <WorkImages
+            imagesWithDimensions={imagesWithDimensions}
+            workTitle={title}
+          />
+        </Article>
       </Wrapper>
     </>
   )
