@@ -1,5 +1,5 @@
 import type { Handlers, PageProps } from '$fresh/server.ts'
-import Layout from 'components/layout/index.tsx'
+import Wrapper from 'components/layout/wrapper.tsx'
 import HeadTag from 'components/head-tag.tsx'
 import Section from 'components/layout/section.tsx'
 import Article from 'components/layout/article.tsx'
@@ -52,7 +52,7 @@ const Work = ({ data }: PageProps<WorkDetails>) => {
   return (
     <>
       <HeadTag title={title} canonicalUrlPath={`/works/${slug.current}`} />
-      <Layout>
+      <Wrapper>
         <Section>
           <Article>
             <h3 class='text(base md:lg pink-800 dark:pink-400) font-bold'>
@@ -71,7 +71,7 @@ const Work = ({ data }: PageProps<WorkDetails>) => {
             />
           </Article>
         </Section>
-      </Layout>
+      </Wrapper>
     </>
   )
 }

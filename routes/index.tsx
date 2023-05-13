@@ -1,5 +1,5 @@
 import type { Handlers, PageProps } from '$fresh/server.ts'
-import Layout from 'components/layout/index.tsx'
+import Wrapper from 'components/layout/wrapper.tsx'
 import Section from 'components/layout/section.tsx'
 import About from 'components/pages/home/about.tsx'
 import Works from 'components/pages/home/works.tsx'
@@ -47,14 +47,14 @@ const Home = (
 ) => (
   <>
     <HeadTag />
-    <Layout>
+    <Wrapper>
       <Section className='grid(& cols-1) gap-16'>
         <About biography={biography} />
         <Works works={works} />
         <Skills />
         <LatestArticles latestArticles={latestArticles} />
       </Section>
-    </Layout>
+    </Wrapper>
   </>
 )
 

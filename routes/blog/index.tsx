@@ -1,5 +1,5 @@
 import type { Handlers, PageProps } from '$fresh/server.ts'
-import Layout from 'components/layout/index.tsx'
+import Wrapper from 'components/layout/wrapper.tsx'
 import HeadTag from 'components/head-tag.tsx'
 import Section from 'components/layout/section.tsx'
 import Title from 'components/layout/title.tsx'
@@ -20,7 +20,7 @@ export const handler: Handlers<Blog[]> = {
 const Blog = ({ data }: PageProps<Blog[]>) => (
   <>
     <HeadTag title='Blog' canonicalUrlPath='/blog' />
-    <Layout>
+    <Wrapper>
       <Section>
         <header className='flex(& col) gap-4'>
           <Title titleTag='h2' titleClass='lg'>
@@ -48,7 +48,7 @@ const Blog = ({ data }: PageProps<Blog[]>) => (
           </div>
         </Section>
       </Section>
-    </Layout>
+    </Wrapper>
   </>
 )
 

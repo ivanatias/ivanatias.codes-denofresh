@@ -1,6 +1,6 @@
 import { asset } from '$fresh/runtime.ts'
 import type { Handlers, PageProps } from '$fresh/server.ts'
-import Layout from 'components/layout/index.tsx'
+import Wrapper from 'components/layout/wrapper.tsx'
 import HeadTag from 'components/head-tag.tsx'
 import Article from 'components/layout/article.tsx'
 import ArticleHeader from 'components/pages/blog-article/article-header.tsx'
@@ -71,7 +71,7 @@ const BlogPost = ({ data }: PageProps<Props>) => {
           },
         ]}
       />
-      <Layout>
+      <Wrapper>
         <Article>
           <ArticleHeader
             coverImageUrl={coverImageUrl}
@@ -88,7 +88,7 @@ const BlogPost = ({ data }: PageProps<Props>) => {
             postSlug={slug.current}
           />
         </Article>
-      </Layout>
+      </Wrapper>
     </>
   )
 }
