@@ -10,7 +10,7 @@ interface Props {
 const Layout = ({ children }: Props) => (
   <>
     <Navbar />
-    <main class='flex(& 1 col) max-w-prose px-5 mx-auto'>
+    <main class='flex(& 1 col) max-w-3xl px-5 mx-auto'>
       <Header />
       {children}
     </main>
