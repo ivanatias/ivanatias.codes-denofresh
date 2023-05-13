@@ -47,6 +47,10 @@ const copyToClipboard = (text: string) => {
   return window.navigator.clipboard.writeText(text)
 }
 
+const truncateText = (text: string, numOfChars = 100) => {
+  return text.length > numOfChars ? text.substring(0, numOfChars) + '...' : text
+}
+
 export {
   calculateIconLeftPosition,
   calculateIconTransition,
@@ -55,4 +59,5 @@ export {
   formatReadingTime,
   getImagesWithDimensions,
   mapToLanguageLogo,
+  truncateText,
 }
