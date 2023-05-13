@@ -28,8 +28,8 @@ const Header = () => (
         Front-end Engineer and UI Designer
       </Paragraph>
       <Social />
-      <div class='absolute bottom-[10%] left-0 rounded-full w-[70px] h-[110px] bg-gradient-to-l from(& pink-800 dark:pink-400) to(& indigo-800 dark:indigo-500) blur-filter' />
-      <div class='absolute -top-[72%] right-[12%] rounded-full w-[80px] h-[124px] bg(& green-600 dark:green-300) blur-filter' />
+      <div class='absolute bottom-[10%] left-0 rounded-full w-[70px] h-[110px] bg-gradient-to-l from(& pink-300 dark:pink-400) to(& indigo-800 dark:indigo-500) blur-filter' />
+      <div class='absolute -top-[72%] right-[12%] rounded-full w-[80px] h-[124px] bg-green-300 blur-filter' />
     </div>
   </header>
 )
