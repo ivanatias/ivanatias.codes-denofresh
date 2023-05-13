@@ -5,6 +5,9 @@ export default {
     'blur-backdrop': {
       backdropFilter: 'blur(8px)',
     },
+    'blur-filter': {
+      filter: 'blur(54px)',
+    },
   },
   theme: {
     extend: {
