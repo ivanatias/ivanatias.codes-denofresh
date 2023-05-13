@@ -19,7 +19,7 @@ const ArticleCard = (
       href={`/blog/${slug.current}`}
       className=''
     >
-      <Article className='flex(& col) sm:min-h-[300px] w-full gap-5 p-4 transition duration-300 border(& dashed indigo-800 dark:indigo-400) rounded-md md:transition-transform md:duration-300 md:hover:scale-105'>
+      <Article className='flex(& col) sm:min-h-[300px] w-full gap-5 p-4 transition duration-300 border(& transparent) hover:border-indigo-600 dark:hover:border-indigo-400 rounded-md transition duration-300 md:hover:scale-105'>
         <img
           src={url}
           alt={altText}
