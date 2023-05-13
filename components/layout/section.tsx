@@ -5,7 +5,7 @@ interface Props {
   className?: string
 }
 
-const defaultStyles = 'flex(& col) gap-10'
+const defaultStyles = 'flex(& col) gap-8'
 
 const Section = ({ children, className }: Props) => (
   <section class={className ?? defaultStyles}>
