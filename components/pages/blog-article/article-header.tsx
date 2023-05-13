@@ -19,7 +19,7 @@ const ArticleHeader = (
     formattedDate,
   }: Props,
 ) => (
-  <>
+  <header class='flex(& col) gap-4'>
     <div class='flex(& col) w-full gap-3'>
       <img
         src={coverImageUrl}
@@ -43,7 +43,7 @@ const ArticleHeader = (
         {formattedReadingTime}
       </span>
     </div>
-  </>
+  </header>
 )
 
 export default ArticleHeader

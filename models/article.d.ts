@@ -1,7 +1,7 @@
 interface BlogArticle {
   currentPost: CurrentPost
-  nextPost: OtherPost
-  previousPost: OtherPost
+  nextPost: OtherPost | null
+  previousPost: OtherPost | null
 }
 
 interface CurrentPost {
@@ -17,7 +17,7 @@ interface CurrentPost {
 
 type OtherPost = {
   slug: Slug
-} | null
+}
 
 interface Slug {
   _type: string

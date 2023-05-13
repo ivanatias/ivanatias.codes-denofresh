@@ -2,12 +2,10 @@ import { asset } from '$fresh/runtime.ts'
 import type { Handlers, PageProps } from '$fresh/server.ts'
 import Layout from 'components/layout/index.tsx'
 import HeadTag from 'components/head-tag.tsx'
-import Section from 'components/layout/section.tsx'
 import Article from 'components/layout/article.tsx'
 import ArticleHeader from 'components/pages/blog-article/article-header.tsx'
-import Link from 'components/link.tsx'
+import ArticleFooter from 'components/pages/blog-article/article-footer.tsx'
 import CustomPortableText from 'components/sanity-block-contents/portable-text/custom-portabletext.tsx'
-import Share from 'islands/socialmedia-share.tsx'
 import { client } from 'lib/sanity-client.ts'
 import { getBlogPostQuery, getBlogPostReadingTimeQuery } from 'utils/queries.ts'
 import type { ArticleReadingTime, BlogArticle } from 'models/article.d.ts'
@@ -74,32 +72,22 @@ const BlogPost = ({ data }: PageProps<Props>) => {
         ]}
       />
       <Layout>
-        <Section>
-          <Article>
-            <ArticleHeader
-              coverImageUrl={coverImageUrl}
-              imageAltText={altText}
-              title={articleTitle}
-              publishDate={publishDate}
-              formattedReadingTime={formattedReadingTime}
-              formattedDate={formattedDate}
-            />
-            <CustomPortableText articleBody={articleBody} />
-            <div class='flex items-center justify-center mt-10 gap-4'>
-              {previousPost !== null && (
-                <Link href={`/blog/${previousPost.slug.current}`}>
-                  Previous article
-                </Link>
-              )}
-              {nextPost !== null && (
-                <Link href={`/blog/${nextPost.slug.current}`}>
-                  Next article
-                </Link>
-              )}
-            </div>
-            <Share slug={slug.current} />
-          </Article>
-        </Section>
+        <Article>
+          <ArticleHeader
+            coverImageUrl={coverImageUrl}
+            imageAltText={altText}
+            title={articleTitle}
+            publishDate={publishDate}
+            formattedReadingTime={formattedReadingTime}
+            formattedDate={formattedDate}
+          />
+          <CustomPortableText articleBody={articleBody} />
+          <ArticleFooter
+            previousPost={previousPost}
+            nextPost={nextPost}
+            postSlug={slug.current}
+          />
+        </Article>
       </Layout>
     </>
   )
