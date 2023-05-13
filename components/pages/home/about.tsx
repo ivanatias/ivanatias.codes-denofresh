@@ -11,9 +11,9 @@ interface Props {
 const About = ({ biography }: Props) => (
   <Section>
     <Title titleTag='h2' titleClass='lg'>
-      Know more about me
+      <span class='block text(center md:left)'>Know more about me</span>
     </Title>
-    <div className='flex(& col md:row) items-center gap-8'>
+    <div class='flex(& col md:row) items-center gap-8'>
       <img
         src='/profile-pic.webp'
         alt='Ivan Atias, Front-end Engineer and UI Designer'

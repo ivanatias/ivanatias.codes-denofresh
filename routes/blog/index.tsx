@@ -22,7 +22,7 @@ const Blog = ({ data }: PageProps<Blog[]>) => (
     <HeadTag title='Blog' canonicalUrlPath='/blog' />
     <Wrapper>
       <Section>
-        <header className='flex(& col) gap-4'>
+        <header class='flex(& col) gap-4'>
           <Title titleTag='h2' titleClass='lg'>
             Blog
           </Title>
@@ -38,7 +38,7 @@ const Blog = ({ data }: PageProps<Blog[]>) => (
               Articles
             </Title>
           </header>
-          <div className='grid(& cols-1 sm:cols-2) sm:gap-6 gap-8'>
+          <div class='grid(& cols-1 sm:cols-2) sm:gap-6 gap-8'>
             {data.map(({ _id, ...item }) => (
               <ArticleCard
                 key={_id}

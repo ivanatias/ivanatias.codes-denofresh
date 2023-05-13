@@ -12,7 +12,7 @@ const Works = ({ works }: Props) => (
     <Title titleClass='lg' titleTag='h2'>
       Personal projects
     </Title>
-    <div className='grid(& cols-1 sm:cols-2) gap-8'>
+    <div class='grid(& cols-1 sm:cols-2) gap-8'>
       {works.map(({ _id, ...work }) => <WorkCard key={_id} {...work} />)}
     </div>
   </Section>
