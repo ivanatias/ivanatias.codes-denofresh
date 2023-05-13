@@ -20,7 +20,7 @@ const BioDescription = ({ children }: BiographyItem) => (
 )
 
 const BiographyItem = ({ year, description }: BiographyProps) => (
-  <div class='flex(& col sm:row) gap-3'>
+  <div class='flex(& col sm:row) sm:items-center sm:gap-5 gap-3'>
     <BioYear>{year}</BioYear>
     <BioDescription>{description}</BioDescription>
   </div>
