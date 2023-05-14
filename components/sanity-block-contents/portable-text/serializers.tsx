@@ -7,7 +7,6 @@ import CopyCode from 'islands/copy-code.tsx'
 import ArticleImage, {
   type Props as ArticleImageType,
 } from 'components/sanity-block-contents/article-image.tsx'
-import { mapToLanguageLogo } from 'utils/helpers.ts'
 
 interface Code {
   code: {
@@ -85,7 +84,7 @@ const serializers = {
   ),
 
   code: ({ children }: { children: string }) => (
-    <code class='text(sm black dark:gray-300 md:base) bg(gray-200 dark:gray-800) px-1 italic tracking-tighter'>
+    <code class='px-2 rounded-lg font-bold font-mono text(sm md:base gray-700 dark:gray-100) border(& [1px] gray-300 dark:gray-700) bg(& gray-100 dark:gray-800)'>
       {children}
     </code>
   ),
@@ -95,8 +94,8 @@ const serializers = {
 
     return (
       <Link
-        {...restOfProps}
         className='text(base md:lg pink-800 dark:pink-400) underline'
+        {...restOfProps}
       >
         {children}
       </Link>
@@ -105,30 +104,11 @@ const serializers = {
 
   customCode: (props: Code) => {
     const { code: { code, filename = '', language } } = props
-    const languageImageSrc = mapToLanguageLogo(language)
 
     return (
       <div class='relative my-5'>
-        <div class='h-[54px] p-3 text(sm lg:base white) bg-indigo-600 flex justify-between items-center'>
-          <span class='flex(& 1) font-mono italic tracking-tighter'>
-            {filename}
-          </span>
-          {languageImageSrc !== undefined
-            ? (
-              <img
-                src={languageImageSrc}
-                alt='Logo of the programming language in code block'
-                width={30}
-                height={30}
-                decoding='async'
-                loading='lazy'
-              />
-            )
-            : (
-              <span class='font-semibold uppercase'>
-                {language}
-              </span>
-            )}
+        <div class='border(& [1px] gray-500 dark:gray-700) rounded-t-lg bg(& gray-700 dark:gray-800) py-1 px-3 text(xs gray-100 center) min-w-[90px] min-h-[26px] w-min font-semibold'>
+          {filename}
         </div>
         <CustomCode code={code} language={language} />
         <CopyCode code={code} />

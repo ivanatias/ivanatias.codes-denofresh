@@ -37,7 +37,12 @@ const CustomCode = ({ code, language }: Props) => {
   const highlighted = refractor.highlight(code, language)
   const html = toHtml(highlighted)
 
-  return <pre class={className} dangerouslySetInnerHTML={{ __html: html }} />
+  return (
+    <pre
+      class={`${className} max-h-[600px] overflow-y-auto bg(& gray-700 dark:gray-800) border(& [1px] gray-500 dark:gray-700)`}
+      dangerouslySetInnerHTML={{ __html: html }}
+    />
+  )
 }
 
 export default CustomCode
