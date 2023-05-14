@@ -39,7 +39,7 @@ const CustomCode = ({ code, language }: Props) => {
 
   return (
     <pre
-      class={`${className} max-h-[600px] overflow-y-auto bg(& gray-700 dark:gray-800) border(& [1px] gray-500 dark:gray-700)`}
+      class={`${className} bg(& gray-700 dark:gray-800) border(& [1px] gray-500 dark:gray-700)`}
       dangerouslySetInnerHTML={{ __html: html }}
     />
   )
