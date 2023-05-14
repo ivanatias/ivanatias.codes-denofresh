@@ -53,7 +53,7 @@ pre[class*='language-'] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-  color: #f92672;
+  color: #f890b6;
 }
 
 .token.boolean,
