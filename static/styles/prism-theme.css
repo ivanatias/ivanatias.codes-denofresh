@@ -22,7 +22,7 @@ pre[class*='language-'] {
 
 /* Code blocks */
 pre[class*='language-'] {
-  padding: 2.5em 1em 1em;
+  padding: 3em 1em 1em;
   overflow-x: auto;
 }
 
