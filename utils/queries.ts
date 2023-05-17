@@ -1,15 +1,13 @@
 const getBiographyQuery = () => {
-  const query = `*[_type == "biography"] | order(_createdAt desc) {
+  return `*[_type == "biography"] | order(_createdAt desc) {
     _id,
     year,
     description
   }`
-
-  return query
 }
 
 const getWorksQuery = () => {
-  const query = `*[_type == "work"] | order(_createdAt asc) {
+  return `*[_type == "work"] | order(_createdAt asc) {
     _id,
     title,
     overview,
@@ -20,12 +18,10 @@ const getWorksQuery = () => {
     }
   }
 }`
-
-  return query
 }
 
 const getWorkQuery = (slug: string) => {
-  const query = `*[_type == "work" && slug.current == "${slug}"] {
+  return `*[_type == "work" && slug.current == "${slug}"] {
     _id,
     title,
     projectUrl,
@@ -48,12 +44,10 @@ const getWorkQuery = (slug: string) => {
     }   
   } 
 }[0]`
-
-  return query
 }
 
 const getBlogQuery = () => {
-  const query = `*[_type == "blog"] | order(_createdAt desc) {
+  return `*[_type == "blog"] | order(_createdAt desc) {
     _id,
     slug,
     excerpt,
@@ -68,12 +62,10 @@ const getBlogQuery = () => {
       }
     } 
   }`
-
-  return query
 }
 
 const getBlogPostQuery = (slug: string) => {
-  const query = `*[_type == "blog" && slug.current == "${slug}"] {
+  return `*[_type == "blog" && slug.current == "${slug}"] {
     "currentPost": {
       _id,
       slug,
@@ -102,20 +94,25 @@ const getBlogPostQuery = (slug: string) => {
       slug
    }
   }[0]`
-
-  return query
 }
 
 const getBlogPostReadingTimeQuery = (slug: string) => {
-  const query = `*[_type == "blog" && slug.current == "${slug}"] {
+  return `*[_type == "blog" && slug.current == "${slug}"] {
     articleTitle,
     "numberOfCharacters": length(pt::text(articleBody)),
     "estimatedWordCount": round(length(pt::text(articleBody)) / 5),
     // Words per minute: 180
     "estimatedReadingTime": round(length(pt::text(articleBody)) / 5 / 180 )
   }[0]`
+}
 
-  return query
+const getPackagesQuery = () => {
+  return `*[_type == "package"] | order(_createdAt desc) {
+    _id,
+    packageName,
+    description,
+    githubUrl,
+  }`
 }
 
 export {
@@ -123,6 +120,7 @@ export {
   getBlogPostQuery,
   getBlogPostReadingTimeQuery,
   getBlogQuery,
+  getPackagesQuery,
   getWorkQuery,
   getWorksQuery,
 }
