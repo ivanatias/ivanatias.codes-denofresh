@@ -1,4 +1,4 @@
-import { Head } from '$fresh/runtime.ts'
+import { asset, Head } from '$fresh/runtime.ts'
 import type { ErrorPageProps } from '$fresh/server.ts'
 import Navbar from 'islands/navbar.tsx'
 import Link from 'components/link.tsx'
@@ -7,6 +7,7 @@ const Error500Page = ({ error }: ErrorPageProps) => (
   <>
     <Head>
       <title>500 Internal server error</title>
+      <script id='theme' src={asset('/scripts/theme.js')} />
     </Head>
     <Navbar />
     <div class='p-4 grid h-screen gap-3 text(black dark:white) place-content-center'>
