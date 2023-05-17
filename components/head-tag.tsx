@@ -108,7 +108,7 @@ const HeadTag = ({
         content={desc}
       />
       <meta name='twitter:image' content={ogImage} />
-      <script id='theme' src='/scripts/theme.js' />
+      <script id='theme' src={asset('/scripts/theme.js')} />
     </Head>
   )
 }
