@@ -64,7 +64,7 @@ const getBlogQuery = () => {
   }`
 }
 
-const getBlogPostQuery = (slug: string) => {
+const getBlogArticleQuery = (slug: string) => {
   return `*[_type == "blog" && slug.current == "${slug}"] {
     "currentPost": {
       _id,
@@ -96,7 +96,7 @@ const getBlogPostQuery = (slug: string) => {
   }[0]`
 }
 
-const getBlogPostReadingTimeQuery = (slug: string) => {
+const getBlogArticleReadingTimeQuery = (slug: string) => {
   return `*[_type == "blog" && slug.current == "${slug}"] {
     articleTitle,
     "numberOfCharacters": length(pt::text(articleBody)),
@@ -117,8 +117,8 @@ const getPackagesQuery = () => {
 
 export {
   getBiographyQuery,
-  getBlogPostQuery,
-  getBlogPostReadingTimeQuery,
+  getBlogArticleQuery,
+  getBlogArticleReadingTimeQuery,
   getBlogQuery,
   getPackagesQuery,
   getWorkQuery,

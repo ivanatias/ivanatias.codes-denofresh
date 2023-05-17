@@ -7,47 +7,15 @@ import LatestArticles from 'components/pages/home/latest-articles.tsx'
 import Packages from 'components/pages/home/packages.tsx'
 import Skills from 'components/pages/home/skills.tsx'
 import HeadTag from 'components/head-tag.tsx'
-import { client } from 'lib/sanity-client.ts'
-import type { Biography } from 'models/biography.d.ts'
-import type { Work } from 'models/works.d.ts'
-import type { Blog } from 'models/blogs.d.ts'
-import type { Package } from 'models/packages.d.ts'
-import {
-  getBiographyQuery,
-  getBlogQuery,
-  getPackagesQuery,
-  getWorksQuery,
-} from 'utils/queries.ts'
+import { getHomeContent } from 'services/content.ts'
 
-interface Props {
-  biography: Biography[]
-  works: Work[]
-  latestArticles: Blog[]
-  packages: Package[]
-}
+type Props = Awaited<ReturnType<typeof getHomeContent>>
 
 export const handler: Handlers<Props> = {
   async GET(_req, ctx) {
-    const biographyQuery = getBiographyQuery()
-    const worksQuery = getWorksQuery()
-    const blogQuery = getBlogQuery()
-    const packagesQuery = getPackagesQuery()
+    const homeContent = await getHomeContent()
 
-    const [biography, works, articles, packages] = await Promise.all([
-      client.fetch<Biography[]>(biographyQuery),
-      client.fetch<Work[]>(worksQuery),
-      client.fetch<Blog[]>(blogQuery),
-      client.fetch<Package[]>(packagesQuery),
-    ])
-
-    console.log({ packages })
-
-    return ctx.render({
-      biography,
-      works,
-      latestArticles: articles.slice(0, 2),
-      packages,
-    })
+    return ctx.render(homeContent)
   },
 }
 

@@ -6,37 +6,25 @@ import Article from 'components/layout/article.tsx'
 import ArticleHeader from 'components/pages/blog-article/article-header.tsx'
 import ArticleFooter from 'components/pages/blog-article/article-footer.tsx'
 import CustomPortableText from 'components/sanity-block-contents/portable-text/custom-portabletext.tsx'
-import { client } from 'lib/sanity-client.ts'
-import { getBlogPostQuery, getBlogPostReadingTimeQuery } from 'utils/queries.ts'
-import type { ArticleReadingTime, BlogArticle } from 'models/article.d.ts'
+import { getBlogArticle } from 'services/content.ts'
 import { formatDate, formatReadingTime } from 'utils/helpers.ts'
 
-interface Props extends BlogArticle {
-  readingTime: ArticleReadingTime
-}
+type Props = NonNullable<Awaited<ReturnType<typeof getBlogArticle>>>
 
 export const handler: Handlers<Props> = {
   async GET(_req, ctx) {
     const { slug } = ctx.params
-    const blogPostQuery = getBlogPostQuery(slug)
-    const readingTimeQuery = getBlogPostReadingTimeQuery(slug)
+    const articleContent = await getBlogArticle(slug)
 
-    const [blogPost, readingTime] = await Promise.all([
-      client.fetch<BlogArticle>(blogPostQuery),
-      client.fetch<ArticleReadingTime>(readingTimeQuery),
-    ])
-
-    return blogPost === null || readingTime === null
+    return articleContent === null
       ? ctx.renderNotFound()
-      : ctx.render({ ...blogPost, readingTime })
+      : ctx.render(articleContent)
   },
 }
 
-const BlogPost = ({ data }: PageProps<Props>) => {
+const BlogArticle = ({ data }: PageProps<Props>) => {
   const {
-    currentPost,
-    previousPost,
-    nextPost,
+    blogArticle: { previousPost, currentPost, nextPost },
     readingTime: { estimatedReadingTime },
   } = data
 
@@ -93,4 +81,4 @@ const BlogPost = ({ data }: PageProps<Props>) => {
   )
 }
 
-export default BlogPost
+export default BlogArticle

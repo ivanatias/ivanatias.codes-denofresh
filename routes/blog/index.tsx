@@ -5,19 +5,20 @@ import Section from 'components/layout/section.tsx'
 import Title from 'components/layout/title.tsx'
 import Paragraph from 'components/layout/paragraph.tsx'
 import ArticleCard from 'components/article-card.tsx'
-import { client } from 'lib/sanity-client.ts'
+import { getBlogArticles } from 'services/content.ts'
 import type { Blog } from 'models/blogs.d.ts'
-import { getBlogQuery } from 'utils/queries.ts'
 
-export const handler: Handlers<Blog[]> = {
+type Props = Awaited<ReturnType<typeof getBlogArticles>>
+
+export const handler: Handlers<Props> = {
   async GET(_req, ctx) {
-    const blogQuery = getBlogQuery()
-    const blog = await client.fetch<Blog[]>(blogQuery)
-    return ctx.render(blog)
+    const blogArticles = await getBlogArticles()
+
+    return ctx.render(blogArticles)
   },
 }
 
-const Blog = ({ data }: PageProps<Blog[]>) => (
+const Blog = ({ data: blogArticles }: PageProps<Blog[]>) => (
   <>
     <HeadTag title='Blog' canonicalUrlPath='/blog' />
     <Wrapper>
@@ -39,7 +40,7 @@ const Blog = ({ data }: PageProps<Blog[]>) => (
             </Title>
           </header>
           <div class='grid(& cols-1 sm:cols-2) sm:gap-6 gap-8'>
-            {data.map(({ _id, ...item }) => (
+            {blogArticles.map(({ _id, ...item }) => (
               <ArticleCard
                 key={_id}
                 {...item}

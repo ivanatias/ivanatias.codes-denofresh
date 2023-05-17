@@ -6,23 +6,21 @@ import Paragraph from 'components/layout/paragraph.tsx'
 import Stack from 'components/pages/work-article/stack.tsx'
 import WorkLinks from 'components/pages/work-article/work-links.tsx'
 import WorkImages from 'components/pages/work-article/work-images.tsx'
-import { client } from 'lib/sanity-client.ts'
-import { getWorkQuery } from 'utils/queries.ts'
+import { getWork } from 'services/content.ts'
 import { getImagesWithDimensions } from 'utils/helpers.ts'
-import type { WorkDetails } from 'models/works.d.ts'
 
-export const handler: Handlers<WorkDetails> = {
+type Props = NonNullable<Awaited<ReturnType<typeof getWork>>>
+
+export const handler: Handlers<Props> = {
   async GET(_req, ctx) {
     const { slug } = ctx.params
-    const workQuery = getWorkQuery(slug)
-
-    const work = await client.fetch<WorkDetails>(workQuery)
+    const work = await getWork(slug)
 
     return work === null ? ctx.renderNotFound() : ctx.render(work)
   },
 }
 
-const Work = ({ data }: PageProps<WorkDetails>) => {
+const Work = ({ data }: PageProps<Props>) => {
   const {
     title,
     description,

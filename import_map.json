@@ -19,6 +19,7 @@
     "components/": "./components/",
     "utils/": "./utils/",
     "lib/": "./lib/",
+    "services/": "./services/",
     "models/": "./models/",
     "constants/": "./constants/",
     "contexts/": "./contexts/",
