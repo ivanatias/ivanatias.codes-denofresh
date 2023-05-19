@@ -35,14 +35,14 @@ const getBlogArticle = async (
 ): Promise<
   { blogArticle: BlogArticle; readingTime: ArticleReadingTime } | null
 > => {
-  const [blogArticle, readingTime] = await Promise.all([
+  const article = await Promise.all([
     client.fetch(getBlogArticleQuery(slug)),
     client.fetch(getBlogArticleReadingTimeQuery(slug)),
   ])
 
-  return blogArticle === null || readingTime === null
-    ? null
-    : { blogArticle, readingTime }
+  return article.filter(Boolean).length > 0
+    ? { blogArticle: article[0], readingTime: article[1] }
+    : null
 }
 
 const getWork = (slug: string): Promise<WorkDetails | null> => {
