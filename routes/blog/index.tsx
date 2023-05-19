@@ -6,7 +6,6 @@ import Title from 'components/layout/title.tsx'
 import Paragraph from 'components/layout/paragraph.tsx'
 import ArticleCard from 'components/article-card.tsx'
 import { getBlogArticles } from 'services/content.ts'
-import type { Blog } from 'models/blogs.d.ts'
 
 type Props = Awaited<ReturnType<typeof getBlogArticles>>
 
@@ -18,7 +17,7 @@ export const handler: Handlers<Props> = {
   },
 }
 
-const Blog = ({ data: blogArticles }: PageProps<Blog[]>) => (
+const Blog = ({ data: blogArticles }: PageProps<Props>) => (
   <>
     <HeadTag title='Blog' canonicalUrlPath='/blog' />
     <Wrapper>
