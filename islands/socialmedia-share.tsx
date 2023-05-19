@@ -1,7 +1,7 @@
 import { useState } from 'preact/hooks'
 import ShareIcon from 'components/social-share/share-icon.tsx'
 import ShareButton from 'components/social-share/share-button.tsx'
-import { socialShare } from 'constants/socials.ts'
+import { SOCIAL_SHARE } from 'constants/socials.ts'
 
 interface Props {
   slug: string
@@ -19,7 +19,7 @@ const Share = ({ slug }: Props) => {
           isActive={shareButtonActive}
           toggleShareButton={toggleShareButton}
         />
-        {socialShare.map(({ outlet, label, icon }, index) => (
+        {SOCIAL_SHARE.map(({ outlet, label, icon }, index) => (
           <ShareIcon
             key={label + index}
             slug={slug}

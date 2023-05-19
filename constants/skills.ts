@@ -1,4 +1,4 @@
-const skills = [
+const SKILLS = [
   {
     skillImage: '/images/reactjs.svg',
     skillText: 'React.js',
@@ -65,4 +65,4 @@ const skills = [
   },
 ]
 
-export { skills }
+export { SKILLS }

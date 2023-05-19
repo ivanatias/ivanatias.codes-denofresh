@@ -1,5 +1,5 @@
 import Navlink from 'components/nav-link.tsx'
-import { links } from 'constants/links.ts'
+import { LINKS } from 'constants/links.ts'
 import { sharedMenuClasses } from 'utils/styling.ts'
 
 interface MenuButtonProps {
@@ -32,7 +32,7 @@ const MenuButton = ({ toggleMenu, isActive }: MenuButtonProps) => (
 const Menu = () => (
   <div class='z-50 absolute bottom-[-128px] right-4 w-[200px] bg(gray-50 dark:[#1C1B1F]) py-5 px-4 rounded-lg shadow-md md:hidden'>
     <ul class='flex(& col) justify-center w-full gap-2'>
-      {links.map(({ path, label, ...item }) => (
+      {LINKS.map(({ path, label, ...item }) => (
         <li key={label}>
           <Navlink href={path} {...item}>
             {label}

@@ -1,10 +1,10 @@
 import SVG from 'components/svg.tsx'
 import Link from 'components/link.tsx'
-import { socialLinks } from 'constants/socials.ts'
+import { SOCIAL_LINKS } from 'constants/socials.ts'
 
 const Social = () => (
   <div class='flex items-center gap-1 text(pink-800 dark:pink-400)'>
-    {socialLinks.map(({ path, icon, name }) => (
+    {SOCIAL_LINKS.map(({ path, icon, name }) => (
       <Link
         key={name}
         href={path}

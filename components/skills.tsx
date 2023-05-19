@@ -1,5 +1,5 @@
 import Paragraph from 'components/layout/paragraph.tsx'
-import { skills } from 'constants/skills.ts'
+import { SKILLS } from 'constants/skills.ts'
 
 interface Props {
   skillImage: string
@@ -25,7 +25,7 @@ const Skill = ({ skillImage, skillText }: Props) => (
 
 const Skills = () => (
   <div class='flex(& wrap) justify(center sm:start) items-center w-full gap(4 md:6)'>
-    {skills.map((skill) => <Skill key={skill.skillText} {...skill} />)}
+    {SKILLS.map((skill) => <Skill key={skill.skillText} {...skill} />)}
   </div>
 )
 

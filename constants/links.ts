@@ -1,4 +1,4 @@
-const links = [
+const LINKS = [
   {
     path: '/',
     label: 'Home',
@@ -17,4 +17,4 @@ const links = [
   },
 ]
 
-export { links }
+export { LINKS }

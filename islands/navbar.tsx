@@ -4,7 +4,7 @@ import { Menu, MenuButton } from 'components/menu.tsx'
 import Navlink from 'components/nav-link.tsx'
 import ThemeProvider from 'contexts/theme.tsx'
 import ThemeToggleButton from 'components/theme-toggle.tsx'
-import { links } from 'constants/links.ts'
+import { LINKS } from 'constants/links.ts'
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -26,7 +26,7 @@ const Navbar = () => {
               />
             </Link>
             <ul class='hidden md:flex md:items-center md:gap-3'>
-              {links.map(({ path, label, ...item }) => (
+              {LINKS.map(({ path, label, ...item }) => (
                 <li key={label}>
                   <Navlink href={path} {...item}>
                     {label}
