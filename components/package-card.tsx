@@ -20,7 +20,7 @@ const PackageCard = ({ packageName, description, githubUrl }: Props) => (
           {packageName}
         </Title>
       </div>
-      <Paragraph>{description}</Paragraph>
+      <Paragraph pClass='small'>{description}</Paragraph>
     </Article>
   </Link>
 )
