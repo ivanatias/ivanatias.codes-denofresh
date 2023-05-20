@@ -51,11 +51,14 @@ const ThemeContext = createContext<
 
 const ThemeProvider = (
   { children }: { children: ComponentChildren },
-) => (
-  <ThemeContext.Provider value={useThemeContext()}>
-    {children}
-  </ThemeContext.Provider>
-)
+) => {
+  const theme = useThemeContext()
+  return (
+    <ThemeContext.Provider value={theme}>
+      {children}
+    </ThemeContext.Provider>
+  )
+}
 
 const useTheme = () => {
   const context = useContext(ThemeContext)
