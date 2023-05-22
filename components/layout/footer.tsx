@@ -43,7 +43,7 @@ const Footer = () => {
           <Link
             href='https://fresh.deno.dev/'
             className='ml-1 underline'
-            isExternal={true}
+            isExternal
           >
             Deno Fresh
           </Link>

@@ -29,7 +29,7 @@ const ShareIcon = (
   return (
     <Link
       href={`${outlet}${BASE_URL_BLOG}/${slug}`}
-      isExternal={true}
+      isExternal
       onClick={toggleShareButton}
       className='absolute z-0 transform-none'
       styles={{

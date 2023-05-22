@@ -8,7 +8,7 @@ const Social = () => (
       <Link
         key={name}
         href={path}
-        isExternal={true}
+        isExternal
         className='transition duration-150 ease-in hover:text(pink-900 dark:pink-500)'
       >
         <SVG

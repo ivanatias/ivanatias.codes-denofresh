@@ -14,7 +14,7 @@ interface Props {
 const WorkLinks = ({ workLinks }: Props) => (
   <div class='flex(& col) gap-3 mt-2'>
     {workLinks.map(({ href, icon, label }) => (
-      <Link href={href} isExternal={true}>
+      <Link href={href} isExternal>
         <SVG
           id={icon}
           hidden={true}
