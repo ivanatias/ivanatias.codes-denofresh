@@ -1,5 +1,5 @@
 import type { ComponentChildren } from 'preact'
-import Navbar from 'islands/navbar.tsx'
+import Navbar from 'components/navbar.tsx'
 import Header from 'components/layout/header.tsx'
 import Footer from 'components/layout/footer.tsx'
 

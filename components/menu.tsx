@@ -12,7 +12,7 @@ interface MenuLineProps extends Pick<MenuButtonProps, 'isActive'> {
 }
 
 const MenuPopup = () => (
-  <div class='z-50 absolute bottom-[-128px] right-4 w-[200px] bg(gray-50 dark:[#1C1B1F]) py-5 px-4 rounded-lg shadow-md md:hidden'>
+  <div class='z-50 absolute bottom-[-128px] right-4 w-[200px] bg(gray-50 dark:[#1C1B1F]) py-5 px-4 rounded-lg shadow-md'>
     <ul class='flex(& col) justify-center w-full gap-2'>
       {LINKS.map(({ path, label, ...item }) => (
         <li key={label}>
@@ -28,7 +28,7 @@ const MenuPopup = () => (
 const MenuButton = ({ toggleMenu, isActive }: MenuButtonProps) => (
   <button
     onClick={toggleMenu}
-    class='flex(& col) justify-between items-center w-7 h-[22px] md:hidden focus:outline-none'
+    class='flex(& col) justify-between items-center w-7 h-[22px] focus:outline-none'
     aria-expanded={isActive}
     aria-label={isActive ? 'Close nav menu' : 'Open nav menu'}
   >

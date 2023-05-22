@@ -1,6 +1,6 @@
 import { asset, Head } from '$fresh/runtime.ts'
 import type { ErrorPageProps } from '$fresh/server.ts'
-import Navbar from 'islands/navbar.tsx'
+import Navbar from 'components/navbar.tsx'
 import Link from 'components/link.tsx'
 
 const Error500Page = ({ error }: ErrorPageProps) => (

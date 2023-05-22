@@ -1,6 +1,6 @@
 import { asset, Head } from '$fresh/runtime.ts'
 import type { UnknownPageProps } from '$fresh/server.ts'
-import Navbar from 'islands/navbar.tsx'
+import Navbar from 'components/navbar.tsx'
 import Link from 'components/link.tsx'
 
 const NotFoundPage = (_props: UnknownPageProps) => (

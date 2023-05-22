@@ -13,8 +13,9 @@ import * as $6 from './routes/index.tsx'
 import * as $7 from './routes/sitemap.xml.ts'
 import * as $8 from './routes/works/[slug].tsx'
 import * as $$0 from './islands/copy-code.tsx'
-import * as $$1 from './islands/navbar.tsx'
+import * as $$1 from './islands/mobile-menu.tsx'
 import * as $$2 from './islands/socialmedia-share.tsx'
+import * as $$3 from './islands/theme-toggle.tsx'
 
 const manifest = {
   routes: {
@@ -30,8 +31,9 @@ const manifest = {
   },
   islands: {
     './islands/copy-code.tsx': $$0,
-    './islands/navbar.tsx': $$1,
+    './islands/mobile-menu.tsx': $$1,
     './islands/socialmedia-share.tsx': $$2,
+    './islands/theme-toggle.tsx': $$3,
   },
   baseUrl: import.meta.url,
   config,
