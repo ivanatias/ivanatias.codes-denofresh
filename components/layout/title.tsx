@@ -23,7 +23,9 @@ const Title = (
 
   return (
     <Tag
-      className={`${titleStyle} ${semibold ? 'font-semibold' : 'font-bold'}`}
+      className={`relative ${titleStyle} ${
+        semibold ? 'font-semibold' : 'font-bold'
+      }`}
     >
       {children}
     </Tag>
