@@ -7,6 +7,7 @@ import CopyCode from 'islands/copy-code.tsx'
 import ArticleImage, {
   type Props as ArticleImageType,
 } from 'components/sanity-block-contents/article-image.tsx'
+import { slugify } from 'utils/helpers.ts'
 
 interface Code {
   code: {
@@ -24,18 +25,20 @@ interface LinkType {
 
 const serializers = {
   container: ({ children }: { children: ComponentChildren }) => (
-    <div class='flex(& col) w-full gap-4'>{children}</div>
+    <div class='flex(& col) w-full gap-5'>{children}</div>
   ),
 
-  h3: ({ children }: { children: string }) => (
-    <Title titleTag='h3' titleClass='normal'>
-      {children}
+  h3: ({ children }: { children: string[] }) => (
+    <Title titleTag='h3' titleClass='lg'>
+      <span class='absolute -top-[90px]' id={slugify(children[0])} />
+      {children[0]}
     </Title>
   ),
 
-  h4: ({ children }: { children: string }) => (
-    <Title titleTag='h4' titleClass='small'>
-      {children}
+  h4: ({ children }: { children: string[] }) => (
+    <Title titleTag='h4' titleClass='normal'>
+      <span class='absolute -top-[90px]' id={slugify(children[0])} />
+      {children[0]}
     </Title>
   ),
 

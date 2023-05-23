@@ -1,4 +1,5 @@
 import type { AdditionalImage } from 'models/works.d.ts'
+import type { Block } from 'models/article.d.ts'
 import { getImageDimensions } from 'sanity/asset-utils'
 
 const formatDate = (date: string) => date.substring(0, 10)
@@ -51,13 +52,40 @@ const truncateText = (text: string, numOfChars = 100) => {
   return text.length > numOfChars ? text.substring(0, numOfChars) + '...' : text
 }
 
+const slugify = (str: string) => {
+  return str
+    .toLowerCase()
+    .replace(/\s+/g, '-') // Replace spaces with -
+    .replace(/[^\w\-]+/g, '') // Remove all non-word chars
+    .replace(/\-\-+/g, '-') // Replace multiple - with single -
+    .replace(/^-+/, '') // Trim - from start of text
+    .replace(/-+$/, '') // Trim - from end of text
+}
+
+const extractHeadingsFromBlocks = (blocks: Block[]) => {
+  return blocks.map((block) => {
+    const { _type, children, style } = block
+
+    if (
+      _type === 'block' && children !== undefined &&
+      style !== undefined && /^h\d$/.test(style)
+    ) {
+      return children[0].text
+    }
+
+    return ''
+  }).filter(Boolean)
+}
+
 export {
   calculateIconLeftPosition,
   calculateIconTransition,
   copyToClipboard,
+  extractHeadingsFromBlocks,
   formatDate,
   formatReadingTime,
   getImagesWithDimensions,
   mapToLanguageLogo,
+  slugify,
   truncateText,
 }

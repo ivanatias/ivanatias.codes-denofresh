@@ -5,9 +5,14 @@ import HeadTag from 'components/head-tag.tsx'
 import Article from 'components/layout/article.tsx'
 import ArticleHeader from 'components/pages/blog-article/article-header.tsx'
 import ArticleFooter from 'components/pages/blog-article/article-footer.tsx'
+import TableOfContent from 'components/pages/blog-article/table-of-content.tsx'
 import CustomPortableText from 'components/sanity-block-contents/portable-text/custom-portabletext.tsx'
 import { getBlogArticle } from 'services/content.ts'
-import { formatDate, formatReadingTime } from 'utils/helpers.ts'
+import {
+  extractHeadingsFromBlocks,
+  formatDate,
+  formatReadingTime,
+} from 'utils/helpers.ts'
 
 type Props = NonNullable<Awaited<ReturnType<typeof getBlogArticle>>>
 
@@ -44,6 +49,8 @@ const BlogArticle = ({ data }: PageProps<Props>) => {
   const formattedDate = formatDate(publishDate)
   const formattedReadingTime = formatReadingTime(estimatedReadingTime)
 
+  const headings = extractHeadingsFromBlocks(articleBody)
+
   return (
     <>
       <HeadTag
@@ -59,8 +66,9 @@ const BlogArticle = ({ data }: PageProps<Props>) => {
           },
         ]}
       />
-      <Wrapper>
+      <Wrapper showHeader={false}>
         <Article>
+          {headings.length > 0 && <TableOfContent headings={headings} />}
           <ArticleHeader
             coverImageUrl={coverImageUrl}
             imageAltText={altText}
