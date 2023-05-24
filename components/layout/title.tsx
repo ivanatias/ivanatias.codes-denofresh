@@ -33,3 +33,5 @@ const Title = (
 }
 
 export default Title
+
+export type { Heading }

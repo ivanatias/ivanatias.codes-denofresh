@@ -1,6 +1,6 @@
 import type { ComponentChildren } from 'preact'
 import Paragraph from 'components/layout/paragraph.tsx'
-import Title from 'components/layout/title.tsx'
+import Heading from 'components/sanity-block-contents/article-heading.tsx'
 import Link from 'components/link.tsx'
 import CustomCode from 'components/sanity-block-contents/custom-code.tsx'
 import CopyCode from 'islands/copy-code.tsx'
@@ -29,24 +29,21 @@ const serializers = {
   ),
 
   h2: ({ children }: { children: string[] }) => (
-    <Title titleTag='h2' titleClass='xl'>
-      <span class='absolute -top-[90px]' id={slugify(children[0])} />
+    <Heading heading='h2' titleClass='xl' id={slugify(children[0])}>
       {children[0]}
-    </Title>
+    </Heading>
   ),
 
   h3: ({ children }: { children: string[] }) => (
-    <Title titleTag='h3' titleClass='lg'>
-      <span class='absolute -top-[90px]' id={slugify(children[0])} />
+    <Heading heading='h3' titleClass='lg' id={slugify(children[0])}>
       {children[0]}
-    </Title>
+    </Heading>
   ),
 
   h4: ({ children }: { children: string[] }) => (
-    <Title titleTag='h4' titleClass='normal'>
-      <span class='absolute -top-[90px]' id={slugify(children[0])} />
+    <Heading heading='h4' titleClass='normal' id={slugify(children[0])}>
       {children[0]}
-    </Title>
+    </Heading>
   ),
 
   normal: ({ children }: { children: string }) => (
