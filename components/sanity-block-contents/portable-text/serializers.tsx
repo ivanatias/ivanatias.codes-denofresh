@@ -28,6 +28,13 @@ const serializers = {
     <div class='flex(& col) w-full gap-5'>{children}</div>
   ),
 
+  h2: ({ children }: { children: string[] }) => (
+    <Title titleTag='h2' titleClass='xl'>
+      <span class='absolute -top-[90px]' id={slugify(children[0])} />
+      {children[0]}
+    </Title>
+  ),
+
   h3: ({ children }: { children: string[] }) => (
     <Title titleTag='h3' titleClass='lg'>
       <span class='absolute -top-[90px]' id={slugify(children[0])} />
