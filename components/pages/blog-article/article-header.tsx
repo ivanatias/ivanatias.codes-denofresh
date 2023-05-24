@@ -29,7 +29,7 @@ const ArticleHeader = (
         class='flex-shrink-0 w-14 h-14'
         decoding='async'
       />
-      <Title titleTag='h2' titleClass='lg'>
+      <Title titleTag='h1' titleClass='xl'>
         {title}
       </Title>
     </div>
