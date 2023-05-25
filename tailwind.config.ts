@@ -1,5 +1,5 @@
 export default {
-  content: ['./**/*.tsx'],
+  content: ['./**/*.{ts,tsx}'],
   theme: {
     extend: {
       colors: {
