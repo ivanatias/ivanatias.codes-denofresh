@@ -1,4 +1,5 @@
 export default {
+  darkMode: 'class',
   content: ['./**/*.{ts,tsx}'],
   theme: {
     extend: {
