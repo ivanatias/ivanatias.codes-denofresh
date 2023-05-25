@@ -45,6 +45,7 @@ const HeadTag = ({
       />
       <link rel='preload' href={asset('/logo.svg')} as='image' />
       <link rel='preload' href={asset('/profile-pic.webp')} as='image' />
+      <link rel='stylesheet' href={asset('/styles/main.css')} />
       <link
         rel='apple-touch-icon'
         sizes='180x180'
