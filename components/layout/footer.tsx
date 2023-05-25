@@ -19,7 +19,7 @@ const Footer = () => {
 
   return (
     <footer class='flex flex-col items-center justify-between pt-20 pb-6'>
-      <div class='flex flex-col gap-5 max-w-3xl w-full mx-auto px(4 md:5)'>
+      <div class='flex flex-col gap-5 max-w-3xl w-full mx-auto px-4 md:px-5'>
         <Title titleTag='h2' titleClass='lg'>
           Feel free to reach out to me!
         </Title>
