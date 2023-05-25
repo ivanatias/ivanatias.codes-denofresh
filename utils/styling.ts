@@ -1,21 +1,21 @@
-const sharedTitleClasses = 'gray-800 dark:gray-100'
+const sharedTitleClasses = 'text-slate-800 dark:text-slate-100'
 
-const sharedParagraphClasses = 'gray-700 dark:gray-300'
+const sharedParagraphClasses = 'text-slate-700 dark:text-slate-300 max-w-prose'
 
 const sharedMenuClasses =
-  'bg(black dark:gray-100) w-full h-[2px] origin-left transition-all duration-200 ease-in'
+  'bg-slate-800 dark:bg-slate-100 w-full h-[2px] origin-left transition-all duration-200 ease-in'
 
 const styling = {
   headings: {
-    xl: `text(${sharedTitleClasses} 3xl md:4xl)`,
-    lg: `text(${sharedTitleClasses} 2xl md:3xl)`,
-    normal: `text(${sharedTitleClasses} xl md:2xl)`,
-    small: `text(${sharedTitleClasses} small md:lg)`,
+    xl: `${sharedTitleClasses} text-3xl md:text-4xl`,
+    lg: `${sharedTitleClasses} text-2xl md:text-3xl`,
+    normal: `${sharedTitleClasses} text-xl md:text-2xl`,
+    small: `${sharedTitleClasses} text-small md:text-lg`,
   },
   paragraphs: {
-    normal: `text(${sharedParagraphClasses} base md:lg)`,
-    small: `text(${sharedParagraphClasses} sm md:base)`,
-    xsmall: `text(${sharedParagraphClasses} xs md:sm)`,
+    normal: `${sharedParagraphClasses} text-base md:text-lg`,
+    small: `${sharedParagraphClasses} text-sm md:text-base`,
+    xsmall: `${sharedParagraphClasses} text-xs md:text-sm`,
   },
 }
 

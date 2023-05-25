@@ -25,7 +25,7 @@ const Home = (
   <>
     <HeadTag />
     <Wrapper>
-      <Section className='grid(& cols-1) gap-16'>
+      <Section className='grid grid-cols-1 gap-16'>
         <About biography={biography} />
         <Works works={works} />
         <Packages packages={packages} />

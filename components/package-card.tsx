@@ -9,12 +9,12 @@ type Props = Omit<Package, '_id'>
 
 const PackageCard = ({ packageName, description, githubUrl }: Props) => (
   <Link isExternal href={githubUrl} className=''>
-    <Article className='flex(& col) gap-5 p-4 min-w-[240px] border(& transparent hover:(indigo-600 dark:indigo-400)) rounded-lg hover:scale-105 transition duration-300 ease-in-out'>
-      <div className='flex(& col) gap-2'>
+    <Article className='flex flex-col gap-5 p-4 min-w-[240px] border border-transparent hover:border-indigo-600 dark:hover:border-indigo-400 rounded-lg hover:scale-105 transition duration-300 ease-in-out'>
+      <div className='flex flex-col gap-2'>
         <SVG
           id='icon-github'
           hidden
-          className='w-10 h-10 text(black dark:white)'
+          className='w-10 h-10 text-slate-800 dark:text-slate-100'
         />
         <Title titleTag='h3' titleClass='normal'>
           {packageName}

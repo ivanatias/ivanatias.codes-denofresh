@@ -10,13 +10,13 @@ const Error500Page = ({ error }: ErrorPageProps) => (
       <script id='theme' src={asset('/scripts/theme.js')} />
     </Head>
     <Navbar />
-    <div class='p-4 grid h-screen gap-3 text(black dark:white) place-content-center'>
-      <h1 class='text(center 4xl 2xl:5xl) font-bold'>
+    <div class='p-4 grid h-screen gap-3 text-slate-700 dark:text-slate-100 place-content-center'>
+      <h1 class='text-center text-4xl 2xl:text-5xl font-bold'>
         500 internal server error
       </h1>
       <Link
         href='/'
-        className='text(base center underline 2xl:lg) font-semibold'
+        className='text-base text-center underline 2xl:text-lg font-semibold'
       >
         Try again
       </Link>

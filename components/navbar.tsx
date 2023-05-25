@@ -5,10 +5,10 @@ import Navlink from 'components/nav-link.tsx'
 import { LINKS } from 'constants/links.ts'
 
 const Navbar = () => (
-  <header class='fixed top-0 z-50 w-full py-5 bg(light-rgba dark:dark-rgba) blur-backdrop'>
+  <header class='fixed top-0 z-50 w-full py-5 bg-light-rgba dark:bg-dark-rgba backdrop-blur-md'>
     <nav>
-      <div class='flex items-center max-w-3xl mx-auto px(4 md:5)'>
-        <div class='flex(& 1) items-center gap-5'>
+      <div class='flex items-center max-w-3xl mx-auto px-4 md:px-5'>
+        <div class='flex flex-1 items-center gap-5'>
           <Link href='/'>
             <img
               src='/logo.svg'

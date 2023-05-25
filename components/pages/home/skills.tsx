@@ -8,7 +8,7 @@ const Skills = () => (
     <Title titleTag='h2' titleClass='lg'>
       Skills
     </Title>
-    <div class='flex(& col) gap-6'>
+    <div class='flex flex-col gap-6'>
       <Paragraph>
         These are some of the technologies and tools I&apos;m comfortable with:
       </Paragraph>

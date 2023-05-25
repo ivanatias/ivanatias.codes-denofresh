@@ -52,14 +52,14 @@ const Work = ({ data }: PageProps<Props>) => {
       <Wrapper>
         <Article>
           <header>
-            <h3 class='text(base md:lg pink-800 dark:pink-400) font-bold'>
+            <h3 class='text-base md:text-lg text-pink-800 dark:text-pink-400 font-bold'>
               {title}
             </h3>
           </header>
           <Paragraph>
             {description}
           </Paragraph>
-          <div class='flex(& col) text(xs md:sm black dark:white) gap-3 font-semibold'>
+          <div class='flex flex-col text-xs md:text-sm text-slate-800 dark:text-slate-100 gap-3 font-semibold'>
             <Stack stack={stack} />
             <WorkLinks workLinks={workLinks} />
           </div>

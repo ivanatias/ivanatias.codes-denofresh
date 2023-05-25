@@ -7,8 +7,8 @@ interface Props {
 }
 
 const Skill = ({ skillImage, skillText }: Props) => (
-  <div class='flex(& col) items-center justify-center gap-2'>
-    <div class='p-1 rounded-md dark:bg-gray-100'>
+  <div class='flex flex-col items-center justify-center gap-2'>
+    <div class='p-1 rounded-md dark:bg-slate-100'>
       <img
         src={skillImage}
         width='40'
@@ -24,7 +24,7 @@ const Skill = ({ skillImage, skillText }: Props) => (
 )
 
 const Skills = () => (
-  <div class='flex(& wrap) justify(center sm:start) items-center w-full gap(4 md:6)'>
+  <div class='flex flex-wrap justify-center sm:justify-start items-center w-full gap-4 md:gap-6'>
     {SKILLS.map((skill) => <Skill key={skill.skillText} {...skill} />)}
   </div>
 )

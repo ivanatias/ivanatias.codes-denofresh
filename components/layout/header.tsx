@@ -3,16 +3,16 @@ import Paragraph from 'components/layout/paragraph.tsx'
 import Social from 'components/social.tsx'
 
 const Header = () => (
-  <header class='flex(& col) gap-12 relative pb-24'>
-    <div class='flex(& col) gap-4'>
-      <div class='flex(& col) gap-1'>
-        <span class='text(indigo-700 dark:indigo-400 2xl md:3xl lg:4xl) font-semibold'>
+  <header class='flex flex-col gap-12 relative pb-24'>
+    <div class='flex flex-col gap-4'>
+      <div class='flex flex-col gap-1'>
+        <span class='text-indigo-700 dark:text-indigo-400 text-2xl md:text-3xl lg:text-4xl font-semibold'>
           Code.
         </span>
-        <span class='text(green-700 dark:green-400 2xl md:3xl lg:4xl) font-semibold pl-4'>
+        <span class='text-green-800 dark:text-green-400 text-2xl md:text-3xl lg:text-4xl font-semibold pl-4'>
           Design.
         </span>
-        <span class='text(pink-700 dark:pink-400 2xl md:3xl lg:4xl) font-semibold pl-8'>
+        <span class='text-pink-800 dark:text-pink-400 text-2xl md:text-3xl lg:text-4xl font-semibold pl-8'>
           Create.
         </span>
       </div>
@@ -20,7 +20,7 @@ const Header = () => (
         Aesthetic design meets functionality, performance, and scalability.
       </Paragraph>
     </div>
-    <div class='relative flex(& col) gap-2 items-center max-w-xs mx-auto'>
+    <div class='relative flex flex-col gap-2 items-center max-w-xs mx-auto'>
       <Title>
         Ivan Atias
       </Title>
@@ -28,8 +28,8 @@ const Header = () => (
         Front-end Engineer and UI Designer
       </Paragraph>
       <Social />
-      <div class='absolute bottom-[10%] left-0 rounded-full w-[70px] h-[110px] bg-gradient-to-l from(& pink-300 dark:pink-400) to(& indigo-800 dark:indigo-500) blur-filter' />
-      <div class='absolute -top-[72%] right-[12%] rounded-full w-[80px] h-[124px] bg-green-300 blur-filter' />
+      <div class='absolute bottom-[10%] left-0 rounded-full w-[70px] h-[110px] bg-gradient-to-l from-pink-300 dark:from-pink-400 to-indigo-800 dark:to-indigo-500 blur-[54px]' />
+      <div class='absolute -top-[72%] right-[12%] rounded-full w-[80px] h-[124px] bg-green-300 blur-[54px]' />
     </div>
   </header>
 )

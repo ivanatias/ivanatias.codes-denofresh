@@ -39,7 +39,7 @@ const CustomCode = ({ code, language }: Props) => {
 
   return (
     <pre
-      class={`${className} bg(& gray-700 dark:gray-800) border(& [1px] gray-500 dark:gray-700)`}
+      class={`${className} bg-slate-700 dark:bg-slate-800 border-[1px] border-slate-500 dark:border-slate-700`}
       dangerouslySetInnerHTML={{ __html: html }}
     />
   )

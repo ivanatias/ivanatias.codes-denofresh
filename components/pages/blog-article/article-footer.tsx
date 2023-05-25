@@ -11,12 +11,12 @@ const ArticleFooter = ({ previousPost, nextPost, postSlug }: Props) => (
     <div class='flex items-center justify-center gap-4'>
       {previousPost !== null && (
         <Link href={`/blog/${previousPost.slug.current}`}>
-          Previous article
+          ← Previous article
         </Link>
       )}
       {nextPost !== null && (
         <Link href={`/blog/${nextPost.slug.current}`}>
-          Next article
+          Next article →
         </Link>
       )}
     </div>

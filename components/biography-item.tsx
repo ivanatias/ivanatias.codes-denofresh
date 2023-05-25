@@ -10,7 +10,7 @@ interface BiographyItem {
 }
 
 const BioYear = ({ children }: BiographyItem) => (
-  <span class='text(sm 2xl:base pink-800 dark:pink-400) font-bold'>
+  <span class='text-sm 2xl:text-base text-pink-800 dark:text-pink-400 font-bold'>
     {children}
   </span>
 )
@@ -20,7 +20,7 @@ const BioDescription = ({ children }: BiographyItem) => (
 )
 
 const BiographyItem = ({ year, description }: BiographyProps) => (
-  <div class='flex(& col sm:row) sm:items-center sm:gap-5 gap-3'>
+  <div class='flex flex-col sm:flex-row sm:items-center sm:gap-5 gap-3'>
     <BioYear>{year}</BioYear>
     <BioDescription>{description}</BioDescription>
   </div>

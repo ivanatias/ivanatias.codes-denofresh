@@ -11,7 +11,7 @@ interface Props {
 }
 
 const defaultStyles =
-  'flex items-center gap-1 font-semibold text(gray-700 dark:gray-300) decoration(gray-700 dark:gray-300) transition-all duration-150 underline-offset-4 hover:underline dark:hover:text-white dark:hover:decoration-white'
+  'flex items-center gap-1 font-semibold text-slate-700 dark:text-slate-300 decoration-slate-700 dark:decoration-slate-300 transition duration-150 underline-offset-4 hover:underline dark:hover:text-white dark:hover:decoration-white'
 
 const Link = (
   {

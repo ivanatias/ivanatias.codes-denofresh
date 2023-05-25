@@ -25,7 +25,7 @@ interface LinkType {
 
 const serializers = {
   container: ({ children }: { children: ComponentChildren }) => (
-    <div class='flex(& col) w-full gap-5'>{children}</div>
+    <div class='flex flex-col w-full gap-5'>{children}</div>
   ),
 
   h2: ({ children }: { children: string[] }) => (
@@ -51,7 +51,7 @@ const serializers = {
   ),
 
   blockquote: ({ children }: { children: string }) => (
-    <blockquote class='pl-2 text(sm black md:base dark:gray-100) italic border(l-2 pink-800 dark:pink-400)'>
+    <blockquote class='pl-2 text-sm text-slate-700 md:text-base dark:text-slate-300 italic border-l-2 border-pink-800 dark:border-pink-400'>
       {children}
     </blockquote>
   ),
@@ -68,7 +68,7 @@ const serializers = {
 
   ul: ({ children }: { children: ComponentChildren }) => (
     <ul
-      class='flex(& col) gap-2 pl-3'
+      class='flex flex-col gap-2 pl-3'
       style={{ listStyleType: 'disc' }}
     >
       {children}
@@ -77,7 +77,7 @@ const serializers = {
 
   ol: ({ children }: { children: ComponentChildren }) => (
     <ol
-      class='flex(& col) gap-2 pl-3'
+      class='flex flex-col gap-2 pl-3'
       style={{ listStyleType: 'number' }}
     >
       {children}
@@ -85,13 +85,13 @@ const serializers = {
   ),
 
   li: ({ children }: { children: string }) => (
-    <li class='text(base black dark:gray-300 md:lg)'>
+    <li class='text-base text-slate-700 dark:text-slate-300 md:text-lg'>
       {children}
     </li>
   ),
 
   code: ({ children }: { children: string }) => (
-    <code class='px-2 rounded-lg font-bold font-mono text(sm md:base gray-700 dark:gray-100) border(& [1px] gray-300 dark:gray-700) bg(& gray-100 dark:gray-800)'>
+    <code class='px-2 rounded-lg font-bold font-mono text-sm md:text-base text-slate-700 dark:text-slate-100 border-[1px] border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-slate-800'>
       {children}
     </code>
   ),
@@ -101,7 +101,7 @@ const serializers = {
 
     return (
       <Link
-        className='text(base md:lg pink-800 dark:pink-400) underline'
+        className='text-base md:text-lg dark:text-pink-400 underline'
         {...restOfProps}
       >
         {children}
@@ -114,7 +114,7 @@ const serializers = {
 
     return (
       <div class='relative my-5'>
-        <div class='border(& [1px] gray-500 dark:gray-700) rounded-t-lg bg(& gray-700 dark:gray-800) py-1 px-3 text(xs gray-100 center) min-w-[90px] min-h-[26px] w-min font-semibold'>
+        <div class='border-[1px] border-slate-500 dark:border-slate-700 rounded-t-lg bg-slate-700 dark:bg-slate-800 py-1 px-3 text-xs text-slate-100 text-center min-w-[90px] min-h-[26px] w-min font-semibold'>
           {filename}
         </div>
         <CustomCode code={code} language={language} />

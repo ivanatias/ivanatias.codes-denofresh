@@ -19,7 +19,7 @@ const ArticleCard = (
       href={`/blog/${slug.current}`}
       className=''
     >
-      <Article className='flex(& col) sm:min-h-[300px] w-full gap-5 p-4 transition duration-300 border(& transparent) hover:border-indigo-600 dark:hover:border-indigo-400 rounded-md transition duration-300 md:hover:scale-105'>
+      <Article className='flex flex-col sm:min-h-[300px] w-full gap-5 p-4 transition duration-300 border border-transparent hover:border-indigo-600 dark:hover:border-indigo-400 rounded-md md:hover:scale-105'>
         <img
           src={url}
           alt={altText}
@@ -29,14 +29,14 @@ const ArticleCard = (
           decoding='async'
           loading='lazy'
         />
-        <div class='flex(& col) gap-1'>
+        <div class='flex flex-col gap-1'>
           <Title titleTag='h3' titleClass='small'>
             {articleTitle}
           </Title>
           <Paragraph pClass='small'>{truncatedExcerpt}</Paragraph>
           <time
             dateTime={publishDate}
-            class='text(pink-800 dark:pink-400 xs 2xl:sm) font-semibold'
+            class='text-pink-800 dark:text-pink-400 text-xs 2xl:text-sm font-semibold'
           >
             {date}
           </time>

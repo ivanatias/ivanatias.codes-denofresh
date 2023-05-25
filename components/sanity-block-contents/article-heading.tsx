@@ -14,7 +14,7 @@ const Heading = (
   { children, id, heading = 'h2', titleClass = 'xl' }: Props,
 ) => (
   <Title titleTag={heading} titleClass={titleClass}>
-    <span class={`absolute -top-[${NAVBAR_HEIGHT}px]`} id={id} />
+    <span class={`absolute -top-[90px]`} id={id} />
     {children}
   </Title>
 )

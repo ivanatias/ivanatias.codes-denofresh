@@ -19,8 +19,8 @@ const ArticleHeader = (
     formattedDate,
   }: Props,
 ) => (
-  <header class='flex(& col) gap-4'>
-    <div class='flex(& col) w-full gap-3'>
+  <header class='flex flex-col gap-4'>
+    <div class='flex flex-col w-full gap-3'>
       <img
         src={coverImageUrl}
         alt={imageAltText}
@@ -33,7 +33,7 @@ const ArticleHeader = (
         {title}
       </Title>
     </div>
-    <div class='flex text(xs md:sm gray-700 dark:gray-400) font-semibold items-center gap-3'>
+    <div class='flex text-xs md:text-sm text-slate-700 dark:text-slate-400 font-semibold items-center gap-3'>
       <time
         dateTime={publishDate}
       >

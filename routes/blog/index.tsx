@@ -22,7 +22,7 @@ const Blog = ({ data: blogArticles }: PageProps<Props>) => (
     <HeadTag title='Blog' canonicalUrlPath='/blog' />
     <Wrapper>
       <Section>
-        <header class='flex(& col) gap-4'>
+        <header class='flex flex-col gap-4'>
           <Title titleTag='h2' titleClass='lg'>
             Blog
           </Title>
@@ -32,13 +32,13 @@ const Blog = ({ data: blogArticles }: PageProps<Props>) => (
             thoughts that cross my mind.
           </Paragraph>
         </header>
-        <Section className='flex(& col) gap-4'>
+        <Section className='flex flex-col gap-4'>
           <header>
             <Title titleTag='h3' titleClass='normal'>
               Articles
             </Title>
           </header>
-          <div class='grid(& cols-1 sm:cols-2) sm:gap-6 gap-8'>
+          <div class='grid grid-cols-1 sm:grid-cols-2 sm:gap-6 gap-8'>
             {blogArticles.map(({ _id, ...item }) => (
               <ArticleCard
                 key={_id}

@@ -24,7 +24,7 @@ const ArticleImage = (
         decoding='async'
         loading='lazy'
       />
-      <figcaption class='mt-1 text(xs black md:sm dark:gray-300)'>
+      <figcaption class='mt-1 text-xs text-slate-600 md:text-sm dark:text-slate-400'>
         {caption}
       </figcaption>
     </figure>

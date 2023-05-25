@@ -26,8 +26,8 @@ const CopyCode = ({ code }: Props) => {
       class={`${
         copied
           ? 'cursor-not-allowed text-green-400'
-          : 'cursor-copy hover:text-white text-gray-300'
-      } absolute text(sm center) transition duration-150 ease-in tracking-tighter top-[32px] right-[8px] px-3 py-1`}
+          : 'cursor-copy hover:text-white text-slate-300'
+      } absolute text-sm text-center transition duration-150 ease-in tracking-tighter top-[32px] right-[8px] px-3 py-1`}
       disabled={!IS_BROWSER || copied}
       onClick={handleCopy}
       aria-label={copied ? 'Copied' : 'Copy code to clipboard'}

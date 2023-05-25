@@ -15,7 +15,7 @@ const WorkCard = ({ thumbNail, title, overview, slug }: Props) => {
       href={`/works/${slug.current}`}
       className=''
     >
-      <Article className='flex(& col) items-center justify-center md:transition-transform md:duration-300 md:hover:scale-105'>
+      <Article className='flex flex-col items-center justify-center md:transition-transform md:duration-300 md:hover:scale-105'>
         <img
           src={thumbNail.asset.url}
           alt={title}
@@ -25,7 +25,7 @@ const WorkCard = ({ thumbNail, title, overview, slug }: Props) => {
           decoding='async'
           loading='lazy'
         />
-        <div class='flex(& col ) items-center justify-center w-full gap-1 mt-3'>
+        <div class='flex flex-col items-center justify-center w-full gap-1 mt-3'>
           <Title titleTag='h3' titleClass='small'>
             {title}
           </Title>

@@ -9,7 +9,7 @@ interface SmallTextProps {
 }
 
 const SmallText = ({ children }: SmallTextProps) => (
-  <small class='text(xs gray-800 dark:gray-400 2xl:sm) font-semibold'>
+  <small class='text-xs text-slate-800 dark:text-slate-400 2xl:text-sm font-semibold'>
     {children}
   </small>
 )
@@ -18,8 +18,8 @@ const Footer = () => {
   const currentYear = new Date().getUTCFullYear()
 
   return (
-    <footer class='flex(& col) items-center justify-between pt-20 pb-6'>
-      <div class='flex(& col) gap-5 max-w-3xl w-full mx-auto px(4 md:5)'>
+    <footer class='flex flex-col items-center justify-between pt-20 pb-6'>
+      <div class='flex flex-col gap-5 max-w-3xl w-full mx-auto px(4 md:5)'>
         <Title titleTag='h2' titleClass='lg'>
           Feel free to reach out to me!
         </Title>
@@ -28,13 +28,13 @@ const Footer = () => {
           any other subject.
         </Paragraph>
         <a
-          class='text(base black dark:gray-300 2xl:lg) font-bold'
+          class='text-base text-slate-800 dark:text-slate-300 2xl:text-lg font-bold'
           href='mailto:ivan.d.atias@gmail.com'
         >
           ivan.d.atias@gmail.com
         </a>
       </div>
-      <div class='flex(& col) items-center gap-1 mt-7'>
+      <div class='flex flex-col items-center gap-1 mt-7'>
         <SmallText>
           © {currentYear} Ivan Atias
         </SmallText>

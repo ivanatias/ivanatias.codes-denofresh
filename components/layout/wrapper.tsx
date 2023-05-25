@@ -11,7 +11,7 @@ interface Props {
 const Layout = ({ children, showHeader = true }: Props) => (
   <>
     <Navbar />
-    <main class='flex(& 1 col) max-w-3xl px-5 mx-auto pt-32'>
+    <main class='flex flex-col flex-1 max-w-3xl px-5 mx-auto pt-32'>
       {showHeader && <Header />}
       {children}
     </main>

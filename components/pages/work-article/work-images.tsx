@@ -12,7 +12,7 @@ interface Props {
 }
 
 const WorkImages = ({ imagesWithDimensions, workTitle }: Props) => (
-  <div class='grid(& cols-1) gap-8'>
+  <div class='grid-cols-1 gap-8'>
     {imagesWithDimensions.map(({ url, id, dimensions }) => (
       <img
         key={id}

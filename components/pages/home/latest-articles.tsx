@@ -13,8 +13,8 @@ const LatestArticles = ({ latestArticles }: Props) => (
     <Title titleTag='h2' titleClass='lg'>
       Latest blog articles
     </Title>
-    <div class='flex(& col) gap-4'>
-      <div class='grid(& cols-1 sm:cols-2) sm:gap-6 gap-8'>
+    <div class='flex flex-col gap-4'>
+      <div class='grid grid-cols-1 sm:grid-cols-2 sm:gap-6 gap-8'>
         {latestArticles.map(({ _id, ...item }) => (
           <ArticleCard
             key={_id}
