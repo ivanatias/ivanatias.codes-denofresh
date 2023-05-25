@@ -20,7 +20,6 @@ const About = ({ biography }: Props) => (
         class='rounded-full w-[240px] h-[240px]'
         width='240'
         height='240'
-        decoding='async'
       />
       <Paragraph>
         Hola! I&apos;m a Venezuelan Systems Engineer working as a Front-end
