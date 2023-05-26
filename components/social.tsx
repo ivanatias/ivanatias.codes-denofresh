@@ -9,7 +9,7 @@ const Social = () => (
         key={name}
         href={path}
         isExternal
-        className='transition duration-150 ease-in hover:text-pink-900 dark:hover:text-pink-500'
+        className='transition duration-150 ease-in hover:drop-shadow-[0_0_12px_#be185d] dark:hover:drop-shadow-[0_0_12px_#ec4899]'
       >
         <SVG
           id={icon}
