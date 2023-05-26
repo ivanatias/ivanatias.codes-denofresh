@@ -47,11 +47,11 @@ const serializers = {
   ),
 
   normal: ({ children }: { children: string }) => (
-    <Paragraph>{children}</Paragraph>
+    <Paragraph pClass='lg'>{children}</Paragraph>
   ),
 
   blockquote: ({ children }: { children: string }) => (
-    <blockquote class='pl-2 text-sm text-slate-700 md:text-base dark:text-slate-300 italic border-l-2 border-pink-800 dark:border-pink-400'>
+    <blockquote class='pl-2 text-base text-slate-700 md:text-lg dark:text-slate-300 italic border-l-2 border-pink-800 dark:border-pink-400'>
       {children}
     </blockquote>
   ),
@@ -68,7 +68,7 @@ const serializers = {
 
   ul: ({ children }: { children: ComponentChildren }) => (
     <ul
-      class='flex flex-col gap-2 pl-3'
+      class='flex flex-col gap-4 pl-3'
       style={{ listStyleType: 'disc' }}
     >
       {children}
@@ -77,7 +77,7 @@ const serializers = {
 
   ol: ({ children }: { children: ComponentChildren }) => (
     <ol
-      class='flex flex-col gap-2 pl-3'
+      class='flex flex-col gap-4 pl-3'
       style={{ listStyleType: 'number' }}
     >
       {children}
@@ -85,7 +85,7 @@ const serializers = {
   ),
 
   li: ({ children }: { children: string }) => (
-    <li class='text-base text-slate-700 dark:text-slate-300 md:text-lg'>
+    <li class='text-lg text-slate-700 dark:text-slate-300 md:text-xl'>
       {children}
     </li>
   ),
@@ -101,7 +101,7 @@ const serializers = {
 
     return (
       <Link
-        className='text-base md:text-lg dark:text-pink-400 underline'
+        className='text-lg md:text-xl text-pink-800 dark:text-pink-400 underline'
         {...restOfProps}
       >
         {children}

@@ -13,6 +13,7 @@ const styling = {
     small: `${sharedTitleClasses} text-small md:text-lg`,
   },
   paragraphs: {
+    lg: `${sharedParagraphClasses} text-lg md:text-xl`,
     normal: `${sharedParagraphClasses} text-base md:text-lg`,
     small: `${sharedParagraphClasses} text-sm md:text-base`,
     xsmall: `${sharedParagraphClasses} text-xs md:text-sm`,
