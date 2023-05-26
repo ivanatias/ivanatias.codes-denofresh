@@ -24,10 +24,9 @@ const ArticleHeader = (
       <img
         src={coverImageUrl}
         alt={imageAltText}
-        width='56'
-        height='56'
-        class='flex-shrink-0 w-14 h-14'
-        decoding='async'
+        width='80'
+        height='80'
+        class='flex-shrink-0 w-20 h-20'
       />
       <Title titleTag='h1' titleClass='xl'>
         {title}
