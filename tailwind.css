@@ -38,13 +38,13 @@
   .token.boolean,
   .token.number,
   .token.selector,
-  .token.atrule {
+  .token.atrule,
+  .token.builtin {
     @apply text-pink-400;    
   }
 
   .token.attr-name,
   .token.char,
-  .token.builtin,
   .token.inserted {
     @apply text-yellow-200;
   }
