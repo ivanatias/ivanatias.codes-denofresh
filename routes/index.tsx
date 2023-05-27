@@ -1,3 +1,4 @@
+import { asset } from '$fresh/runtime.ts'
 import type { Handlers, PageProps } from '$fresh/server.ts'
 import Wrapper from 'components/layout/wrapper.tsx'
 import Section from 'components/layout/section.tsx'
@@ -23,7 +24,11 @@ const Home = (
   { data: { biography, works, latestArticles, packages } }: PageProps<Props>,
 ) => (
   <>
-    <HeadTag />
+    <HeadTag
+      linkTags={[
+        { rel: 'preload', href: asset('/profile-pic.webp'), as: 'image' },
+      ]}
+    />
     <Wrapper>
       <Section className='grid grid-cols-1 gap-16'>
         <About biography={biography} />

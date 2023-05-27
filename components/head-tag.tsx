@@ -44,8 +44,8 @@ const HeadTag = ({
         content='Front-end Engineer, UI Designer, Ivan Atias, Portfolio, Blog'
       />
       <link rel='preload' href={asset('/logo.svg')} as='image' />
-      <link rel='preload' href={asset('/profile-pic.webp')} as='image' />
       <link rel='stylesheet' href={asset('/styles/main.css')} />
+      {hasAdditionalLinkTags && linkTags.map((tag) => <link {...tag} />)}
       <link
         rel='apple-touch-icon'
         sizes='180x180'
@@ -75,7 +75,6 @@ const HeadTag = ({
         sizes='16x16'
         href={asset('/icons/favicon-16x16.png')}
       />
-      {hasAdditionalLinkTags && linkTags.map((tag) => <link {...tag} />)}
       <link
         rel='canonical'
         href={url}
