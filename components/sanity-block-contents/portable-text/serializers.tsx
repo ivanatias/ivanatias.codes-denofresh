@@ -91,7 +91,7 @@ const serializers = {
   ),
 
   code: ({ children }: { children: string }) => (
-    <code class='px-2 rounded-lg font-bold font-mono text-sm md:text-base text-slate-700 dark:text-slate-100 border-[1px] border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-slate-800'>
+    <code class='px-2 rounded-lg font-bold font-mono text-sm md:text-base text-slate-700 dark:text-slate-100 border-[1px] border-slate-300 dark:border-zinc-800 bg-slate-100 dark:bg-zinc-900'>
       {children}
     </code>
   ),
@@ -101,7 +101,7 @@ const serializers = {
 
     return (
       <Link
-        className='text-lg md:text-xl text-pink-800 dark:text-pink-400 underline'
+        className='text-lg md:text-xl text-pink-800 dark:text-pink-400 underline hover:text-pink-900 dark:hover:text-pink-500 transition-colors duration-150'
         {...restOfProps}
       >
         {children}
@@ -114,7 +114,7 @@ const serializers = {
 
     return (
       <div class='relative my-5'>
-        <div class='border-[1px] border-slate-500 dark:border-slate-700 rounded-t-lg bg-slate-700 dark:bg-slate-800 py-1 px-3 text-xs text-slate-100 text-center min-w-[90px] min-h-[26px] w-min font-semibold'>
+        <div class='border-[1px] border-zinc-800 rounded-t-lg bg-zinc-900 py-1 px-3 text-xs text-slate-100 text-center min-w-[90px] min-h-[26px] w-min font-semibold'>
           {filename}
         </div>
         <CustomCode code={code} language={language} />

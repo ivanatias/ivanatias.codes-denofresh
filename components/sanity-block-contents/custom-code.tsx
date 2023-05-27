@@ -33,16 +33,10 @@ interface Props {
 }
 
 const CustomCode = ({ code, language }: Props) => {
-  const className = `language-${language}`
   const highlighted = refractor.highlight(code, language)
   const html = toHtml(highlighted)
 
-  return (
-    <pre
-      class={`${className} bg-slate-700 dark:bg-slate-800 border-[1px] border-slate-500 dark:border-slate-700`}
-      dangerouslySetInnerHTML={{ __html: html }}
-    />
-  )
+  return <pre dangerouslySetInnerHTML={{ __html: html }} />
 }
 
 export default CustomCode

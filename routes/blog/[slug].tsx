@@ -1,4 +1,3 @@
-import { asset } from '$fresh/runtime.ts'
 import type { Handlers, PageProps } from '$fresh/server.ts'
 import Wrapper from 'components/layout/wrapper.tsx'
 import HeadTag from 'components/head-tag.tsx'
@@ -59,12 +58,6 @@ const BlogArticle = ({ data }: PageProps<Props>) => {
         description={excerpt}
         socialCardImage={socialImageUrl}
         contentType='article'
-        linkTags={[
-          {
-            rel: 'stylesheet',
-            href: asset('/styles/prism-theme.css'),
-          },
-        ]}
       />
       <Wrapper showHeader={false}>
         <Article>
