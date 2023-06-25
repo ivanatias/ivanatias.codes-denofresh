@@ -1,4 +1,3 @@
-import '$std/dotenv/load.ts'
 import type { MiddlewareHandlerContext } from '$fresh/server.ts'
 import { BASE_URL } from 'constants/socials.ts'
 

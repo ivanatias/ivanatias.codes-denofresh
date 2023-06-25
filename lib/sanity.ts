@@ -1,4 +1,3 @@
-import '$std/dotenv/load.ts'
 import { type ClientConfig, createClient } from 'sanity/client'
 import imageUrlBuilder from 'sanity/image-url'
 
