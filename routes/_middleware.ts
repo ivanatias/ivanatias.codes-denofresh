@@ -1,10 +1,11 @@
 import type { MiddlewareHandlerContext } from '$fresh/server.ts'
 import { BASE_URL } from 'constants/socials.ts'
 
-const ENV = Deno.env.get('ENV') ?? 'development'
+const DEVELOPMENT = 'development'
+const ENV = Deno.env.get('ENV') ?? DEVELOPMENT
 
 const plainTextHeader = { 'Content-Type': 'text/plain' }
-const isDevelopment = ENV === 'development'
+const isDevelopment = ENV === DEVELOPMENT
 
 export async function handler(
   req: Request,
