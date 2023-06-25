@@ -1,14 +1,16 @@
 import '$std/dotenv/load.ts'
-import sanityClient from 'sanity/client'
+import { type ClientConfig, createClient } from 'sanity/client'
 import imageUrlBuilder from 'sanity/image-url'
 
-const client = sanityClient({
+const config: ClientConfig = {
   projectId: 'uaj0umn5',
   dataset: 'production',
-  apiVersion: '2023-02-11',
+  apiVersion: '2023-06-24',
   token: Deno.env.get('SANITY_TOKEN'),
   useCdn: true,
-})
+}
+
+const client = createClient(config)
 
 const builder = imageUrlBuilder(client)
 
