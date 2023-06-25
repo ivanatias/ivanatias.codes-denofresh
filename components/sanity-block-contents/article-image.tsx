@@ -12,7 +12,8 @@ const ArticleImage = (
   { image, altText = 'Article image', caption = '' }: Props,
 ) => {
   const { width, height } = getImageDimensions(image.asset)
-  const imageUrl = urlFor(image.asset._ref).url()
+  const imageUrl = urlFor(image.asset._ref).auto('format').url()
+
   return (
     <figure>
       <img
