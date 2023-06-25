@@ -11,7 +11,7 @@ const config: ClientConfig = {
   projectId: 'uaj0umn5',
   dataset: 'production',
   apiVersion: '2023-06-24',
-  token: Deno.env.get('SANITY_TOKEN'),
+  token: SANITY_TOKEN,
   useCdn: true,
 }
 
