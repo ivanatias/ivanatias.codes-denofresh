@@ -7,8 +7,8 @@ interface Props {
 }
 
 const TableOfContent = ({ headings }: Props) => (
-  <nav class='hidden fixed top-[15%] right-[4%] 2xl:right-[10%] xl:flex xl:flex-col xl:gap-3 pt-3 w-[200px]'>
-    <Title titleClass='small' titleTag='h5'>Table of Content</Title>
+  <nav class='hidden fixed right-[4%] 2xl:right-[10%] xl:flex xl:flex-col xl:gap-3 pt-3 w-[200px]'>
+    <Title titleClass='small' titleTag='h3'>Table of Content</Title>
     <ul class='flex flex-col gap-2 pl-2 font-bold border-l-2 border-indigo-600 dark:border-indigo-400'>
       {headings.map((heading) => (
         <li key={heading}>
