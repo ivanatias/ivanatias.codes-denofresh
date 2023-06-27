@@ -1,23 +1,28 @@
 import { IS_BROWSER } from '$fresh/runtime.ts'
 import SVG from 'components/svg.tsx'
-import { type Theme, useTheme } from 'contexts/theme.tsx'
+import { type Signal } from '@preact/signals'
+import { type Theme } from 'islands/theme-toggle.tsx'
 
 type ThemeIcon = 'icon-sun' | 'icon-moon'
 
-interface ThemeOptions {
+type ThemeOptions = {
   label: string
   iconLabel: string
   icon: ThemeIcon
 }
 
-const themeOptions: Record<Theme, ThemeOptions> = {
+interface Props {
+  theme: Signal<Theme>
+  toggleTheme: () => void
+}
+
+const THEME_OPTIONS: Record<Theme, ThemeOptions> = {
   dark: { label: 'Light mode', icon: 'icon-sun', iconLabel: 'Sun icon' },
   light: { label: 'Dark mode', icon: 'icon-moon', iconLabel: 'Moon icon' },
 }
 
-const ThemeToggleButton = () => {
-  const { theme, toggleTheme } = useTheme()
-  const { icon, iconLabel, label } = themeOptions[theme]
+const ThemeToggleButton = ({ theme, toggleTheme }: Props) => {
+  const { icon, iconLabel, label } = THEME_OPTIONS[theme.value]
 
   return (
     <button
