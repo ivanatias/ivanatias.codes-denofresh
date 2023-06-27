@@ -1,10 +1,11 @@
 import Navlink from 'components/nav-link.tsx'
 import { LINKS } from 'constants/links.ts'
 import { sharedMenuClasses } from 'utils/styling.ts'
+import { type Signal } from '@preact/signals'
 
 interface MenuButtonProps {
   toggleMenu: () => void
-  isActive: boolean
+  isActive: Signal<boolean>
 }
 
 interface MenuLineProps extends Pick<MenuButtonProps, 'isActive'> {
@@ -29,8 +30,8 @@ const MenuButton = ({ toggleMenu, isActive }: MenuButtonProps) => (
   <button
     onClick={toggleMenu}
     class='flex flex-col justify-between items-center w-7 h-[22px] focus:outline-none'
-    aria-expanded={isActive}
-    aria-label={isActive ? 'Close nav menu' : 'Open nav menu'}
+    aria-expanded={isActive.value}
+    aria-label={isActive.value ? 'Close nav menu' : 'Open nav menu'}
   >
     <MenuLine isActive={isActive} activeClass='rotate-45' />
     <MenuLine isActive={isActive} activeClass='opacity-0' />
@@ -40,7 +41,7 @@ const MenuButton = ({ toggleMenu, isActive }: MenuButtonProps) => (
 
 const MenuLine = ({ isActive, activeClass }: MenuLineProps) => (
   <span
-    class={`${sharedMenuClasses} ${isActive ? activeClass : ''}`}
+    class={`${sharedMenuClasses} ${isActive.value ? activeClass : ''}`}
     aria-hidden='true'
   />
 )

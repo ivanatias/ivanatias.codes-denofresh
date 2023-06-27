@@ -1,15 +1,17 @@
-import { useState } from 'preact/hooks'
+import { useSignal } from '@preact/signals'
 import { MenuButton, MenuPopup } from 'components/menu.tsx'
 
 const MobileMenu = () => {
-  const [isActive, setIsActive] = useState(false)
+  const isActive = useSignal(false)
 
-  const toggleMenu = () => setIsActive((prev) => !prev)
+  const toggleMenu = () => {
+    isActive.value = !isActive.value
+  }
 
   return (
     <div class='md:hidden'>
       <MenuButton isActive={isActive} toggleMenu={toggleMenu} />
-      {isActive && <MenuPopup />}
+      {isActive.value && <MenuPopup />}
     </div>
   )
 }

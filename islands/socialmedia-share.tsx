@@ -1,4 +1,4 @@
-import { useState } from 'preact/hooks'
+import { useSignal } from '@preact/signals'
 import ShareIcon from 'components/social-share/share-icon.tsx'
 import ShareButton from 'components/social-share/share-button.tsx'
 import { SOCIAL_SHARE } from 'constants/socials.ts'
@@ -8,22 +8,26 @@ interface Props {
 }
 
 const Share = ({ slug }: Props) => {
-  const [shareButtonActive, setShareButtonActive] = useState(false)
+  const isActive = useSignal(false)
 
-  const toggleShareButton = () => setShareButtonActive((prev) => !prev)
+  const toggleShareButton = () => {
+    isActive.value = !isActive.value
+  }
+
+  console.log('re-rendered')
 
   return (
     <div class='flex items-center justify-center my-4'>
       <div class='relative'>
         <ShareButton
-          isActive={shareButtonActive}
+          isActive={isActive}
           toggleShareButton={toggleShareButton}
         />
         {SOCIAL_SHARE.map(({ outlet, label, icon }, index) => (
           <ShareIcon
             key={label + index}
             slug={slug}
-            isActive={shareButtonActive}
+            isActive={isActive}
             toggleShareButton={toggleShareButton}
             outlet={outlet}
             label={label}

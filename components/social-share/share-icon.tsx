@@ -5,10 +5,11 @@ import {
   calculateIconLeftPosition,
   calculateIconTransition,
 } from 'utils/helpers.ts'
+import { type Signal } from '@preact/signals'
 
 interface Props {
   slug: string
-  isActive: boolean
+  isActive: Signal<boolean>
   toggleShareButton: () => void
   position: number
   icon: string
@@ -21,10 +22,10 @@ const ShareIcon = (
 ) => {
   const transition = calculateIconTransition(position, 50)
   const activeLeft = calculateIconLeftPosition(position, 40)
-  const left = isActive ? activeLeft : 0
-  const opacity = isActive ? 1 : 0
-  const top = isActive ? '60px' : 0
-  const pointerEvents = isActive ? 'auto' : 'none'
+  const left = isActive.value ? activeLeft : 0
+  const opacity = isActive.value ? 1 : 0
+  const top = isActive.value ? '60px' : 0
+  const pointerEvents = isActive.value ? 'auto' : 'none'
 
   return (
     <Link
