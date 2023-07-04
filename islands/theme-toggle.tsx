@@ -2,7 +2,7 @@ import { IS_BROWSER } from '$fresh/runtime.ts'
 import { effect, useSignal } from '@preact/signals'
 import ThemeToggleButton from 'components/theme-toggle-btn.tsx'
 
-enum Theme {
+const enum Theme {
   LIGHT = 'light',
   DARK = 'dark',
 }
