@@ -1,27 +1,44 @@
 import type { AdditionalImage } from 'models/works.d.ts'
 import type { Block } from 'models/article.d.ts'
-import { getImageDimensions } from 'sanity/asset-utils'
+import {
+  getImageDimensions,
+  type SanityImageDimensions,
+} from 'sanity/asset-utils'
 
-const formatDate = (date: string) => date.substring(0, 10)
+const formatDate = (date: string): string => date.substring(0, 10)
 
-const formatReadingTime = (readingMinutes: number) => {
+const formatReadingTime = (readingMinutes: number): string => {
   const noun = readingMinutes > 1 ? 'minutes' : 'minute'
   return `${readingMinutes} ${noun} read`
 }
 
-const calculateIconTransition = (position: number, multiplicator: number) => {
+const calculateIconTransition = (
+  position: number,
+  multiplicator: number,
+): string => {
   return `top 0.2s ${position * multiplicator}ms, left 0.2s ${
     position * multiplicator
   }ms, opacity 0.2s ${position * multiplicator}ms`
 }
 
-const calculateIconLeftPosition = (position: number, multiplicator: number) => {
+const calculateIconLeftPosition = (
+  position: number,
+  multiplicator: number,
+): string => {
   return `calc(${
     (-1) ** position * Math.ceil(position / 2) * multiplicator
   }px + 6px)`
 }
 
-const getImagesWithDimensions = (images: AdditionalImage[]) => {
+type ImageWithDimensions = {
+  id: string
+  url: string
+  dimensions: SanityImageDimensions
+}
+
+const getImagesWithDimensions = (
+  images: AdditionalImage[],
+): ImageWithDimensions[] => {
   return images.map(({ asset }) => ({
     id: asset._id,
     url: asset.url,
@@ -29,30 +46,15 @@ const getImagesWithDimensions = (images: AdditionalImage[]) => {
   }))
 }
 
-const mapToLanguageLogo = (language: string): string | undefined => {
-  const languages: Record<string, string> = {
-    jsx: '/images/reactjs.svg',
-    tsx: '/images/reactjs.svg',
-    javascript: '/images/javascript.svg',
-    js: '/images/javascript.svg',
-    typescript: '/images/typescript.svg',
-    ts: '/images/typescript.svg',
-    css: '/images/css.svg',
-    sass: '/images/sass.svg',
-  }
-
-  return languages[language]
-}
-
-const copyToClipboard = (text: string) => {
+const copyToClipboard = (text: string): Promise<void> => {
   return window.navigator.clipboard.writeText(text)
 }
 
-const truncateText = (text: string, numOfChars = 100) => {
+const truncateText = (text: string, numOfChars = 100): string => {
   return text.length > numOfChars ? text.substring(0, numOfChars) + '...' : text
 }
 
-const slugify = (str: string) => {
+const slugify = (str: string): string => {
   return str
     .toLowerCase()
     .replace(/\s+/g, '-') // Replace spaces with -
@@ -62,7 +64,7 @@ const slugify = (str: string) => {
     .replace(/-+$/, '') // Trim - from end of text
 }
 
-const extractHeadingsFromBlocks = (blocks: Block[]) => {
+const extractHeadingsFromBlocks = (blocks: Block[]): string[] => {
   return blocks.map((block) => {
     const { _type, children, style } = block
 
@@ -85,7 +87,6 @@ export {
   formatDate,
   formatReadingTime,
   getImagesWithDimensions,
-  mapToLanguageLogo,
   slugify,
   truncateText,
 }
