@@ -10,7 +10,7 @@ enum Theme {
 const STORAGE_KEY = 'ivanatias-theme'
 const MATCH_MEDIA = '(prefers-color-scheme: dark)'
 
-let initialTheme: Theme = Theme.LIGHT
+let initialTheme = Theme.LIGHT
 
 if (IS_BROWSER) {
   const storedMode = window.localStorage.getItem(STORAGE_KEY)
