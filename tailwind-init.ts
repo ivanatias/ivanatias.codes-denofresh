@@ -14,6 +14,8 @@ const TO = './static/styles/main.css'
 const tailwindInitialize = async (
   twConfig: Partial<TailwindConfig>,
 ) => {
+  const start = performance.now()
+
   const processor = postcss([
     (tailwindcss as PluginCreator)(twConfig),
     autoprefixer(),
@@ -26,7 +28,11 @@ const tailwindInitialize = async (
   await ensureFile(TO)
   await Deno.writeTextFile(TO, result.css)
 
-  console.info(`${green('TailwindCSS has been generated')}`)
+  const elapsed = performance.now() - start
+
+  console.info(
+    `${green(`TailwindCSS has been generated in ${elapsed.toFixed(2)}ms`)}`,
+  )
 
   twBundle.resolve()
 }
