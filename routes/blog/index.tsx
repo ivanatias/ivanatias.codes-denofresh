@@ -41,7 +41,7 @@ const Blog = ({ data: blogArticles }: PageProps<Props>) => (
           <ul class='grid grid-cols-1 sm:grid-cols-2 sm:gap-6 gap-8'>
             {blogArticles.map(({ _id, ...item }) => (
               <li key={_id}>
-                <ArticleCard key={_id} {...item} />
+                <ArticleCard {...item} />
               </li>
             ))}
           </ul>

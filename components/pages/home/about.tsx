@@ -1,8 +1,8 @@
 import Title from 'components/layout/title.tsx'
 import Paragraph from 'components/layout/paragraph.tsx'
 import Section from 'components/layout/section.tsx'
-import type { Biography } from 'models/biography.ts'
 import BiographyItem from 'components/biography-item.tsx'
+import type { Biography } from 'models/biography.ts'
 
 interface Props {
   biography: Biography[]
@@ -33,14 +33,13 @@ const About = ({ biography }: Props) => (
         nobody&apos;s business), look no further!
       </Paragraph>
     </div>
-    <div class='flex flex-col gap-3'>
+    <ul class='flex flex-col gap-3'>
       {biography.map(({ _id, ...item }) => (
-        <BiographyItem
-          key={_id}
-          {...item}
-        />
+        <li key={_id}>
+          <BiographyItem {...item} />
+        </li>
       ))}
-    </div>
+    </ul>
   </Section>
 )
 export default About

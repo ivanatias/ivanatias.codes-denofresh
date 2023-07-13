@@ -27,7 +27,7 @@ const Skills = () => (
   <ul class='flex flex-wrap justify-center sm:justify-start items-center w-full gap-4 md:gap-6'>
     {SKILLS.map((skill) => (
       <li key={skill.skillText}>
-        <Skill key={skill.skillText} {...skill} />
+        <Skill {...skill} />
       </li>
     ))}
   </ul>
