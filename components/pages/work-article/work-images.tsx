@@ -1,10 +1,4 @@
-import type { SanityImageDimensions } from 'sanity/asset-utils'
-
-interface ImageWithDimensions {
-  id: string
-  url: string
-  dimensions: SanityImageDimensions
-}
+import type { ImageWithDimensions } from 'utils/helpers.ts'
 
 interface Props {
   imagesWithDimensions: ImageWithDimensions[]

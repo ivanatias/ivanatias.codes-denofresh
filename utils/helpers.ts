@@ -87,6 +87,7 @@ export {
   formatDate,
   formatReadingTime,
   getImagesWithDimensions,
+  type ImageWithDimensions,
   slugify,
   truncateText,
 }
