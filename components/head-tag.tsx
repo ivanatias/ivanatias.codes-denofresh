@@ -1,6 +1,6 @@
 import { asset, Head } from '$fresh/runtime.ts'
-import type { JSX } from 'preact'
 import { BASE_URL } from 'constants/socials.ts'
+import type { JSX } from 'preact'
 
 type LinkAttributes = JSX.HTMLAttributes<HTMLLinkElement>
 

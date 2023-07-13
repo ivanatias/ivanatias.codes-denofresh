@@ -3,15 +3,6 @@ import { LINKS } from 'constants/links.ts'
 import { sharedMenuClasses } from 'utils/styling.ts'
 import { type Signal } from '@preact/signals'
 
-interface MenuButtonProps {
-  toggleMenu: () => void
-  isActive: Signal<boolean>
-}
-
-interface MenuLineProps extends Pick<MenuButtonProps, 'isActive'> {
-  activeClass: string
-}
-
 const MenuPopup = () => (
   <div class='z-50 absolute bottom-[-128px] right-4 w-[200px] bg-slate-50 dark:bg-[#1C1B1F] py-5 px-4 rounded-lg shadow-md'>
     <ul class='flex flex-col justify-center w-full gap-2'>
@@ -26,6 +17,11 @@ const MenuPopup = () => (
   </div>
 )
 
+interface MenuButtonProps {
+  toggleMenu: () => void
+  isActive: Signal<boolean>
+}
+
 const MenuButton = ({ toggleMenu, isActive }: MenuButtonProps) => (
   <button
     onClick={toggleMenu}
@@ -38,6 +34,10 @@ const MenuButton = ({ toggleMenu, isActive }: MenuButtonProps) => (
     <MenuLine isActive={isActive} activeClass='-rotate-45' />
   </button>
 )
+
+interface MenuLineProps extends Pick<MenuButtonProps, 'isActive'> {
+  activeClass: string
+}
 
 const MenuLine = ({ isActive, activeClass }: MenuLineProps) => (
   <span

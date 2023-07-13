@@ -1,12 +1,12 @@
 import Paragraph from 'components/layout/paragraph.tsx'
 import { SKILLS } from 'constants/skills.ts'
 
-interface Props {
+interface SkillProps {
   skillImage: string
   skillText: string
 }
 
-const Skill = ({ skillImage, skillText }: Props) => (
+const Skill = ({ skillImage, skillText }: SkillProps) => (
   <div class='flex flex-col items-center justify-center gap-2'>
     <div class='p-1 rounded-md dark:bg-slate-100'>
       <img

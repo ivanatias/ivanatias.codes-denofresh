@@ -1,25 +1,21 @@
 import Paragraph from 'components/layout/paragraph.tsx'
 
-interface BiographyProps {
-  year: string
-  description: string
-}
-
-interface BiographyItem {
-  children: string
-}
-
-const BioYear = ({ children }: BiographyItem) => (
+const BioYear = ({ children }: { children: string }) => (
   <span class='text-sm 2xl:text-base text-pink-800 dark:text-pink-400 font-bold'>
     {children}
   </span>
 )
 
-const BioDescription = ({ children }: BiographyItem) => (
+const BioDescription = ({ children }: { children: string }) => (
   <Paragraph>{children}</Paragraph>
 )
 
-const BiographyItem = ({ year, description }: BiographyProps) => (
+interface BiographyItemProps {
+  year: string
+  description: string
+}
+
+const BiographyItem = ({ year, description }: BiographyItemProps) => (
   <div class='flex flex-col sm:flex-row sm:items-center sm:gap-5 gap-3'>
     <BioYear>{year}</BioYear>
     <BioDescription>{description}</BioDescription>
