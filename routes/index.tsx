@@ -8,9 +8,9 @@ import LatestArticles from 'components/pages/home/latest-articles.tsx'
 import Packages from 'components/pages/home/packages.tsx'
 import Skills from 'components/pages/home/skills.tsx'
 import HeadTag from 'components/head-tag.tsx'
-import { getHomeContent } from 'services/content.ts'
+import { getHomeContent, type HomeContent } from 'services/content.ts'
 
-type Props = Awaited<ReturnType<typeof getHomeContent>>
+type Props = HomeContent
 
 export const handler: Handlers<Props> = {
   async GET(_req, ctx) {

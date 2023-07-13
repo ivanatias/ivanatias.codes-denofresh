@@ -65,7 +65,15 @@ const getHomeContent = async () => {
   }
 }
 
+type HomeContent = Awaited<ReturnType<typeof getHomeContent>>
+type BlogArticlesContent = Awaited<ReturnType<typeof getBlogArticles>>
+type WorksContent = Awaited<ReturnType<typeof getWorks>>
+type WorkContent = Awaited<ReturnType<typeof getWork>>
+type BlogArticleContent = Awaited<ReturnType<typeof getBlogArticle>>
+
 export {
+  type BlogArticleContent,
+  type BlogArticlesContent,
   getBiography,
   getBlogArticle,
   getBlogArticles,
@@ -73,4 +81,7 @@ export {
   getPackages,
   getWork,
   getWorks,
+  type HomeContent,
+  type WorkContent,
+  type WorksContent,
 }

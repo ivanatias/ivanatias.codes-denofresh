@@ -6,14 +6,14 @@ import ArticleHeader from 'components/pages/blog-article/article-header.tsx'
 import ArticleFooter from 'components/pages/blog-article/article-footer.tsx'
 import TableOfContent from 'components/pages/blog-article/table-of-content.tsx'
 import CustomPortableText from 'components/sanity-block-contents/portable-text/custom-portabletext.tsx'
-import { getBlogArticle } from 'services/content.ts'
+import { type BlogArticleContent, getBlogArticle } from 'services/content.ts'
 import {
   extractHeadingsFromBlocks,
   formatDate,
   formatReadingTime,
 } from 'utils/helpers.ts'
 
-type Props = NonNullable<Awaited<ReturnType<typeof getBlogArticle>>>
+type Props = NonNullable<BlogArticleContent>
 
 export const handler: Handlers<Props> = {
   async GET(_req, ctx) {

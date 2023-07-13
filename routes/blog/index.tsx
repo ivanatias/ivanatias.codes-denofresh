@@ -5,9 +5,9 @@ import Section from 'components/layout/section.tsx'
 import Title from 'components/layout/title.tsx'
 import Paragraph from 'components/layout/paragraph.tsx'
 import ArticleCard from 'components/article-card.tsx'
-import { getBlogArticles } from 'services/content.ts'
+import { type BlogArticlesContent, getBlogArticles } from 'services/content.ts'
 
-type Props = Awaited<ReturnType<typeof getBlogArticles>>
+type Props = BlogArticlesContent
 
 export const handler: Handlers<Props> = {
   async GET(_req, ctx) {

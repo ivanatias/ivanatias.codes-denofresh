@@ -6,10 +6,10 @@ import Paragraph from 'components/layout/paragraph.tsx'
 import Stack from 'components/pages/work-article/stack.tsx'
 import WorkLinks from 'components/pages/work-article/work-links.tsx'
 import WorkImages from 'components/pages/work-article/work-images.tsx'
-import { getWork } from 'services/content.ts'
+import { getWork, type WorkContent } from 'services/content.ts'
 import { getImagesWithDimensions } from 'utils/helpers.ts'
 
-type Props = NonNullable<Awaited<ReturnType<typeof getWork>>>
+type Props = NonNullable<WorkContent>
 
 export const handler: Handlers<Props> = {
   async GET(_req, ctx) {
