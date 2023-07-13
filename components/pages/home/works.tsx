@@ -12,9 +12,13 @@ const Works = ({ works }: Props) => (
     <Title titleClass='lg' titleTag='h2'>
       Personal projects
     </Title>
-    <div class='grid grid-cols-1 sm:grid-cols-2 gap-8'>
-      {works.map(({ _id, ...work }) => <WorkCard key={_id} {...work} />)}
-    </div>
+    <ul class='grid grid-cols-1 sm:grid-cols-2 gap-8'>
+      {works.map(({ _id, ...work }) => (
+        <li key={_id}>
+          <WorkCard {...work} />
+        </li>
+      ))}
+    </ul>
   </Section>
 )
 

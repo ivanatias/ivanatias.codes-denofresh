@@ -38,14 +38,13 @@ const Blog = ({ data: blogArticles }: PageProps<Props>) => (
               Articles
             </Title>
           </header>
-          <div class='grid grid-cols-1 sm:grid-cols-2 sm:gap-6 gap-8'>
+          <ul class='grid grid-cols-1 sm:grid-cols-2 sm:gap-6 gap-8'>
             {blogArticles.map(({ _id, ...item }) => (
-              <ArticleCard
-                key={_id}
-                {...item}
-              />
+              <li key={_id}>
+                <ArticleCard key={_id} {...item} />
+              </li>
             ))}
-          </div>
+          </ul>
         </Section>
       </Section>
     </Wrapper>

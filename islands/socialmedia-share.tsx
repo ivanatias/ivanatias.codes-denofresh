@@ -23,7 +23,7 @@ const Share = ({ slug }: Props) => {
         />
         {SOCIAL_SHARE.map(({ outlet, label, icon }, index) => (
           <ShareIcon
-            key={label + index}
+            key={label}
             slug={slug}
             isActive={isActive}
             toggleShareButton={toggleShareButton}

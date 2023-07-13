@@ -24,9 +24,13 @@ const Skill = ({ skillImage, skillText }: Props) => (
 )
 
 const Skills = () => (
-  <div class='flex flex-wrap justify-center sm:justify-start items-center w-full gap-4 md:gap-6'>
-    {SKILLS.map((skill) => <Skill key={skill.skillText} {...skill} />)}
-  </div>
+  <ul class='flex flex-wrap justify-center sm:justify-start items-center w-full gap-4 md:gap-6'>
+    {SKILLS.map((skill) => (
+      <li key={skill.skillText}>
+        <Skill key={skill.skillText} {...skill} />
+      </li>
+    ))}
+  </ul>
 )
 
 export default Skills

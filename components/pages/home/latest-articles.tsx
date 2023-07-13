@@ -14,14 +14,13 @@ const LatestArticles = ({ latestArticles }: Props) => (
       Latest blog articles
     </Title>
     <div class='flex flex-col gap-4'>
-      <div class='grid grid-cols-1 sm:grid-cols-2 sm:gap-6 gap-8'>
+      <ul class='grid grid-cols-1 sm:grid-cols-2 sm:gap-6 gap-8'>
         {latestArticles.map(({ _id, ...item }) => (
-          <ArticleCard
-            key={_id}
-            {...item}
-          />
+          <li key={_id}>
+            <ArticleCard {...item} />
+          </li>
         ))}
-      </div>
+      </ul>
       <div class='mt-3'>
         <Link href='/blog'>
           Read all articles →

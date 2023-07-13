@@ -12,9 +12,13 @@ const Packages = ({ packages }: Props) => (
     <Title titleTag='h2' titleClass='lg'>
       Published packages
     </Title>
-    {packages.map(({ _id, ...npmPackage }) => (
-      <PackageCard key={_id} {...npmPackage} />
-    ))}
+    <ul class='flex flex-col gap-4'>
+      {packages.map(({ _id, ...npmPackage }) => (
+        <li key={_id}>
+          <PackageCard {...npmPackage} />
+        </li>
+      ))}
+    </ul>
   </Section>
 )
 

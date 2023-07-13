@@ -9,16 +9,16 @@ const Stack = ({ stack }: Props) => (
     <span class='inline-block px-4 py-1 text-xs md:text-sm text-white bg-indigo-800 dark:bg-indigo-600 font-semibold rounded-lg'>
       Stack
     </span>
-    <div class='flex flex-wrap items-center gap-1'>
+    <ul class='flex flex-wrap items-center gap-1'>
       {stack.map(({ _key, tech }) => (
-        <span
+        <li
           key={_key}
           class='text-xs md:text-sm text-slate-700 dark:text-slate-300 underline'
         >
           {tech}
-        </span>
+        </li>
       ))}
-    </div>
+    </ul>
   </div>
 )
 
