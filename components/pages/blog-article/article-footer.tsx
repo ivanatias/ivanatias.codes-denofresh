@@ -1,6 +1,6 @@
 import Link from 'components/link.tsx'
 import Share from 'islands/socialmedia-share.tsx'
-import type { BlogArticle } from 'models/article.d.ts'
+import type { BlogArticle } from 'models/article.ts'
 
 interface Props extends Omit<BlogArticle, 'currentPost'> {
   postSlug: string

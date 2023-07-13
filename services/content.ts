@@ -8,11 +8,11 @@ import {
   getWorkQuery,
   getWorksQuery,
 } from 'utils/queries.ts'
-import type { Biography } from 'models/biography.d.ts'
-import type { ArticleReadingTime, BlogArticle } from 'models/article.d.ts'
-import type { Blog } from 'models/blogs.d.ts'
-import type { Work, WorkDetails } from 'models/works.d.ts'
-import type { Package } from 'models/packages.d.ts'
+import type { Biography } from 'models/biography.ts'
+import type { ArticleReadingTime, BlogArticle } from 'models/article.ts'
+import type { Blog } from 'models/blog.ts'
+import type { Work, WorkDetails } from 'models/works.ts'
+import type { Package } from 'models/packages.ts'
 
 const getBiography = (): Promise<Biography[]> => {
   return client.fetch(getBiographyQuery())

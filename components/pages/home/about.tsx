@@ -1,7 +1,7 @@
 import Title from 'components/layout/title.tsx'
 import Paragraph from 'components/layout/paragraph.tsx'
 import Section from 'components/layout/section.tsx'
-import type { Biography } from 'models/biography.d.ts'
+import type { Biography } from 'models/biography.ts'
 import BiographyItem from 'components/biography-item.tsx'
 
 interface Props {

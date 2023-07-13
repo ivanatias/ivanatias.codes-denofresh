@@ -3,7 +3,7 @@ import Title from 'components/layout/title.tsx'
 import Article from 'components/layout/article.tsx'
 import Paragraph from 'components/layout/paragraph.tsx'
 import { getImageDimensions } from 'sanity/asset-utils'
-import type { Work } from 'models/works.d.ts'
+import type { Work } from 'models/works.ts'
 
 type Props = Omit<Work, '_id'>
 

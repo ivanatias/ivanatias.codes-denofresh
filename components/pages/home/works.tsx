@@ -1,7 +1,7 @@
 import Title from 'components/layout/title.tsx'
 import Section from 'components/layout/section.tsx'
 import WorkCard from 'components/work-card.tsx'
-import type { Work } from 'models/works.d.ts'
+import type { Work } from 'models/works.ts'
 
 interface Props {
   works: Work[]

@@ -1,6 +1,6 @@
 import { getImageDimensions } from 'sanity/asset-utils'
 import { urlFor } from 'lib/sanity.ts'
-import type { ArticleImage as ArticleImageType } from 'models/article.d.ts'
+import type { ArticleImage as ArticleImageType } from 'models/article.ts'
 
 interface Props {
   image: ArticleImageType

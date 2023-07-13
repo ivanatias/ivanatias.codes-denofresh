@@ -2,7 +2,7 @@ import Title from 'components/layout/title.tsx'
 import Section from 'components/layout/section.tsx'
 import ArticleCard from 'components/article-card.tsx'
 import Link from 'components/link.tsx'
-import type { Blog } from 'models/blogs.d.ts'
+import type { Blog } from 'models/blog.ts'
 
 interface Props {
   latestArticles: Blog[]

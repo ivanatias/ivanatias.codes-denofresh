@@ -3,7 +3,7 @@ import Title from 'components/layout/title.tsx'
 import Paragraph from 'components/layout/paragraph.tsx'
 import SVG from 'components/svg.tsx'
 import Link from 'components/link.tsx'
-import type { Package } from 'models/packages.d.ts'
+import type { Package } from 'models/packages.ts'
 
 type Props = Omit<Package, '_id'>
 

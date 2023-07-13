@@ -1,5 +1,5 @@
-import type { AdditionalImage } from 'models/works.d.ts'
-import type { Block } from 'models/article.d.ts'
+import type { AdditionalImage } from 'models/works.ts'
+import type { Block } from 'models/article.ts'
 import {
   getImageDimensions,
   type SanityImageDimensions,

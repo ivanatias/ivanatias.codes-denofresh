@@ -1,7 +1,7 @@
 import Section from 'components/layout/section.tsx'
 import Title from 'components/layout/title.tsx'
 import PackageCard from 'components/package-card.tsx'
-import type { Package } from 'models/packages.d.ts'
+import type { Package } from 'models/packages.ts'
 
 interface Props {
   packages: Package[]

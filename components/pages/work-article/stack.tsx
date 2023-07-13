@@ -1,4 +1,4 @@
-import type { Stack as StackType } from 'models/works.d.ts'
+import type { Stack as StackType } from 'models/works.ts'
 
 interface Props {
   stack: StackType[]
