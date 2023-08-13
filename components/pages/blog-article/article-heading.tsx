@@ -1,8 +1,9 @@
+import type { ComponentChildren } from 'preact'
 import Title, { type Heading } from 'components/layout/title.tsx'
 import type { HeadingStyling } from 'utils/styling.ts'
 
 interface Props {
-  children: string
+  children: ComponentChildren
   id: string
   heading?: Heading
   titleClass?: HeadingStyling

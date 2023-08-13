@@ -1,72 +1,43 @@
-import type { Handlers, PageProps } from '$fresh/server.ts'
+import type { RouteContext } from '$fresh/server.ts'
 import Wrapper from 'components/layout/wrapper.tsx'
 import HeadTag from 'components/head-tag.tsx'
 import Article from 'components/layout/article.tsx'
-import Paragraph from 'components/layout/paragraph.tsx'
-import Stack from 'components/pages/work-article/stack.tsx'
-import WorkLinks from 'components/pages/work-article/work-links.tsx'
-import WorkImages from 'components/pages/work-article/work-images.tsx'
-import { getWork, type WorkContent } from 'services/content.ts'
-import { getImagesWithDimensions } from 'utils/helpers.ts'
+import BlocksRenderer from 'components/blocks-renderer.tsx'
+import PageSwitch from 'components/page-switch.tsx'
+import { DB_TYPES, getNotionPageContent } from 'lib/notion.ts'
+import { extractProjectMetadata } from 'utils/notion.ts'
 
-type Props = NonNullable<WorkContent>
+const Work = async (_req: Request, ctx: RouteContext) => {
+  const { slug } = ctx.params
 
-export const handler: Handlers<Props> = {
-  async GET(_req, ctx) {
-    const { slug } = ctx.params
-    const work = await getWork(slug)
+  const page = await getNotionPageContent(slug, DB_TYPES.PROJECTS)
 
-    return work === null ? ctx.renderNotFound() : ctx.render(work)
-  },
-}
+  if (page === null) return ctx.renderNotFound()
 
-const Work = ({ data }: PageProps<Props>) => {
-  const {
-    title,
-    description,
-    additionalImages,
-    githubUrl,
-    projectUrl,
-    stack,
-    slug,
-  } = data
+  const { content, foundPage, nextPageTitle, prevPageTitle } = page
 
-  const workLinks = [
-    {
-      href: githubUrl,
-      icon: 'icon-github',
-      label: 'Source code',
-    },
-    {
-      href: projectUrl,
-      icon: 'icon-eye',
-      label: 'Live project',
-    },
-  ]
-
-  const imagesWithDimensions = getImagesWithDimensions(additionalImages)
+  const { title } = extractProjectMetadata(foundPage)
 
   return (
     <>
-      <HeadTag title={title} canonicalUrlPath={`/works/${slug.current}`} />
+      <HeadTag title={title} canonicalUrlPath={`/works/${slug}`} />
       <Wrapper>
         <Article>
           <header>
-            <h3 class='text-base md:text-lg text-pink-800 dark:text-pink-400 font-bold'>
+            <h2 class='text-3xl md:text-4xl text-indigo-700 dark:text-indigo-400 font-bold'>
               {title}
-            </h3>
+            </h2>
           </header>
-          <Paragraph>
-            {description}
-          </Paragraph>
-          <div class='flex flex-col text-xs md:text-sm text-slate-800 dark:text-slate-100 gap-3 font-semibold'>
-            <Stack stack={stack} />
-            <WorkLinks workLinks={workLinks} />
-          </div>
-          <WorkImages
-            imagesWithDimensions={imagesWithDimensions}
-            workTitle={title}
-          />
+
+          {content.map((c) => <BlocksRenderer key={c.id} block={c} />)}
+
+          <footer class='mt-10'>
+            <PageSwitch
+              prevPageTitle={prevPageTitle}
+              nextPageTitle={nextPageTitle}
+              type='project'
+            />
+          </footer>
         </Article>
       </Wrapper>
     </>

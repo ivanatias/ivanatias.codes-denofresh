@@ -2,26 +2,22 @@ import Link from 'components/link.tsx'
 import Title from 'components/layout/title.tsx'
 import Article from 'components/layout/article.tsx'
 import Paragraph from 'components/layout/paragraph.tsx'
-import { getImageDimensions } from 'sanity/asset-utils'
-import type { Work } from 'models/works.ts'
+import { slugify } from 'utils/helpers.ts'
+import type { ProjectArticleEntry } from 'utils/notion.ts'
 
-type Props = Omit<Work, '_id'>
+type Props = ProjectArticleEntry
 
-const WorkCard = ({ thumbNail, title, overview, slug }: Props) => {
-  const { width, height } = getImageDimensions(thumbNail.asset)
-
+const WorkCard = ({ title, coverImageUrl, description }: Props) => {
   return (
     <Link
-      href={`/works/${slug.current}`}
+      href={`/works/${slugify(title)}`}
       className=''
     >
       <Article className='flex flex-col items-center justify-center md:transition-transform md:duration-300 md:hover:scale-105'>
         <img
-          src={thumbNail.asset.url}
+          src={coverImageUrl}
           alt={title}
-          width={width}
-          height={height}
-          class='w-full h-auto rounded-lg'
+          class='w-full rounded-lg aspect-video'
           decoding='async'
           loading='lazy'
         />
@@ -29,7 +25,7 @@ const WorkCard = ({ thumbNail, title, overview, slug }: Props) => {
           <Title titleTag='h3' titleClass='small'>
             {title}
           </Title>
-          <Paragraph pClass='small' centered>{overview}</Paragraph>
+          <Paragraph pClass='small' centered>{description}</Paragraph>
         </div>
       </Article>
     </Link>

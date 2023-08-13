@@ -1,11 +1,5 @@
-import type { AdditionalImage } from 'models/works.ts'
-import type { Block } from 'models/article.ts'
-import {
-  getImageDimensions,
-  type SanityImageDimensions,
-} from 'sanity/asset-utils'
-
-const formatDate = (date: string): string => date.substring(0, 10)
+// deno-lint-ignore-file no-explicit-any
+import type { Block } from 'utils/notion.ts'
 
 const formatReadingTime = (readingMinutes: number): string => {
   const noun = readingMinutes > 1 ? 'minutes' : 'minute'
@@ -30,22 +24,6 @@ const calculateIconLeftPosition = (
   }px + 6px)`
 }
 
-type ImageWithDimensions = {
-  id: string
-  url: string
-  dimensions: SanityImageDimensions
-}
-
-const getImagesWithDimensions = (
-  images: AdditionalImage[],
-): ImageWithDimensions[] => {
-  return images.map(({ asset }) => ({
-    id: asset._id,
-    url: asset.url,
-    dimensions: getImageDimensions(asset),
-  }))
-}
-
 const copyToClipboard = (text: string): Promise<void> => {
   return window.navigator.clipboard.writeText(text)
 }
@@ -57,37 +35,34 @@ const truncateText = (text: string, numOfChars = 100): string => {
 const slugify = (str: string): string => {
   return str
     .toLowerCase()
-    .replace(/\s+/g, '-') // Replace spaces with -
+    .replace(/\s+|\//g, '-') // Replace white spaces and slashes with -
     .replace(/[^\w\-]+/g, '') // Remove all non-word chars
     .replace(/\-\-+/g, '-') // Replace multiple - with single -
     .replace(/^-+/, '') // Trim - from start of text
     .replace(/-+$/, '') // Trim - from end of text
 }
 
-const extractHeadingsFromBlocks = (blocks: Block[]): string[] => {
-  return blocks.map((block) => {
-    const { _type, children, style } = block
+const extractHeadings = (blocks: Block[]): string[] => {
+  return blocks
+    .filter((block) => {
+      const regexp = /^heading_\d+$/
 
-    if (
-      _type === 'block' && children !== undefined &&
-      style !== undefined && /^h\d$/.test(style)
-    ) {
-      return children[0].text
-    }
+      return regexp.test(block.type)
+    }).flatMap((block: any) => {
+      const { type } = block
 
-    return ''
-  }).filter(Boolean)
+      return block[type].rich_text.map((item: any) => {
+        return item.plain_text
+      })
+    })
 }
 
 export {
   calculateIconLeftPosition,
   calculateIconTransition,
   copyToClipboard,
-  extractHeadingsFromBlocks,
-  formatDate,
+  extractHeadings,
   formatReadingTime,
-  getImagesWithDimensions,
-  type ImageWithDimensions,
   slugify,
   truncateText,
 }

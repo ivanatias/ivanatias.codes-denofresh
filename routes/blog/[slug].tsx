@@ -1,80 +1,54 @@
-import type { Handlers, PageProps } from '$fresh/server.ts'
+import type { RouteContext } from '$fresh/server.ts'
 import Wrapper from 'components/layout/wrapper.tsx'
 import HeadTag from 'components/head-tag.tsx'
 import Article from 'components/layout/article.tsx'
 import ArticleHeader from 'components/pages/blog-article/article-header.tsx'
 import ArticleFooter from 'components/pages/blog-article/article-footer.tsx'
 import TableOfContent from 'components/pages/blog-article/table-of-content.tsx'
-import CustomPortableText from 'components/sanity-block-contents/portable-text/custom-portabletext.tsx'
-import { type BlogArticleContent, getBlogArticle } from 'services/content.ts'
-import {
-  extractHeadingsFromBlocks,
-  formatDate,
-  formatReadingTime,
-} from 'utils/helpers.ts'
+import BlocksRenderer from 'components/blocks-renderer.tsx'
+import { DB_TYPES, getNotionPageContent } from 'lib/notion.ts'
+import { extractArticleMetadata } from 'utils/notion.ts'
+import { extractHeadings } from 'utils/helpers.ts'
 
-type Props = NonNullable<BlogArticleContent>
+const BlogArticle = async (_req: Request, ctx: RouteContext) => {
+  const { slug } = ctx.params
+  const page = await getNotionPageContent(slug, DB_TYPES.BLOG)
 
-export const handler: Handlers<Props> = {
-  async GET(_req, ctx) {
-    const { slug } = ctx.params
-    const articleContent = await getBlogArticle(slug)
+  if (page === null) return ctx.renderNotFound()
 
-    return articleContent === null
-      ? ctx.renderNotFound()
-      : ctx.render(articleContent)
-  },
-}
+  const { content, foundPage, nextPageTitle, prevPageTitle } = page
 
-const BlogArticle = ({ data }: PageProps<Props>) => {
-  const {
-    blogArticle: { previousPost, currentPost, nextPost },
-    readingTime: { estimatedReadingTime },
-  } = data
+  const metadata = extractArticleMetadata(foundPage)
 
-  const {
-    articleTitle,
-    articleBody,
-    coverImage,
-    publishDate,
-    slug,
-    socialShareImage,
-    excerpt,
-  } = currentPost
-
-  const { altText, image: { asset: { url: coverImageUrl } } } = coverImage
-  const { asset: { url: socialImageUrl } } = socialShareImage
-
-  const formattedDate = formatDate(publishDate)
-  const formattedReadingTime = formatReadingTime(estimatedReadingTime)
-
-  const headings = extractHeadingsFromBlocks(articleBody)
+  const headings = extractHeadings(content)
 
   return (
     <>
       <HeadTag
-        title={articleTitle}
-        canonicalUrlPath={`/blog/${slug.current}`}
-        description={excerpt}
-        socialCardImage={socialImageUrl}
+        title={metadata.title}
+        canonicalUrlPath={`/blog/${slug}`}
+        description={metadata.description}
+        socialCardImage={metadata.socialCardImage}
         contentType='article'
       />
       <Wrapper showHeader={false}>
         <Article>
           {headings.length > 0 && <TableOfContent headings={headings} />}
           <ArticleHeader
-            coverImageUrl={coverImageUrl}
-            imageAltText={altText}
-            title={articleTitle}
-            publishDate={publishDate}
-            formattedReadingTime={formattedReadingTime}
-            formattedDate={formattedDate}
+            coverImageUrl={metadata.coverImageUrl}
+            imageAttribution={metadata.imageAttribution}
+            title={metadata.title}
+            publishDate={metadata.publishedAt}
+            readingTime={metadata.readingTime}
+            tags={metadata.tags}
           />
-          <CustomPortableText articleBody={articleBody} />
+
+          {content.map((c) => <BlocksRenderer key={c.id} block={c} />)}
+
           <ArticleFooter
-            previousPost={previousPost}
-            nextPost={nextPost}
-            postSlug={slug.current}
+            articleSlug={slug}
+            prevPageTitle={prevPageTitle}
+            nextPageTitle={nextPageTitle}
           />
         </Article>
       </Wrapper>
