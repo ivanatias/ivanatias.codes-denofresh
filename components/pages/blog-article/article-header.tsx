@@ -34,7 +34,7 @@ const ArticleHeader = (
           <img
             src={coverImageUrl}
             alt={alt}
-            class='rounded-md w-full aspect-video'
+            class='rounded-md w-full aspect-[1.5]'
           />
           <figcaption class='text-xs md:text-sm text-center'>
             Photo by{' '}

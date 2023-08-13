@@ -22,7 +22,7 @@ const ArticleCard = (
         <img
           src={coverImageUrl}
           alt={title}
-          class='aspect-video rounded-[3px] w-full'
+          class='aspect-[1.5] rounded-[3px] w-full'
           decoding='async'
           loading='lazy'
         />
