@@ -13,7 +13,7 @@ const Skill = ({ skillImage, skillText }: SkillProps) => (
         src={skillImage}
         width='40'
         height='40'
-        alt={skillText}
+        alt={`Logo for ${skillText}`}
         class='w-10 h-10'
       />
     </div>
