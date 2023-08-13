@@ -30,6 +30,9 @@ const BlogArticle = async (_req: Request, ctx: RouteContext) => {
         description={metadata.description}
         socialCardImage={metadata.socialCardImage}
         contentType='article'
+        linkTags={[
+          { rel: 'preload', href: metadata.coverImageUrl, as: 'image' },
+        ]}
       />
       <Wrapper showHeader={false}>
         <Article>
