@@ -43,18 +43,21 @@ const slugify = (str: string): string => {
 }
 
 const extractHeadings = (blocks: Block[]): string[] => {
-  return blocks
-    .filter((block) => {
-      const regexp = /^heading_\d+$/
+  const regexp = /^heading_\d+$/
+  const headings: string[] = []
 
-      return regexp.test(block.type)
-    }).flatMap((block: any) => {
-      const { type } = block
+  for (const block of blocks) {
+    const { type } = block
+    if (!regexp.test(type)) continue
 
-      return block[type].rich_text.map((item: any) => {
-        return item.plain_text
-      })
-    })
+    const richText = (block as any)[type].rich_text
+
+    for (const item of richText) {
+      headings.push(item.plain_text)
+    }
+  }
+
+  return headings
 }
 
 export {
