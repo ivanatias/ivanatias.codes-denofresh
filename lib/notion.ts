@@ -73,7 +73,7 @@ const getBlocks = (id: string) => {
   })
 }
 
-const getPageBlocks = async (pageId: string) => {
+const getPageBlocks = async (pageId: string): Promise<Block[]> => {
   const blocks = await getBlocks(pageId)
 
   const blocksWithChildren = await Promise.all(
@@ -87,62 +87,67 @@ const getPageBlocks = async (pageId: string) => {
       })),
   )
 
-  return blocks.results
-    .map((parentBlock: any) => {
-      const { type, has_children, id } = parentBlock
+  const updatedBlocks: Block[] = []
 
-      if (has_children && parentBlock[type].children === undefined) {
-        /*
-          if a Block is suppossed to have children, then include those
-          into the children property for easy/convenient access later on.
-          Since all blocks with children have been retrieved previously and stored
-          in an array of objects consisting of the block's id and its children,
-          the next step is finding the children of the parent block using the id
-          as a matcher.
-        */
-        parentBlock[type].children = blocksWithChildren.find((b) => {
-          return b.id === id
-        })?.children
-      }
+  blocks.results.forEach((block: any) => {
+    const { type, has_children, id } = block
+    const shouldAddChildren = has_children && block[type].children === undefined
 
-      return parentBlock
-    })
-    .reduce((acc, item: any) => {
-      const { type } = item
+    if (shouldAddChildren) {
+      /*
+        if a Block is suppossed to have children, then include those
+        into the children property for easy/convenient access later on.
+        Since all blocks with children have been retrieved previously and stored
+        in an array of objects consisting of the block's id and its children,
+        the next step is finding the children of the parent block using the id
+         as a matcher.
+      */
+      const children = blocksWithChildren.find((b) => {
+        return b.id === id
+      })?.children
 
-      const isListItem = type === 'bulleted_list_item' ||
-        type === 'numbered_list_item'
+      block[type].children = children
+    }
 
-      if (isListItem) {
-        const lastItem = acc[acc.length - 1]
-        const isList = lastItem?.type === 'bulleted_list' ||
-          lastItem?.type === 'numbered_list'
+    const isListItem = type === 'bulleted_list_item' ||
+      type === 'numbered_list_item'
 
-        if (isList) {
-          lastItem[lastItem?.type].children.results.push(item)
-          return acc
-        }
+    /*
+      If block is not a list item, just push it to the updated blocks array
+      and continue with the next block. Otherwise, it's necessary to check
+      if this is the first list item on the list, which means the list parent block should be
+      created (bulleted list or numbered list) and add the list item(s) as its child.
+    */
+    if (!isListItem) return updatedBlocks.push(block)
 
-        const listType = type === 'bulleted_list_item'
-          ? 'bulleted_list'
-          : 'numbered_list'
+    const lastItem = updatedBlocks[updatedBlocks.length - 1] as any
 
-        const newItem = {
-          object: 'block',
-          has_children: true,
-          type: listType,
-          [listType]: {
-            children: {
-              results: [item],
-            },
+    const isList = lastItem?.type === 'bulleted_list' ||
+      lastItem?.type === 'numbered_list'
+
+    if (isList) {
+      lastItem[lastItem.type].children.results.push(block)
+    } else {
+      const listType = type === 'bulleted_list_item'
+        ? 'bulleted_list'
+        : 'numbered_list'
+
+      const newItem = {
+        object: 'block',
+        has_children: true,
+        type: listType,
+        [listType]: {
+          children: {
+            results: [block],
           },
-        }
+        },
+      } as Block
 
-        return [...acc, newItem]
-      }
+      updatedBlocks.push(newItem)
+    }
+  })
 
-      return [...acc, item]
-    }, []) as Block[]
+  return updatedBlocks
 }
 
 const getPreviousAndNextPage = (pages: any[], actualPageIndex: number) => {
