@@ -2,7 +2,7 @@
 import { Client, isFullBlock } from 'notion'
 import { slugify } from 'utils/helpers.ts'
 import { DEVELOPMENT, ENV } from 'constants/env.ts'
-import { type Block, type PageObjectResponse } from 'utils/notion.ts'
+import type { Block, PageObjectResponse } from 'utils/notion.ts'
 
 const NOTION_SECRET = Deno.env.get('NOTION_SECRET')
 const BLOG_DB = Deno.env.get('NOTION_BLOG_DB_ID')
@@ -79,7 +79,7 @@ const getPageBlocks = async (pageId: string): Promise<Block[]> => {
   const blocksWithChildren = await Promise.all(
     blocks.results
       .filter((block) => {
-        return isFullBlock(block) ? block.has_children : false
+        return isFullBlock(block) && block.has_children
       })
       .map(async (block) => ({
         id: block.id,
@@ -89,7 +89,12 @@ const getPageBlocks = async (pageId: string): Promise<Block[]> => {
 
   const updatedBlocks: Block[] = []
 
-  blocks.results.forEach((block: any) => {
+  /*
+    Both forEach and for...of approaches have the advantage of avoiding an extra iteration
+    to transform the blocks into lists if needed, as oppossed to the map + reduce approach.
+    for...of loop seems to be more performant in this case.
+  */
+  for (const block of blocks.results as any) {
     const { type, has_children, id } = block
     const shouldAddChildren = has_children && block[type].children === undefined
 
@@ -118,7 +123,10 @@ const getPageBlocks = async (pageId: string): Promise<Block[]> => {
       if this is the first list item on the list, which means the list parent block should be
       created (bulleted list or numbered list) and add the list item(s) as its child.
     */
-    if (!isListItem) return updatedBlocks.push(block)
+    if (!isListItem) {
+      updatedBlocks.push(block)
+      continue
+    }
 
     const lastItem = updatedBlocks[updatedBlocks.length - 1] as any
 
@@ -145,7 +153,7 @@ const getPageBlocks = async (pageId: string): Promise<Block[]> => {
 
       updatedBlocks.push(newItem)
     }
-  })
+  }
 
   return updatedBlocks
 }
@@ -173,14 +181,15 @@ const getPreviousAndNextPage = (pages: any[], actualPageIndex: number) => {
 type NotionPageResults = {
   foundPage: PageObjectResponse
   content: Block[]
-  prevPageTitle: string | undefined
-  nextPageTitle: string | undefined
+  prevPageTitle?: string
+  nextPageTitle?: string
 }
 
 const getNotionPageContent = async (
   slug: string,
   type: DB_TYPE,
 ): Promise<NotionPageResults | null> => {
+  const start = performance.now()
   const { results } = await queryDatabase(type)
 
   // Fix typings for this later on
@@ -190,14 +199,19 @@ const getNotionPageContent = async (
 
   if (foundPage === undefined) return null
 
-  const blocks = await getPageBlocks(foundPage.id)
-
-  const foundPageIndex = results.indexOf(foundPage)
+  const [blocks, foundPageIndex] = await Promise.all([
+    getPageBlocks(foundPage.id),
+    Promise.resolve(results.indexOf(foundPage)),
+  ])
 
   const { nextPageTitle, prevPageTitle } = getPreviousAndNextPage(
     results,
     foundPageIndex,
   )
+
+  const elapsed = performance.now() - start
+
+  console.info(`Notion page content retrieved in ${elapsed.toFixed(2)}ms`)
 
   return {
     foundPage: foundPage as PageObjectResponse,
