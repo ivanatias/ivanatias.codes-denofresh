@@ -1,5 +1,6 @@
 const DEVELOPMENT = 'development'
+const BUILD = 'build'
 
 const ENV = Deno.env.get('ENV') ?? DEVELOPMENT
 
-export { DEVELOPMENT, ENV }
+export { BUILD, DEVELOPMENT, ENV }

@@ -1,7 +1,7 @@
 // deno-lint-ignore-file no-explicit-any
 import { Client, isFullBlock } from 'notion'
 import { slugify } from 'utils/helpers.ts'
-import { DEVELOPMENT, ENV } from 'constants/env.ts'
+import { BUILD, DEVELOPMENT, ENV } from 'constants/env.ts'
 import type { Block, PageObjectResponse } from 'utils/notion.ts'
 
 const NOTION_SECRET = Deno.env.get('NOTION_SECRET')
@@ -14,7 +14,7 @@ const allEnvSet = NOTION_SECRET !== undefined && BLOG_DB !== undefined &&
   PROJECTS_DB !== undefined && CONTRIBUTIONS_DB !== undefined &&
   PACKAGES_DB !== undefined
 
-if (!allEnvSet) {
+if (!allEnvSet && ENV !== BUILD) {
   throw new Error(
     `All Notion environment variables must be set, check for NOTION_SECRET, NOTION_BLOG_DB_ID, 
     NOTION_PROJECTS_DB_ID, NOTION_CONTRIBUTIONS_DB_ID 
@@ -32,10 +32,10 @@ const DB_TYPES = {
 type DB_TYPE = typeof DB_TYPES[keyof typeof DB_TYPES]
 
 const databases: Record<DB_TYPE, string> = {
-  blog: BLOG_DB,
-  projects: PROJECTS_DB,
-  contributions: CONTRIBUTIONS_DB,
-  packages: PACKAGES_DB,
+  blog: BLOG_DB as string,
+  projects: PROJECTS_DB as string,
+  contributions: CONTRIBUTIONS_DB as string,
+  packages: PACKAGES_DB as string,
 } as const
 
 const notionClient = new Client({
