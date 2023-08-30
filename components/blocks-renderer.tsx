@@ -230,8 +230,8 @@ const BlocksRenderer = ({ block }: Props) => {
 
       return (
         <div class='p-3 bg-slate-200/40 border border-slate-300 dark:border-slate-700 dark:bg-slate-700/30 text-slate-700 dark:text-slate-300 text-base md:text-lg rounded-lg'>
-          {emoji !== '' && <span class='text-xl mr-2'>{emoji}</span>}
-          <p class='pl-6'>
+          {emoji !== '' && <span class='text-xl'>{emoji}</span>}
+          <p class={emoji !== '' ? 'pl-6' : ''}>
             <Text item={item} />
           </p>
         </div>
