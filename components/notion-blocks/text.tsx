@@ -22,7 +22,7 @@ const Text = ({ item }: Props) => (
             strikethrough ? 'line-through' : '',
             underline ? 'underline' : '',
             code
-              ? 'px-2 rounded-lg font-bold font-mono text-sm md:text-base text-slate-700 dark:text-slate-100 border-[1px] border-slate-300 dark:border-zinc-800 bg-slate-100 dark:bg-zinc-900'
+              ? 'rounded-sm bg-slate-200/70 dark:bg-gray-800/50 font-bold text-sm md:text-base text-indigo-500 dark:text-indigo-400 py-1 px-2 font-mono'
               : '',
           ].join(' ')}
           style={color === 'default' ? {} : { color }}
