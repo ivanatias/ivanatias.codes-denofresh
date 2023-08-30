@@ -29,9 +29,9 @@ const DB_TYPES = {
   PACKAGES: 'packages',
 } as const
 
-type DB_TYPE = typeof DB_TYPES[keyof typeof DB_TYPES]
+type DatabaseType = typeof DB_TYPES[keyof typeof DB_TYPES]
 
-const databases: Record<DB_TYPE, string> = {
+const databases: Record<DatabaseType, string> = {
   blog: BLOG_DB as string,
   projects: PROJECTS_DB as string,
   contributions: CONTRIBUTIONS_DB as string,
@@ -42,7 +42,7 @@ const notionClient = new Client({
   auth: NOTION_SECRET,
 })
 
-const queryDatabase = (database: DB_TYPE) => {
+const queryDatabase = (database: DatabaseType) => {
   const options: {
     database_id: string
     filter?: {
@@ -187,7 +187,7 @@ type NotionPageResults = {
 
 const getNotionPageContent = async (
   slug: string,
-  type: DB_TYPE,
+  type: DatabaseType,
 ): Promise<NotionPageResults | null> => {
   const start = performance.now()
   const { results } = await queryDatabase(type)
