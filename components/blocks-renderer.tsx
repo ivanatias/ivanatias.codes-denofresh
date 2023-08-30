@@ -200,7 +200,7 @@ const BlocksRenderer = ({ block }: Props) => {
 
       return (
         <div class='relative my-5'>
-          <div class='border-[1px] border-zinc-800 rounded-t-lg bg-zinc-900 w-[90px] h-[26px]' />
+          <div class='border-[1px] rounded-t-lg bg-gray-800 dark:bg-gray-800/50 border-slate-500 dark:border-slate-700 w-[90px] h-[26px]' />
           <Code code={code} language={language} />
           <CopyCode code={code} />
         </div>

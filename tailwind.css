@@ -6,7 +6,7 @@
   }
 
   pre {
-    @apply text-slate-100 bg-zinc-900 border-[1px] border-zinc-800 whitespace-pre leading-6 hyphens-none p-4 pt-12 overflow-x-auto font-mono font-semibold;
+    @apply text-slate-100 bg-gray-800 dark:bg-gray-800/50 border-[1px] border-slate-500 dark:border-slate-700 whitespace-pre leading-6 hyphens-none p-4 pt-12 overflow-x-auto font-mono font-semibold;
   }
 }
 
