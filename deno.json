@@ -33,6 +33,7 @@
     "utils/": "./utils/",
     "lib/": "./lib/",
     "constants/": "./constants/",
+    "config/": "./config/",
     "islands/": "./islands/"
   },
   "lint": { "rules": { "tags": ["fresh", "recommended"] } },
