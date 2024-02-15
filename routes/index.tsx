@@ -36,17 +36,22 @@ const About = () => (
         width='240'
         height='240'
       />
-      <Paragraph>
-        Hola! I&apos;m a Venezuelan Systems Engineer working as a Front-end
-        Engineer and UI Designer. I thrive on creating sleek, minimalistic
-        designs that are both visually stunning and user-friendly. When it comes
-        to code, I firmly believe in keeping things clean and scalable - because
-        who has time for spaghetti code anyway? Whether I'm designing or coding,
-        my goal is always to create something that's not only beautiful but also
-        functional. So, if you&apos;re looking for someone who&apos;s passionate
-        about design and development (and can whip up an arepa like
-        nobody&apos;s business), look no further!
-      </Paragraph>
+      <div class='flex flex-col gap-4'>
+        <Paragraph>
+          Hola! I&apos;m a Venezuelan Systems Engineer working as a Front-end
+          Engineer and UI Designer. I thrive on creating sleek, minimalistic
+          designs that are both visually stunning and user-friendly. When it
+          comes to code, I firmly believe in keeping things clean and scalable -
+          because who has time for spaghetti code anyway?
+        </Paragraph>
+        <Paragraph>
+          Whether I'm designing or coding, my goal is always to create something
+          that's not only beautiful but also functional. So, if you&apos;re
+          looking for someone who&apos;s passionate about design and development
+          (and can whip up an arepa like nobody&apos;s business), look no
+          further!
+        </Paragraph>
+      </div>
     </div>
     <Biography />
   </Section>
