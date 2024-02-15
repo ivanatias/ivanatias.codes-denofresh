@@ -7,19 +7,22 @@ import ArticleFooter from 'components/pages/blog-article/article-footer.tsx'
 import TableOfContent from 'components/pages/blog-article/table-of-content.tsx'
 import BlocksRenderer from 'components/blocks-renderer.tsx'
 import { DB_TYPES, getNotionPageContent } from 'lib/notion.ts'
+import { previewSuffix, removePreviewSuffixFromPath } from 'lib/og-images.ts'
 import { extractArticleMetadata } from 'utils/notion.ts'
 import { extractHeadings } from 'utils/helpers.ts'
 
-const BlogArticle = async (_req: Request, ctx: RouteContext) => {
+const BlogArticle = async (req: Request, ctx: RouteContext) => {
   const { slug } = ctx.params
-  const page = await getNotionPageContent(slug, DB_TYPES.BLOG)
+  const { origin, pathname } = new URL(req.url)
+  const page = await getNotionPageContent(
+    removePreviewSuffixFromPath(slug),
+    DB_TYPES.BLOG,
+  )
 
   if (page === null) return ctx.renderNotFound()
 
   const { content, foundPage, nextPageTitle, prevPageTitle } = page
-
   const metadata = extractArticleMetadata(foundPage)
-
   const headings = extractHeadings(content)
 
   return (
@@ -28,11 +31,8 @@ const BlogArticle = async (_req: Request, ctx: RouteContext) => {
         title={metadata.title}
         canonicalUrlPath={`/blog/${slug}`}
         description={metadata.description}
-        socialCardImage={metadata.socialCardImage}
+        socialCardImage={`${origin}/${pathname}${previewSuffix}`}
         contentType='article'
-        linkTags={[
-          { rel: 'preload', href: metadata.coverImageUrl, as: 'image' },
-        ]}
       />
       <Wrapper showHeader={false}>
         <Article>
