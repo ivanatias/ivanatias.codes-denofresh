@@ -8,7 +8,7 @@ const NotFoundPage = (_props: UnknownPageProps) => (
     <Head>
       <title>404 Not Found</title>
       <link rel='preload' href={asset('/logo.svg')} as='image' />
-      <link rel='stylesheet' href={asset('/styles/main.css')} />
+      <link rel='stylesheet' href={asset('/styles.css')} />
       <link
         rel='apple-touch-icon'
         sizes='180x180'
