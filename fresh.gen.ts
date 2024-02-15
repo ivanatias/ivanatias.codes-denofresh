@@ -2,39 +2,40 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
-import * as $0 from './routes/_404.tsx'
-import * as $1 from './routes/_500.tsx'
-import * as $2 from './routes/_app.tsx'
-import * as $3 from './routes/_middleware.ts'
-import * as $4 from './routes/blog/[slug].tsx'
-import * as $5 from './routes/blog/index.tsx'
-import * as $6 from './routes/index.tsx'
-import * as $7 from './routes/sitemap.xml.ts'
-import * as $8 from './routes/works/[slug].tsx'
-import * as $$0 from './islands/copy-code.tsx'
-import * as $$1 from './islands/mobile-menu.tsx'
-import * as $$2 from './islands/socialmedia-share.tsx'
-import * as $$3 from './islands/theme-toggle.tsx'
+import * as $_404 from './routes/_404.tsx'
+import * as $_500 from './routes/_500.tsx'
+import * as $_app from './routes/_app.tsx'
+import * as $_middleware from './routes/_middleware.ts'
+import * as $blog_slug_ from './routes/blog/[slug].tsx'
+import * as $blog_index from './routes/blog/index.tsx'
+import * as $index from './routes/index.tsx'
+import * as $sitemap_xml from './routes/sitemap.xml.ts'
+import * as $works_slug_ from './routes/works/[slug].tsx'
+import * as $copy_code from './islands/copy-code.tsx'
+import * as $mobile_menu from './islands/mobile-menu.tsx'
+import * as $socialmedia_share from './islands/socialmedia-share.tsx'
+import * as $theme_toggle from './islands/theme-toggle.tsx'
+import { type Manifest } from '$fresh/server.ts'
 
 const manifest = {
   routes: {
-    './routes/_404.tsx': $0,
-    './routes/_500.tsx': $1,
-    './routes/_app.tsx': $2,
-    './routes/_middleware.ts': $3,
-    './routes/blog/[slug].tsx': $4,
-    './routes/blog/index.tsx': $5,
-    './routes/index.tsx': $6,
-    './routes/sitemap.xml.ts': $7,
-    './routes/works/[slug].tsx': $8,
+    './routes/_404.tsx': $_404,
+    './routes/_500.tsx': $_500,
+    './routes/_app.tsx': $_app,
+    './routes/_middleware.ts': $_middleware,
+    './routes/blog/[slug].tsx': $blog_slug_,
+    './routes/blog/index.tsx': $blog_index,
+    './routes/index.tsx': $index,
+    './routes/sitemap.xml.ts': $sitemap_xml,
+    './routes/works/[slug].tsx': $works_slug_,
   },
   islands: {
-    './islands/copy-code.tsx': $$0,
-    './islands/mobile-menu.tsx': $$1,
-    './islands/socialmedia-share.tsx': $$2,
-    './islands/theme-toggle.tsx': $$3,
+    './islands/copy-code.tsx': $copy_code,
+    './islands/mobile-menu.tsx': $mobile_menu,
+    './islands/socialmedia-share.tsx': $socialmedia_share,
+    './islands/theme-toggle.tsx': $theme_toggle,
   },
   baseUrl: import.meta.url,
-}
+} satisfies Manifest
 
 export default manifest
