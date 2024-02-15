@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "start": "deno run -A --watch=tailwind.css,routes/ dev.ts",
+    "start": "deno run -A --watch=routes/ dev.ts",
     "build": "deno run -A dev.ts build",
     "preview": "deno run -A main.ts"
   },
@@ -16,6 +16,7 @@
       "semiColons": false
     }
   },
+  "nodeModulesDir": true,
   "imports": {
     "$fresh/": "https://deno.land/x/fresh@1.6.5/",
     "$std/": "https://deno.land/std@0.192.0/",
@@ -24,6 +25,9 @@
     "preact-render-to-string": "https://esm.sh/*preact-render-to-string@6.2.1",
     "@preact/signals": "https://esm.sh/*@preact/signals@1.2.1",
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.0",
+    "tailwindcss": "npm:tailwindcss@3.4.1",
+    "tailwindcss/": "npm:/tailwindcss@3.4.1/",
+    "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js",
     "notion": "https://esm.sh/@notionhq/client@2.2.9",
     "notion/": "https://esm.sh/@notionhq/client@2.2.9/",
     "refractor/": "https://esm.sh/refractor@4.8.1/",

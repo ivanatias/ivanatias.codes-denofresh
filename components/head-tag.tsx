@@ -44,7 +44,7 @@ const HeadTag = ({
         content='Front-end Engineer, UI Designer, Ivan Atias, Portfolio, Blog'
       />
       <link rel='preload' href={asset('/logo.svg')} as='image' />
-      <link rel='stylesheet' href={asset('/styles/main.css')} />
+      <link rel='stylesheet' href={asset('/styles.css')} />
       {hasAdditionalLinkTags && linkTags.map((tag) => <link {...tag} />)}
       <link
         rel='apple-touch-icon'

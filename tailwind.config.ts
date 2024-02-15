@@ -1,6 +1,10 @@
+import { type Config } from 'tailwindcss'
+
 export default {
   darkMode: 'class',
-  content: ['./**/*.{ts,tsx}'],
+  content: [
+    '{routes,islands,components,utils}/**/*.{ts,tsx}',
+  ],
   theme: {
     extend: {
       colors: {
@@ -10,4 +14,4 @@ export default {
     },
   },
   plugins: [],
-}
+} satisfies Config
