@@ -31,7 +31,7 @@ const BlogArticle = async (req: Request, ctx: RouteContext) => {
         title={metadata.title}
         canonicalUrlPath={`/blog/${slug}`}
         description={metadata.description}
-        socialCardImage={`${origin}/${pathname}${previewSuffix}`}
+        socialCardImage={`${origin}${pathname}${previewSuffix}`}
         contentType='article'
       />
       <Wrapper showHeader={false}>
