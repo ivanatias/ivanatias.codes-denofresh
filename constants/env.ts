@@ -1,6 +1,4 @@
 const DEVELOPMENT = 'development'
-const BUILD = 'build'
-
 const ENV = Deno.env.get('ENV') ?? DEVELOPMENT
 const NOTION_SECRET = Deno.env.get('NOTION_SECRET')
 const BLOG_DB = Deno.env.get('NOTION_BLOG_DB_ID')
@@ -10,7 +8,6 @@ const PACKAGES_DB = Deno.env.get('NOTION_PACKAGES_DB_ID')
 
 export {
   BLOG_DB,
-  BUILD,
   CONTRIBUTIONS_DB,
   DEVELOPMENT,
   ENV,
