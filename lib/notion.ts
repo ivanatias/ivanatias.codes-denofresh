@@ -9,7 +9,7 @@ import {
   NOTION_SECRET,
   PACKAGES_DB,
   PROJECTS_DB,
-} from 'constants/env.ts'
+} from 'config/env.ts'
 import type { Block, PageObjectResponse } from 'utils/notion.ts'
 
 if (

@@ -1,6 +1,6 @@
 import type { MiddlewareHandlerContext } from '$fresh/server.ts'
 import { BASE_URL } from 'constants/socials.ts'
-import { DEVELOPMENT, ENV } from 'constants/env.ts'
+import { DEVELOPMENT, ENV } from 'config/env.ts'
 
 const plainTextHeader = { 'Content-Type': 'text/plain' }
 const isDevelopment = ENV === DEVELOPMENT
