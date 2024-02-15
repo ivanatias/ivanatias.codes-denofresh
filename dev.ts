@@ -3,6 +3,7 @@
 import dev from '$fresh/dev.ts'
 import tailwind from './tailwind-init.ts'
 import tailwindConfig from './tailwind.config.ts'
+import '$std/dotenv/load.ts'
 
 tailwind(tailwindConfig)
 
