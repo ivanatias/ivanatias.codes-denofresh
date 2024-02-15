@@ -28,6 +28,7 @@
     "tailwindcss": "npm:tailwindcss@3.4.1",
     "tailwindcss/": "npm:/tailwindcss@3.4.1/",
     "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js",
+    "imagescript": "https://deno.land/x/imagescript@1.2.17/mod.ts",
     "notion": "https://esm.sh/@notionhq/client@2.2.9",
     "notion/": "https://esm.sh/@notionhq/client@2.2.9/",
     "refractor/": "https://esm.sh/refractor@4.8.1/",
