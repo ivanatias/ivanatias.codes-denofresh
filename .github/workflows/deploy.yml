@@ -6,6 +6,7 @@ on:
 jobs:
   deploy:
     name: Deploy
+    if: github.event_name == 'push' && github.repository == 'ivanatias/ivanatias.codes-denofresh' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-22.04
 
     permissions:
