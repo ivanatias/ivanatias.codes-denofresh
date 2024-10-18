@@ -1,4 +1,4 @@
-const BASE_URL = 'https://ivanatias.codes'
+const BASE_URL = 'https://ivanatias.dev'
 const BASE_URL_BLOG = `${BASE_URL}/blog`
 
 const SOCIAL_SHARE = [
