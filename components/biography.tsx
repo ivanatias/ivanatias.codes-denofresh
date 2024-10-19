@@ -24,9 +24,19 @@ const BiographyItem = ({ year, description }: BiographyItemProps) => (
 
 const BIOGRAPHY = [
   {
+    year: 2023,
+    description:
+      'Worked as a freelance Software Engineer developing and designing robust applications using mainly Next.js and TypeScript, implementing comprehensive unit, integration and end-to-end testing to validate functionality and performance.',
+  },
+  {
+    year: 2022,
+    description:
+      'Got offered and accepted an offer to join GML Agency as a Software Engineer. Worked on building leads generation tools using technologies such as React.js and Node.js.',
+  },
+  {
     year: 2021,
     description:
-      'Started my path as a Front-end Engineer and UI Designer. Now I\'m open for new opportunities and experiences in this field',
+      "Started my path as a Front-end Engineer and UI Designer. Now I'm open for new opportunities and experiences in this field.",
   },
   {
     year: 2020,
@@ -41,7 +51,7 @@ const BIOGRAPHY = [
     year: 1992,
     description: 'Born in Venezuela.',
   },
-]
+] as const
 
 const Biography = () => (
   <ul class='flex flex-col gap-3'>
