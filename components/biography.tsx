@@ -47,10 +47,6 @@ const BIOGRAPHY = [
     description:
       'Obtained my Systems Engineering bachelor’s degree in “Santa María” University and co-founded GoSocial inc, a digital marketing agency.',
   },
-  {
-    year: 1992,
-    description: 'Born in Venezuela.',
-  },
 ] as const
 
 const Biography = () => (

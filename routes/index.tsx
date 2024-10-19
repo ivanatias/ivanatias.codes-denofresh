@@ -38,11 +38,11 @@ const About = () => (
       />
       <div class='flex flex-col gap-4'>
         <Paragraph>
-          Hola! I&apos;m a Venezuelan Systems Engineer working as a Front-end
-          Engineer and UI Designer. I thrive on creating sleek, minimalistic
-          designs that are both visually stunning and user-friendly. When it
-          comes to code, I firmly believe in keeping things clean and scalable -
-          because who has time for spaghetti code anyway?
+          Hola! I&apos;m a Systems Engineer working as a Front-end Engineer and
+          UI Designer. I thrive on creating sleek, minimalistic designs that are
+          both visually stunning and user-friendly. When it comes to code, I
+          firmly believe in keeping things clean and scalable - because who has
+          time for spaghetti code anyway?
         </Paragraph>
         <Paragraph>
           Whether I'm designing or coding, my goal is always to create something
